@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Home section--------------------------- */
+
+.hero-section {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 0.875rem;
+    height: auto;
+    padding-top: 7rem;
+    background-image: url(https://d3juy0zp6vqec8.cloudfront.net/images/bg-banner.webp);
+}
+
+.better-way-of-living{
+    width: 100%;
+    background: conic-gradient(from 270deg at 98.67% 100%, #5F83A5 0deg, rgba(95, 131, 165, 0) 360deg);
+    padding: 39px 0;
+    text-align: center;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+}
