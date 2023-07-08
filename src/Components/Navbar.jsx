@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaBars } from "react-icons/fa"
 import { RxCross1 } from "react-icons/rx"
-
+import { NavLink } from 'react-router-dom';
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const toggleMenu = () => {
@@ -42,7 +42,7 @@ const Navbar = () => {
 
                                             <ul className="accordion-content p-4" style={{ display: 'block' }}>
                                                 <li className="mb-4">
-                                                    <a
+                                                    <NavLink
                                                         href="https://cityfurnish.com/delhi/bedroom-furniture-on-rent"
                                                         aria-label="Bed Room"
                                                         target="_self"
@@ -50,10 +50,10 @@ const Navbar = () => {
                                                         className="text-sm md:text-base font-normal leading-6 text-ruby-beta hover:text-pearl-alpha"
                                                     >
                                                         Bed Room
-                                                    </a>
+                                                    </NavLink>
                                                 </li>
                                                 <li className="mb-4">
-                                                    <a
+                                                    <NavLink
                                                         href="https://cityfurnish.com/delhi/living-room-furniture-on-rent"
                                                         aria-label="Living Room"
                                                         target="_self"
@@ -61,10 +61,10 @@ const Navbar = () => {
                                                         className="text-sm md:text-base font-normal leading-6 text-ruby-beta hover:text-pearl-alpha"
                                                     >
                                                         Living Room
-                                                    </a>
+                                                    </NavLink>
                                                 </li>
                                                 <li className="mb-4">
-                                                    <a
+                                                    <NavLink
                                                         href="https://cityfurnish.com/delhi/dining-furniture-on-rent"
                                                         aria-label="Dining Room"
                                                         target="_self"
@@ -72,10 +72,10 @@ const Navbar = () => {
                                                         className="text-sm md:text-base font-normal leading-6 text-ruby-beta hover:text-pearl-alpha"
                                                     >
                                                         Dining Room
-                                                    </a>
+                                                    </NavLink>
                                                 </li>
                                                 <li className="mb-4">
-                                                    <a
+                                                    <NavLink
                                                         href="https://cityfurnish.com/delhi/study-room-furniture-rental"
                                                         aria-label="Study Room"
                                                         target="_self"
@@ -83,7 +83,7 @@ const Navbar = () => {
                                                         className="text-sm md:text-base font-normal leading-6 text-ruby-beta hover:text-pearl-alpha"
                                                     >
                                                         Study Room
-                                                    </a>
+                                                    </NavLink>
                                                 </li>
                                             </ul>
                                         </li>
@@ -117,7 +117,7 @@ const Navbar = () => {
 
                                             <ul className="accordion-content p-4" style={{ display: 'block' }}>
                                                 <li className="mb-4">
-                                                    <a
+                                                    <NavLink
                                                         href="https://cityfurnish.com/delhi/bedroom-furniture-on-rent"
                                                         aria-label="Bed Room"
                                                         target="_self"
@@ -125,10 +125,10 @@ const Navbar = () => {
                                                         className="text-sm md:text-base font-normal leading-6 text-ruby-beta hover:text-pearl-alpha"
                                                     >
                                                         Bed Room
-                                                    </a>
+                                                    </NavLink>
                                                 </li>
                                                 <li className="mb-4">
-                                                    <a
+                                                    <NavLink
                                                         href="https://cityfurnish.com/delhi/living-room-furniture-on-rent"
                                                         aria-label="Living Room"
                                                         target="_self"
@@ -136,10 +136,10 @@ const Navbar = () => {
                                                         className="text-sm md:text-base font-normal leading-6 text-ruby-beta hover:text-pearl-alpha"
                                                     >
                                                         Living Room
-                                                    </a>
+                                                    </NavLink>
                                                 </li>
                                                 <li className="mb-4">
-                                                    <a
+                                                    <NavLink
                                                         href="https://cityfurnish.com/delhi/dining-furniture-on-rent"
                                                         aria-label="Dining Room"
                                                         target="_self"
@@ -147,10 +147,10 @@ const Navbar = () => {
                                                         className="text-sm md:text-base font-normal leading-6 text-ruby-beta hover:text-pearl-alpha"
                                                     >
                                                         Dining Room
-                                                    </a>
+                                                    </NavLink>
                                                 </li>
                                                 <li className="mb-4">
-                                                    <a
+                                                    <NavLink
                                                         href="https://cityfurnish.com/delhi/study-room-furniture-rental"
                                                         aria-label="Study Room"
                                                         target="_self"
@@ -158,7 +158,7 @@ const Navbar = () => {
                                                         className="text-sm md:text-base font-normal leading-6 text-ruby-beta hover:text-pearl-alpha"
                                                     >
                                                         Study Room
-                                                    </a>
+                                                    </NavLink>
                                                 </li>
                                             </ul>
                                         </li>
@@ -193,7 +193,7 @@ const Navbar = () => {
 
                                             <ul className="accordion-content p-4" style={{ display: 'block' }}>
                                                 <li className="mb-4">
-                                                    <a
+                                                    <NavLink
                                                         href="https://cityfurnish.com/delhi/bedroom-furniture-on-rent"
                                                         aria-label="Bed Room"
                                                         target="_self"
@@ -201,10 +201,10 @@ const Navbar = () => {
                                                         className="text-sm md:text-base font-normal leading-6 text-ruby-beta hover:text-pearl-alpha"
                                                     >
                                                         Bed Room
-                                                    </a>
+                                                    </NavLink>
                                                 </li>
                                                 <li className="mb-4">
-                                                    <a
+                                                    <NavLink
                                                         href="https://cityfurnish.com/delhi/living-room-furniture-on-rent"
                                                         aria-label="Living Room"
                                                         target="_self"
@@ -212,10 +212,10 @@ const Navbar = () => {
                                                         className="text-sm md:text-base font-normal leading-6 text-ruby-beta hover:text-pearl-alpha"
                                                     >
                                                         Living Room
-                                                    </a>
+                                                    </NavLink>
                                                 </li>
                                                 <li className="mb-4">
-                                                    <a
+                                                    <NavLink
                                                         href="https://cityfurnish.com/delhi/dining-furniture-on-rent"
                                                         aria-label="Dining Room"
                                                         target="_self"
@@ -223,10 +223,10 @@ const Navbar = () => {
                                                         className="text-sm md:text-base font-normal leading-6 text-ruby-beta hover:text-pearl-alpha"
                                                     >
                                                         Dining Room
-                                                    </a>
+                                                    </NavLink>
                                                 </li>
                                                 <li className="mb-4">
-                                                    <a
+                                                    <NavLink
                                                         href="https://cityfurnish.com/delhi/study-room-furniture-rental"
                                                         aria-label="Study Room"
                                                         target="_self"
@@ -234,7 +234,7 @@ const Navbar = () => {
                                                         className="text-sm md:text-base font-normal leading-6 text-ruby-beta hover:text-pearl-alpha"
                                                     >
                                                         Study Room
-                                                    </a>
+                                                    </NavLink>
                                                 </li>
                                             </ul>
                                         </li>
@@ -271,7 +271,7 @@ const Navbar = () => {
 
                                             <ul className="accordion-content p-4" style={{ display: 'block' }}>
                                                 <li className="mb-4">
-                                                    <a
+                                                    <NavLink
                                                         href="https://cityfurnish.com/delhi/bedroom-furniture-on-rent"
                                                         aria-label="Bed Room"
                                                         target="_self"
@@ -279,10 +279,10 @@ const Navbar = () => {
                                                         className="text-sm md:text-base font-normal leading-6 text-ruby-beta hover:text-pearl-alpha"
                                                     >
                                                         combo Room
-                                                    </a>
+                                                    </NavLink>
                                                 </li>
                                                 <li className="mb-4">
-                                                    <a
+                                                    <NavLink
                                                         href="https://cityfurnish.com/delhi/living-room-furniture-on-rent"
                                                         aria-label="Living Room"
                                                         target="_self"
@@ -290,10 +290,10 @@ const Navbar = () => {
                                                         className="text-sm md:text-base font-normal leading-6 text-ruby-beta hover:text-pearl-alpha"
                                                     >
                                                         Living Room
-                                                    </a>
+                                                    </NavLink>
                                                 </li>
                                                 <li className="mb-4">
-                                                    <a
+                                                    <NavLink
                                                         href="https://cityfurnish.com/delhi/dining-furniture-on-rent"
                                                         aria-label="Dining Room"
                                                         target="_self"
@@ -301,10 +301,10 @@ const Navbar = () => {
                                                         className="text-sm md:text-base font-normal leading-6 text-ruby-beta hover:text-pearl-alpha"
                                                     >
                                                         Dining Room
-                                                    </a>
+                                                    </NavLink>
                                                 </li>
                                                 <li className="mb-4">
-                                                    <a
+                                                    <NavLink
                                                         href="https://cityfurnish.com/delhi/study-room-furniture-rental"
                                                         aria-label="Study Room"
                                                         target="_self"
@@ -312,7 +312,7 @@ const Navbar = () => {
                                                         className="text-sm md:text-base font-normal leading-6 text-ruby-beta hover:text-pearl-alpha"
                                                     >
                                                         Study Room
-                                                    </a>
+                                                    </NavLink>
                                                 </li>
                                             </ul>
                                         </li>

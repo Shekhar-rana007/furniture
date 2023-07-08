@@ -1,17 +1,21 @@
 import React from 'react'
 import Navbar from "./Components/Navbar"
-import Home from './Components/Home'
+import HomeMain from './Components/Home/HomeMain'
 import "./App.css"
-import HomeWhy from './Components/HomeWhy'
-import HomeStress from './Components/HomeStress'
+import { Routes,Route } from 'react-router-dom'
+import ShoppingMain from './Components/ShoppingSec/ShoppingMain'
 const App = () => {
   
 return (
     <>
     <Navbar />
-    <Home />
-    <HomeWhy />
-    <HomeStress />
+    <Routes>
+    <Route path="/rentFurnitures" element={<ShoppingMain />} />
+
+
+
+    </Routes>
+   <HomeMain />
     </>
   )
 }

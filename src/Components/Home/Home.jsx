@@ -53,7 +53,7 @@ const Home = () => {
   ]
   return (
     <>
-      <section className="hero-section w-full h-125.5 md:h-auto bg-cover bg-no-repeat bg-center pt-7 md:pt-28 pb-3.5">
+      <section className="hero-sectionMain w-full h-125.5 md:h-auto bg-cover bg-no-repeat bg-center pt-7 md:pt-28 pb-3.5">
         <div className="h-full flex flex-col text-center">
           <div className="container my-auto md:my-0">
             <h1 className="relative text-2.5xl leading-10 md:text-5.5xl md:leading-74 lg:leading-72 font-bold text-white max-w-md md:max-w-[906px] mx-auto mt-6 md:mt-0">Make your picture perfect home with us</h1>
