@@ -1,6 +1,5 @@
 import React from 'react'
 import HomeFurniture from './HomeFurniture'
-
 const ShoppingMain = () => {
   return (
     <>
