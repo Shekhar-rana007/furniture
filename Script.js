@@ -735,7 +735,7 @@ function delete_subscribe(t, e) {
 }
 
 function ajaxEditproductAttribute(t, e, a, i) {
-    $("#loadingImg_" + t).html('<span classname="loading"><img src="' + CDN_URL + 'images/indicator.gif" alt="Loading..."></span>'), $.ajax({
+    $("#loadingImg_" + t).html('<span className="loading"><img src="' + CDN_URL + 'images/indicator.gif" alt="Loading..."></span>'), $.ajax({
         type: "POST",
         url: baseURL + "admin/product/ajaxProductAttributeUpdate",
         data: {
@@ -751,7 +751,7 @@ function ajaxEditproductAttribute(t, e, a, i) {
 }
 
 function ajaxChangeproductAttribute(t, e, a, i) {
-    $("#loadingImg_" + t).html('<span classname="loading"><img src="' + CDN_URL + 'images/indicator.gif" alt="Loading..."></span>'), $.ajax({
+    $("#loadingImg_" + t).html('<span className="loading"><img src="' + CDN_URL + 'images/indicator.gif" alt="Loading..."></span>'), $.ajax({
         type: "POST",
         url: baseURL + "site/product/ajaxProductAttributeUpdate",
         data: {
@@ -767,7 +767,7 @@ function ajaxChangeproductAttribute(t, e, a, i) {
 }
 
 function ajaxCartAttributeChange(t, e) {
-    $("#loadingImg_" + e).html('<span classname="loading"><img src="' + CDN_URL + 'images/indicator.gif" alt="Loading..."></span>'), $("#AttrErr").html(""), $("#AttrErr").hide(), $("#loadingmessage").show(), $.ajax({
+    $("#loadingImg_" + e).html('<span className="loading"><img src="' + CDN_URL + 'images/indicator.gif" alt="Loading..."></span>'), $("#AttrErr").html(""), $("#AttrErr").hide(), $("#loadingmessage").show(), $.ajax({
         type: "POST",
         url: baseURL + "site/product/ajaxProductDetailAttributeUpdate",
         data: {
@@ -782,7 +782,7 @@ function ajaxCartAttributeChange(t, e) {
 }
 
 function ajaxCartAttributeChangePopup(t, e) {
-    $("#loadingImg1_" + e).html('<span classname="loading"><img src="' + CDN_URL + 'images/indicator.gif" alt="Loading..."></span>'), $.ajax({
+    $("#loadingImg1_" + e).html('<span className="loading"><img src="' + CDN_URL + 'images/indicator.gif" alt="Loading..."></span>'), $.ajax({
         type: "POST",
         url: baseURL + "site/product/ajaxProductDetailAttributeUpdate",
         data: {
@@ -834,24 +834,24 @@ function delete_cart(p, e, product_name='') {
                 $(".priceaddon").hide();
                 $(".btncartdiv").hide();
                 $("#subtotal").hide();
-                $("#add_new_product, #min-cart-order-summary").append('<div classname="emptycartbar"><img src="' + CDN_URL + 'images/empty_cart.webp" alt="Empaty cart"><h5 style="text-align: center;">Your Cart is Empty</h5><p style="text-align: center;font-size: 12px;margin-top: 5px;">Looks like you have not chosen <br> any product yet</p></div>');
-                $("#new_product_added").append('<div classname="emptycartbar"><img src="' + CDN_URL + 'images/empty_cart.webp" alt="Empaty cart"><h5 style="text-align: center;">Your Cart is Empty</h5><p style="text-align: center;font-size: 12px;margin-top: 5px;">Looks like you have not chosen <br> any product yet</p></div>');
+                $("#add_new_product, #min-cart-order-summary").append('<div className="emptycartbar"><img src="' + CDN_URL + 'images/empty_cart.webp" alt="Empaty cart"><h5 style="text-align: center;">Your Cart is Empty</h5><p style="text-align: center;font-size: 12px;margin-top: 5px;">Looks like you have not chosen <br> any product yet</p></div>');
+                $("#new_product_added").append('<div className="emptycartbar"><img src="' + CDN_URL + 'images/empty_cart.webp" alt="Empaty cart"><h5 style="text-align: center;">Your Cart is Empty</h5><p style="text-align: center;font-size: 12px;margin-top: 5px;">Looks like you have not chosen <br> any product yet</p></div>');
                 $("#empty_msg").show();
                 $("#title").hide();
                 $(".emptycartbar").show();
             }
             if (r[4] > 0) {
-                $("#user_cart_btn").html(`<span classname="material-symbols-outlined">shopping_cart</span><span classname="cart-badge" id="new_count">${r[4]}</span>`);
-                $("#user_cart_btn_m").html(`<span classname="material-symbols-outlined">shopping_cart</span><span classname="cart-badge" id="new_count">${r[4]}</span>`);
+                $("#user_cart_btn").html(`<span className="material-symbols-outlined">shopping_cart</span><span className="cart-badge" id="new_count">${r[4]}</span>`);
+                $("#user_cart_btn_m").html(`<span className="material-symbols-outlined">shopping_cart</span><span className="cart-badge" id="new_count">${r[4]}</span>`);
             } else {
-                $("#user_cart_btn").html('<span classname="material-symbols-outlined">shopping_cart</span>');
-                $("#user_cart_btn_m").html('<span classname="material-symbols-outlined">shopping_cart</span>');
+                $("#user_cart_btn").html('<span className="material-symbols-outlined">shopping_cart</span>');
+                $("#user_cart_btn_m").html('<span className="material-symbols-outlined">shopping_cart</span>');
             }
             
             if ($('#TotalRentIncludeGST').length) {
                 var totalrentincludegst = (parseFloat(cart_data_wcs['total_rent_after_discount']) + parseFloat(cart_data_wcs['total_gst']));
-                $("#TotalRentIncludeGST").html('<i classname="rupees-symbol">&#x20B9;</i> ' + totalrentincludegst.toFixed(2));
-                $("#TotalRentIncludeGST1").html('<i classname="rupees-symbol">&#x20B9;</i> ' + totalrentincludegst.toFixed(2));
+                $("#TotalRentIncludeGST").html('<i className="rupees-symbol">&#x20B9;</i> ' + totalrentincludegst.toFixed(2));
+                $("#TotalRentIncludeGST1").html('<i className="rupees-symbol">&#x20B9;</i> ' + totalrentincludegst.toFixed(2));
             }
             
             $("#cart_amount").val(r[0]);
@@ -861,22 +861,22 @@ function delete_cart(p, e, product_name='') {
             $("#discount_Amt").val(r[5]);
             $("#CartAmt").html(cart_data_wcs['total_final_rent']);
             $("#CartAmtFirst").html(r[0]);
-            $("#rental_amt").html('<i id="new_pricesymbl" classname="fa fa-inr" aria-hidden="true"></i>' + r[0]);
-            $("#min-cart-advance").html('<i classname="rupees-symbol">&#x20B9;</i> ' + r[0]);
+            $("#rental_amt").html('<i id="new_pricesymbl" className="fa fa-inr" aria-hidden="true"></i>' + r[0]);
+            $("#min-cart-advance").html('<i className="rupees-symbol">&#x20B9;</i> ' + r[0]);
             $("#CartAmtDup").html(r[0]);
             $("#CartSAmt").html(cart_data_wcs['security_deposite']);
             $("#CartSAmtFirst").html(r[1]);
-            $("#deposit_amt").html('<i id="new_pricesymbl" classname="fa fa-inr" aria-hidden="true"></i>' + r[1]);
-            $("#min-cart-refundable-deposit").html('<i classname="rupees-symbol">&#x20B9;</i> ' + r[1]);
-            $("#min-cart-subtotal").html('<i classname="rupees-symbol">&#x20B9;</i> ' + r[3]);
+            $("#deposit_amt").html('<i id="new_pricesymbl" className="fa fa-inr" aria-hidden="true"></i>' + r[1]);
+            $("#min-cart-refundable-deposit").html('<i className="rupees-symbol">&#x20B9;</i> ' + r[1]);
+            $("#min-cart-subtotal").html('<i className="rupees-symbol">&#x20B9;</i> ' + r[3]);
             $("#CartTAmt").html(r[2]);
-            $("#CartGAmt").html('<i id="new_pricesymbl" classname="fa fa-inr" aria-hidden="true"></i>' + r[3]);
-            $("#DetailCartGAmt").html('<i id="new_pricesymbl" classname="fa fa-inr" aria-hidden="true"></i>' + r[3]);
-            $("#CartCartGAmt").html('<i classname="rupees-symbol">&#x20B9;</i> ' + cart_data_wcs['total_grand_final_rent']);
-            $("#CartCartGAmtFirst").html('<i classname="rupees-symbol">&#x20B9;</i> ' + r[10]);
+            $("#CartGAmt").html('<i id="new_pricesymbl" className="fa fa-inr" aria-hidden="true"></i>' + r[3]);
+            $("#DetailCartGAmt").html('<i id="new_pricesymbl" className="fa fa-inr" aria-hidden="true"></i>' + r[3]);
+            $("#CartCartGAmt").html('<i className="rupees-symbol">&#x20B9;</i> ' + cart_data_wcs['total_grand_final_rent']);
+            $("#CartCartGAmtFirst").html('<i className="rupees-symbol">&#x20B9;</i> ' + r[10]);
             $("#Shop_id_count").html(r[4]);
             $("#Shop_MiniId_count").html(r[4] + " items");
-            $("#disAmtVal").html('<i classname="rupees-symbol">&#x20B9;</i> ' + cart_data_wcs['discount_amount']);
+            $("#disAmtVal").html('<i className="rupees-symbol">&#x20B9;</i> ' + cart_data_wcs['discount_amount']);
             $("#cartdivId_" + e).hide();
             $("#cartMindivId_" + e).hide();
             if (0 == r[0]) {
@@ -906,11 +906,11 @@ function delete_cart(p, e, product_name='') {
             //$("#product_quantity_" + a).val("0");
             $("#CartAmt1").html(r[0]);
             $("#CartSAmt1").html(r[1]);
-            $("#gstTaxVal").html('<i classname="rupees-symbol">&#x20B9;</i> ' + cart_data_wcs['total_gst']);
-            $("#gstTaxValFirst").html('<i classname="rupees-symbol">&#x20B9;</i> ' + r[9]);
+            $("#gstTaxVal").html('<i className="rupees-symbol">&#x20B9;</i> ' + cart_data_wcs['total_gst']);
+            $("#gstTaxValFirst").html('<i className="rupees-symbol">&#x20B9;</i> ' + r[9]);
             $('#gstTaxVal1').html('&#8377; ' + r[9]);
-            $("#CartCartGAmt1").html('<i classname="rupees-symbol">&#x20B9;</i> ' + r[10]);
-            $("#price_table").append(' <div classname="discol"><label>ADVANCE RENTAL</label><span id="rental_amt"><i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + r[0] + '</span></div><div classname="discol"><label>REFUNDABLE DEPOSIT</label><span id="deposit_amt"> <i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + r[1] + '</span></div><label>TOTAL RENT </label><span id="DetailCartGAmt"> <i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + r[3] + "</span> </div>");
+            $("#CartCartGAmt1").html('<i className="rupees-symbol">&#x20B9;</i> ' + r[10]);
+            $("#price_table").append(' <div className="discol"><label>ADVANCE RENTAL</label><span id="rental_amt"><i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + r[0] + '</span></div><div className="discol"><label>REFUNDABLE DEPOSIT</label><span id="deposit_amt"> <i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + r[1] + '</span></div><label>TOTAL RENT </label><span id="DetailCartGAmt"> <i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + r[3] + "</span> </div>");
             if ("yes" == r[7]) {
                 checkRemove(i);
             }
@@ -942,12 +942,12 @@ function removeCoins_on_coupon_vjs(type = 'null') {
                 $('.wallet_amount_visible').remove();
                 $('.wallet_grand_total').remove();
                 $('#wallet_message').html('<label style="color:green">Coins Released</label>');
-                $('#CoinsRedeemed').html('-<i classname="rupees-symbol">&#x20B9;</i> 0');
-                $('#CartCartGAmt1').html('<i classname="rupees-symbol">&#x20B9;</i>' + response.data.total_after_wallet_discount);
-                $('#CartCartGAmt').html('<i classname="rupees-symbol">&#x20B9;</i>' + response.data.total_after_wallet_discount);
+                $('#CoinsRedeemed').html('-<i className="rupees-symbol">&#x20B9;</i> 0');
+                $('#CartCartGAmt1').html('<i className="rupees-symbol">&#x20B9;</i>' + response.data.total_after_wallet_discount);
+                $('#CartCartGAmt').html('<i className="rupees-symbol">&#x20B9;</i>' + response.data.total_after_wallet_discount);
                 $('.cartInvoiceBal').html(response.data.total_after_wallet_discount);
-                $('.coins-amt').html('<i classname="icn icn-coins-gold"></i>' + response.data.original_wallet);
-                var html = '<label>Coins to be Redeemed</label> <input type="text" id="wallet_amount" name="" value=""><span classname="redeem-btn flex-full justify-content-center"><a href="#" onclick="VerifyWalletAndApply(\'' + type + '\')" classname="explore-btn" >Redeem</a></span>';
+                $('.coins-amt').html('<i className="icn icn-coins-gold"></i>' + response.data.original_wallet);
+                var html = '<label>Coins to be Redeemed</label> <input type="text" id="wallet_amount" name="" value=""><span className="redeem-btn flex-full justify-content-center"><a href="#" onclick="VerifyWalletAndApply(\'' + type + '\')" className="explore-btn" >Redeem</a></span>';
                 $("#redeemcoinDiv").html(html);
                 setTimeout(function () {
                     $('#wallet_message').html('');
@@ -985,7 +985,7 @@ function update_cart(t, e, a, i = !1) {
                 },
                 success: function (t) {
                     var a = t.split("|");
-                    $("#cart_amount").val(a[1]), $("#cart_ship_amount").val(a[2]), $("#cart_tax_amount").val(a[3]), $("#cart_total_amount").val(a[4]), $("#discount_Amt").val(a[6]), $("#IndTotalVal" + e).html(a[0]), $("#CartAmt").html(a[1]), $("#CartAmtFirst").html(a[1]), $("#rental_amt").html('<i id="new_pricesymbl" classname="fa fa-inr" aria-hidden="true"></i>' + a[1]), $("#CartAmt1").html(a[1]), $("#CartAmtDup").html(a[1]), $("#CartSAmt").html(a[2]), $("#CartSAmtFirst").html(a[2]), $("#deposit_amt").html('<i id="new_pricesymbl" classname="fa fa-inr" aria-hidden="true"></i>' + a[2]), $("#CartTAmt").html(a[3]), $("#CartGAmt").html('<i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + a[4]), $("#MCartGAmt").html(a[10]), $("#Shop_id_count").html(a[5]), $("#Shop_MiniId_count").html(a[5] + " items"), $("#disAmtVal").html('<i classname="rupees-symbol">&#x20B9;</i> ' + a[6]), location.reload()
+                    $("#cart_amount").val(a[1]), $("#cart_ship_amount").val(a[2]), $("#cart_tax_amount").val(a[3]), $("#cart_total_amount").val(a[4]), $("#discount_Amt").val(a[6]), $("#IndTotalVal" + e).html(a[0]), $("#CartAmt").html(a[1]), $("#CartAmtFirst").html(a[1]), $("#rental_amt").html('<i id="new_pricesymbl" className="fa fa-inr" aria-hidden="true"></i>' + a[1]), $("#CartAmt1").html(a[1]), $("#CartAmtDup").html(a[1]), $("#CartSAmt").html(a[2]), $("#CartSAmtFirst").html(a[2]), $("#deposit_amt").html('<i id="new_pricesymbl" className="fa fa-inr" aria-hidden="true"></i>' + a[2]), $("#CartTAmt").html(a[3]), $("#CartGAmt").html('<i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + a[4]), $("#MCartGAmt").html(a[10]), $("#Shop_id_count").html(a[5]), $("#Shop_MiniId_count").html(a[5] + " items"), $("#disAmtVal").html('<i className="rupees-symbol">&#x20B9;</i> ' + a[6]), location.reload()
                 }
             })
         }
@@ -1019,7 +1019,7 @@ function update_cart_mobile(t, e, a, i) {
                 },
                 success: function (t) {
                     var i = t.split("|");
-                    $("#cart_amount").val(i[1]), $("#cart_ship_amount").val(i[2]), $("#cart_tax_amount").val(i[3]), $("#cart_total_amount").val(i[4]), $("#discount_Amt").val(i[6]), $("#IndTotalVal" + e).html(i[0]), $("#CartAmt").html(i[1]), $("#CartAmtFirst").html(i[1]), $("#CartAmt1").html(i[1]), $("#rental_amt").html('<i id="new_pricesymbl" classname="fa fa-inr" aria-hidden="true"></i>' + i[1]), $("#CartAmtDup").html(i[1]), $("#CartSAmt").html(i[2]), $("#CartSAmtFirst").html(i[2]), $("#CartSAmt1").html(i[2]), $("#deposit_amt").html('<i id="new_pricesymbl" classname="fa fa-inr" aria-hidden="true"></i>' + i[2]), $("#CartTAmt").html(i[3]), $("#CartGAmt").html('<i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + i[4]), $("#MCartGAmt").html(i[4]), $("#Shop_id_count").html(i[5]), $("#Shop_MiniId_count").html(i[5] + " items"), $("#disAmtVal").html('<i classname="rupees-symbol">&#x20B9;</i> ' + i[6]), $("#CartCartGAmt").html('<i classname="rupees-symbol">&#x20B9;</i> ' + i[4]), $("#CartCartGAmtFirst").html('<i classname="rupees-symbol">&#x20B9;</i> ' + i[4]), $("#CartCartGAmt1").html('<i classname="rupees-symbol">&#x20B9;</i> ' + i[10]), $("#new_quantity1_" + a).html(i[8])
+                    $("#cart_amount").val(i[1]), $("#cart_ship_amount").val(i[2]), $("#cart_tax_amount").val(i[3]), $("#cart_total_amount").val(i[4]), $("#discount_Amt").val(i[6]), $("#IndTotalVal" + e).html(i[0]), $("#CartAmt").html(i[1]), $("#CartAmtFirst").html(i[1]), $("#CartAmt1").html(i[1]), $("#rental_amt").html('<i id="new_pricesymbl" className="fa fa-inr" aria-hidden="true"></i>' + i[1]), $("#CartAmtDup").html(i[1]), $("#CartSAmt").html(i[2]), $("#CartSAmtFirst").html(i[2]), $("#CartSAmt1").html(i[2]), $("#deposit_amt").html('<i id="new_pricesymbl" className="fa fa-inr" aria-hidden="true"></i>' + i[2]), $("#CartTAmt").html(i[3]), $("#CartGAmt").html('<i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + i[4]), $("#MCartGAmt").html(i[4]), $("#Shop_id_count").html(i[5]), $("#Shop_MiniId_count").html(i[5] + " items"), $("#disAmtVal").html('<i className="rupees-symbol">&#x20B9;</i> ' + i[6]), $("#CartCartGAmt").html('<i className="rupees-symbol">&#x20B9;</i> ' + i[4]), $("#CartCartGAmtFirst").html('<i className="rupees-symbol">&#x20B9;</i> ' + i[4]), $("#CartCartGAmt1").html('<i className="rupees-symbol">&#x20B9;</i> ' + i[10]), $("#new_quantity1_" + a).html(i[8])
                 }
             })
         }
@@ -1173,60 +1173,60 @@ function ajax_add_cart(t, rentnow = "") {
                         if ($("#frp_product_cart_id").length > 0) {
                             $("#frp_product_cart_id").val(t.inserted_frp_product_id);
                         }
-                        $("#add_new_product").append('<li id="header-cart-row-' + t.product_value[o].id + '"><div classname="cart-thumb"><img src="' + CDN_URL + 'images/product/' + s[0] + '" alt="" /></div><div classname="cart-desc"><strong>' + t.product_value[o].product_name + "</strong><small>" + l + d + '</small><span id="new_quantity1_' + t.product_value[o].product_id + '">' + t.product_value[o].quantity + "</span><span>  x Rs " + t.product_value[o].price + '</span><br><a href="cart"><i classname="material-icons">mode_edit</i></a><a href="#" onclick="delete_cart(' + t.product_value[o].id + "," + t.product_value[o].id + ')"><i classname="material-icons">delete</i></a></div> <strong></li>'), $("#min-cart-order-summary").append(`<li id="min-cart-product-${o}">
-                                								<div classname="order-summary-box flex-full">
-                                									<div classname="product-img flex-full">
+                        $("#add_new_product").append('<li id="header-cart-row-' + t.product_value[o].id + '"><div className="cart-thumb"><img src="' + CDN_URL + 'images/product/' + s[0] + '" alt="" /></div><div className="cart-desc"><strong>' + t.product_value[o].product_name + "</strong><small>" + l + d + '</small><span id="new_quantity1_' + t.product_value[o].product_id + '">' + t.product_value[o].quantity + "</span><span>  x Rs " + t.product_value[o].price + '</span><br><a href="cart"><i className="material-icons">mode_edit</i></a><a href="#" onclick="delete_cart(' + t.product_value[o].id + "," + t.product_value[o].id + ')"><i className="material-icons">delete</i></a></div> <strong></li>'), $("#min-cart-order-summary").append(`<li id="min-cart-product-${o}">
+                                								<div className="order-summary-box flex-full">
+                                									<div className="product-img flex-full">
                                 										<img src="${CDN_URL}images/product/${t.product_value[o].image.split(',')[0]}" alt="Product Image" width="110" height="86"></img>
                                 									</div>
-                                									<div classname="product-desc flex-full align-items-start align-content-start">
-                                										<a href="#" classname="delete" onclick="javascript:delete_cart(${t.product_value[o].id},${o})"><i classname="icn icn-delete"></i></a>
+                                									<div className="product-desc flex-full align-items-start align-content-start">
+                                										<a href="#" className="delete" onclick="javascript:delete_cart(${t.product_value[o].id},${o})"><i className="icn icn-delete"></i></a>
                                 										<h3>${t.product_value[o].product_name}</h3>
-                                										<ul classname="product-desc-listing flex-full">
+                                										<ul className="product-desc-listing flex-full">
                                 											<li>
                                 												<h4>Quantity</h4>
                                 												<span>${t.product_value[o].quantity} item</span>
                                 											</li>
                                 											<li>
                                 												<h4>${t.product_value[o].rental_freq} Rent</h4>
-                                												<span><i classname="rupees-symbol">&#x20B9;</i> ${t.product_value[o].price}</span>
+                                												<span><i className="rupees-symbol">&#x20B9;</i> ${t.product_value[o].price}</span>
                                 											</li>
                                 										</ul>
                                 									</div>
                                 								</div>
-                                							</li>`), 0 == t.product_value[o].is_addon && $("#new_product_added").append('<li id="addon-product-detail-cart-' + t.product_value[o].id + '"><div classname="cart-item"><div classname="cart-image"> <img src="' + CDN_URL + 'images/product/' + s[0] + '" alt="' + t.product_value[o].product_name + '" /> </div><div classname="cart-item-detail"><h5>' + t.product_value[o].product_name + '</h5><span id="new_quantity1_' + t.product_value[o].product_id + '">' + t.product_value[o].quantity + "</span><span> x Rs " + t.product_value[o].price + '</span><br> <a href="cart"><i classname="material-icons">&#xE254;</i></a> <a href="#" onclick="javascript:delete_cart(' + t.product_value[o].id + "," + t.product_value[o].id + ')"><i classname="material-icons">&#xE872;</i></a> </div></div></li>')
+                                							</li>`), 0 == t.product_value[o].is_addon && $("#new_product_added").append('<li id="addon-product-detail-cart-' + t.product_value[o].id + '"><div className="cart-item"><div className="cart-image"> <img src="' + CDN_URL + 'images/product/' + s[0] + '" alt="' + t.product_value[o].product_name + '" /> </div><div className="cart-item-detail"><h5>' + t.product_value[o].product_name + '</h5><span id="new_quantity1_' + t.product_value[o].product_id + '">' + t.product_value[o].quantity + "</span><span> x Rs " + t.product_value[o].price + '</span><br> <a href="cart"><i className="material-icons">&#xE254;</i></a> <a href="#" onclick="javascript:delete_cart(' + t.product_value[o].id + "," + t.product_value[o].id + ')"><i className="material-icons">&#xE872;</i></a> </div></div></li>')
                     }
-                    n = '<li><div classname="pull-left">ADVANCE RENTAL</div><div classname="pull-right"><strong id="rental_amt"><i id="p-price_1" classname="fa fa-inr" aria-hidden="true"></i>' + i + "</strong></div><br>", n += '<div classname="pull-left">REFUNDABLE DEPOSIT</div><div classname="pull-right"><strong id="deposit_amt"> <i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + r + "</strong></div><br>", n += '<div classname="pull-left">SUBTOTAL</div><div classname="pull-right"><strong id="CartGAmt"> <i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + e + "</strong></div></li>", $("#add_new_product").append(n), $("#mini-cart-checkout-wrapper").show(), $("#mini-cart-checkout-wrapper").html(`<ul classname="product-desc-listing flex-full">
+                    n = '<li><div className="pull-left">ADVANCE RENTAL</div><div className="pull-right"><strong id="rental_amt"><i id="p-price_1" className="fa fa-inr" aria-hidden="true"></i>' + i + "</strong></div><br>", n += '<div className="pull-left">REFUNDABLE DEPOSIT</div><div className="pull-right"><strong id="deposit_amt"> <i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + r + "</strong></div><br>", n += '<div className="pull-left">SUBTOTAL</div><div className="pull-right"><strong id="CartGAmt"> <i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + e + "</strong></div></li>", $("#add_new_product").append(n), $("#mini-cart-checkout-wrapper").show(), $("#mini-cart-checkout-wrapper").html(`<ul className="product-desc-listing flex-full">
                 							<li>
                 								<h4>Duration</h4>
                 								<span id="min-cart-duration">${tenureData[selected_tenure].attr_name}</span>
                 							</li>
                 							<li>
                 								<h4>Advance Rental</h4>
-                								<span id="min-cart-advance"><i classname="rupees-symbol">&#x20B9;</i> ${i.toFixed(2)}</span>
+                								<span id="min-cart-advance"><i className="rupees-symbol">&#x20B9;</i> ${i.toFixed(2)}</span>
                 							</li>
                 							<li>
                 								<h4>Refundable Deposit</h4>
-<!--                								<span id="min-cart-refundable-deposit"><i classname="rupees-symbol">&#x20B9;</i> ${r.toFixed(2)}</span>-->
-<!--                								<span id="min-cart-refundable-deposit"><i classname="rupees-symbol">&#x20B9;</i> ${(tenureData[selected_tenure].attr_name == '3 Months' ? (i * 2).toFixed(2) : 0)}</span>-->
+<!--                								<span id="min-cart-refundable-deposit"><i className="rupees-symbol">&#x20B9;</i> ${r.toFixed(2)}</span>-->
+<!--                								<span id="min-cart-refundable-deposit"><i className="rupees-symbol">&#x20B9;</i> ${(tenureData[selected_tenure].attr_name == '3 Months' ? (i * 2).toFixed(2) : 0)}</span>-->
                 			
-                								<span id="min-cart-refundable-deposit"><i classname="rupees-symbol">&#x20B9;</i> ${(isupfront == 1 ? (tenureData[selected_tenure].attr_name == '3 Months' ? (i * 2).toFixed(2) : 0) : shippingcost.toFixed(2))}</span>
+                								<span id="min-cart-refundable-deposit"><i className="rupees-symbol">&#x20B9;</i> ${(isupfront == 1 ? (tenureData[selected_tenure].attr_name == '3 Months' ? (i * 2).toFixed(2) : 0) : shippingcost.toFixed(2))}</span>
                 							</li>							
                 							<li>
                 								<h4>Sub Total</h4>
-                								<span id="min-cart-subtotal"><i classname="rupees-symbol">&#x20B9;</i> ${e.toFixed(2)}</span>
+                								<span id="min-cart-subtotal"><i className="rupees-symbol">&#x20B9;</i> ${e.toFixed(2)}</span>
                 							</li>
                 						</ul>
-                						<span classname="submit-btn flex-full justify-content-center">
-                							<a href="${baseURL}cart" classname="explore-btn">Checkout</a>
-                                            </span>`), $(".btncartdiv").append('<a href="' + baseURL + 'cart" classname="btn-check pull-left btngray"><i classname="material-icons">shopping_cart</i><span>View Cart</span></a><a href="' + baseURL + 'cart" classname="btn-check pull-right"><span>Check Out</span> <i classname="material-icons checkrot">reply</i></a>'), $("#price_table").append('<div classname="discol"><label>ADVANCE RENTAL</label><span id="rental_amt"><i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + i + '</span></div><div classname="discol"><label>REFUNDABLE DEPOSIT</label><span id="deposit_amt"><i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + r + '</span></div><label>TOTAL RENT </label><span id="DetailCartGAmt"> <i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + e + "</span></div>"), $('#add-to-cart-btn').length > 0 ?
+                						<span className="submit-btn flex-full justify-content-center">
+                							<a href="${baseURL}cart" className="explore-btn">Checkout</a>
+                                            </span>`), $(".btncartdiv").append('<a href="' + baseURL + 'cart" className="btn-check pull-left btngray"><i className="material-icons">shopping_cart</i><span>View Cart</span></a><a href="' + baseURL + 'cart" className="btn-check pull-right"><span>Check Out</span> <i className="material-icons checkrot">reply</i></a>'), $("#price_table").append('<div className="discol"><label>ADVANCE RENTAL</label><span id="rental_amt"><i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + i + '</span></div><div className="discol"><label>REFUNDABLE DEPOSIT</label><span id="deposit_amt"><i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + r + '</span></div><label>TOTAL RENT </label><span id="DetailCartGAmt"> <i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + e + "</span></div>"), $('#add-to-cart-btn').length > 0 ?
                             document.getElementById('add-to-cart-btn').innerHTML = 'Added to Cart' : '';
                     toast('Great! Product is added to the Cart :)', 'toast bg-success', '3000');
 
                 }
 
                 if (t.product_value.length > 0) {
-                    $("#user_cart_btn").html(`<span classname="material-symbols-outlined">shopping_cart</span><span classname="cart-badge" id="new_count">${totalCount}</span>`);
-                    $("#user_cart_btn_m").html(`<span classname="material-symbols-outlined">shopping_cart</span><span classname="cart-badge" id="new_count">${totalCount}</span>`);
+                    $("#user_cart_btn").html(`<span className="material-symbols-outlined">shopping_cart</span><span className="cart-badge" id="new_count">${totalCount}</span>`);
+                    $("#user_cart_btn_m").html(`<span className="material-symbols-outlined">shopping_cart</span><span className="cart-badge" id="new_count">${totalCount}</span>`);
 
                     check_page = window.location.href;
                     check_page_array = check_page.split('/');
@@ -1239,8 +1239,8 @@ function ajax_add_cart(t, rentnow = "") {
                         $("body").addClass('scroll-hide');
                     }
                 } else {
-                    $("#user_cart_btn").html(`<span classname="material-symbols-outlined">shopping_cart</span>`);
-                    $("#user_cart_btn_m").html(`<span classname="material-symbols-outlined">shopping_cart</span>`);
+                    $("#user_cart_btn").html(`<span className="material-symbols-outlined">shopping_cart</span>`);
+                    $("#user_cart_btn_m").html(`<span className="material-symbols-outlined">shopping_cart</span>`);
                 }
 
                 if (p_ev) {
@@ -1348,11 +1348,11 @@ function ajax_get_tenure_data(t, e) {
                     alert("Maximum Quantity: " + a + ". Already in your cart: " + t.show_error + ".");
                 else {
                     if (t.product_value.length > 0) {
-                        $("#user_cart_btn").html(`<i classname="icn icn-cart"></i><span id="new_count">${t.product_value.length}</span>`);
-                        $("#user_cart_btn_m").html(`<i classname="icn icn-cart-white"></i><span id="new_count">${t.product_value.length}</span>`);
+                        $("#user_cart_btn").html(`<i className="icn icn-cart"></i><span id="new_count">${t.product_value.length}</span>`);
+                        $("#user_cart_btn_m").html(`<i className="icn icn-cart-white"></i><span id="new_count">${t.product_value.length}</span>`);
                     } else {
-                        $("#user_cart_btn").html(`<i classname="icn icn-cart"></i>`);
-                        $("#user_cart_btn_m").html(`<i classname="icn icn-cart-white"></i>`);
+                        $("#user_cart_btn").html(`<i className="icn icn-cart"></i>`);
+                        $("#user_cart_btn_m").html(`<i className="icn icn-cart-white"></i>`);
                     }
                     for (var s = 0; s < t.product_value.length; s++) {
                         var l = t.product_value[s].image.split(",");
@@ -1361,9 +1361,9 @@ function ajax_get_tenure_data(t, e) {
                                     c = t.product_value[s].attr_name;
                         else
                             d = "", c = "";
-                        $("#add_new_product").append('<li id="header-cart-row-' + t.product_value[s].id + '"><div classname="cart-thumb"><img src="' + CDN_URL + 'images/product/' + l[0] + '" alt="" /></div><div classname="cart-desc"><strong>' + t.product_value[s].product_name + "</strong><small>" + d + c + '</small><span id="new_quantity1_' + t.product_value[s].product_id + '">' + t.product_value[s].quantity + "</span><span> x Rs " + t.product_value[s].price + '</span><br><a href="cart"><i classname="material-icons">mode_edit</i></a><a href="#" onclick="delete_cart(' + t.product_value[s].id + "," + t.product_value[s].id + "," + t.product_value[s].product_id + ')"><i classname="material-icons">delete</i></a></div> <strong></li>'), 1 == t.product_value[s].is_addon && ($("#product_quantity_" + t.product_value[s].product_id).val(t.product_value[s].quantity), $("#addon_new_product").append('<li id="addon-product-detail-cart-' + t.product_value[s].id + '"><div classname="cart-item"><div classname="cart-image"> <img src="' + CDN_URL + 'images/product/' + l[0] + '" alt="' + t.product_value[s].product_name + '" /> </div><div classname="cart-item-detail"><h5>' + t.product_value[s].product_name + '</h5><span id="new_quantity_' + t.product_value[s].product_id + '">' + t.product_value[s].quantity + "</span><span> x Rs " + t.product_value[s].price + '</span><br> <a href="cart"><i classname="material-icons">&#xE254;</i></a> <a href="#" onclick="javascript:delete_cart(' + t.product_value[s].id + "," + t.product_value[s].id + "," + t.product_value[s].product_id + ')"><i classname="material-icons">&#xE872;</i></a> </div></div></li>'))
+                        $("#add_new_product").append('<li id="header-cart-row-' + t.product_value[s].id + '"><div className="cart-thumb"><img src="' + CDN_URL + 'images/product/' + l[0] + '" alt="" /></div><div className="cart-desc"><strong>' + t.product_value[s].product_name + "</strong><small>" + d + c + '</small><span id="new_quantity1_' + t.product_value[s].product_id + '">' + t.product_value[s].quantity + "</span><span> x Rs " + t.product_value[s].price + '</span><br><a href="cart"><i className="material-icons">mode_edit</i></a><a href="#" onclick="delete_cart(' + t.product_value[s].id + "," + t.product_value[s].id + "," + t.product_value[s].product_id + ')"><i className="material-icons">delete</i></a></div> <strong></li>'), 1 == t.product_value[s].is_addon && ($("#product_quantity_" + t.product_value[s].product_id).val(t.product_value[s].quantity), $("#addon_new_product").append('<li id="addon-product-detail-cart-' + t.product_value[s].id + '"><div className="cart-item"><div className="cart-image"> <img src="' + CDN_URL + 'images/product/' + l[0] + '" alt="' + t.product_value[s].product_name + '" /> </div><div className="cart-item-detail"><h5>' + t.product_value[s].product_name + '</h5><span id="new_quantity_' + t.product_value[s].product_id + '">' + t.product_value[s].quantity + "</span><span> x Rs " + t.product_value[s].price + '</span><br> <a href="cart"><i className="material-icons">&#xE254;</i></a> <a href="#" onclick="javascript:delete_cart(' + t.product_value[s].id + "," + t.product_value[s].id + "," + t.product_value[s].product_id + ')"><i className="material-icons">&#xE872;</i></a> </div></div></li>'))
                     }
-                    $("#price_table").append(' <div classname="discol"><label>ADVANCE RENTAL</label><span id="rental_amt"><i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + i + '</span></div><div classname="discol"><label>REFUNDABLE DEPOSIT</label><span id="deposit_amt"> <i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + n + '</span></div><label>TOTAL RENT </label><span id="DetailCartGAmt"> <i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + e + "</span> </div>"), o = '<li><div classname="pull-left">ADVANCE RENTAL</div><div classname="pull-right"><strong id="rental_amt"> <i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + i + "</strong></div><br>", o += '<div classname="pull-left">REFUNDABLE DEPOSIT</div><div classname="pull-right"><strong id="deposit_amt"> <i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + n + "</strong></div><br>", o += '<div classname="pull-left">SUBTOTAL</div><div classname="pull-right"><strong id="CartGAmt"> <i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + e + "</strong></div></li>", $("#add_new_product").append(o), $("#add_new_product").append('<div classname="btncartdiv"><a href="' + baseURL + 'cart" classname="btn-check pull-left btngray"><i classname="material-icons">shopping_cart</i><span>View Cart</span></a><a href="' + baseURL + 'cart" classname="btn-check pull-right"><span>Check Out</span> <i classname="material-icons checkrot">reply</i></a></div>'), $("#new_msg_box").hide(), $("#title").show(), swal({
+                    $("#price_table").append(' <div className="discol"><label>ADVANCE RENTAL</label><span id="rental_amt"><i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + i + '</span></div><div className="discol"><label>REFUNDABLE DEPOSIT</label><span id="deposit_amt"> <i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + n + '</span></div><label>TOTAL RENT </label><span id="DetailCartGAmt"> <i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + e + "</span> </div>"), o = '<li><div className="pull-left">ADVANCE RENTAL</div><div className="pull-right"><strong id="rental_amt"> <i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + i + "</strong></div><br>", o += '<div className="pull-left">REFUNDABLE DEPOSIT</div><div className="pull-right"><strong id="deposit_amt"> <i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + n + "</strong></div><br>", o += '<div className="pull-left">SUBTOTAL</div><div className="pull-right"><strong id="CartGAmt"> <i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + e + "</strong></div></li>", $("#add_new_product").append(o), $("#add_new_product").append('<div className="btncartdiv"><a href="' + baseURL + 'cart" className="btn-check pull-left btngray"><i className="material-icons">shopping_cart</i><span>View Cart</span></a><a href="' + baseURL + 'cart" className="btn-check pull-right"><span>Check Out</span> <i className="material-icons checkrot">reply</i></a></div>'), $("#new_msg_box").hide(), $("#title").show(), swal({
                         title: "Success!",
                         text: t.message,
                         animation: "slide-from-bottom",
@@ -1811,15 +1811,15 @@ function checkCode() {
                         var cart_data_wcs = JSON.parse(a[a.length - 1]);
                         $('#CouponMessage').html(r[3]);
                         $('#CouponMessage').css('color', 'green');
-                        $("#CouponErr").html("Coupon Code Applied"), $("#CouponErr").css("color", "green"), $("#cart_amount").val(a[0]), $("#cart_ship_amount").val(a[1]), $("#cart_tax_amount").val(a[2]), $("#cart_total_amount").val(a[3]), $("#discount_Amt").val(a[4]), $("#rental_amt").html('<i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + a[0]), $("#CartTAmt").html(a[2]), $("#CartGAmt").html('<i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + a[3]), $("#disAmtVal").html('<i classname="rupees-symbol">&#x20B9;</i> ' + cart_data_wcs['discount_amount']), $("#3rdStepDiscount").html(a[4]), $("#disAmtVal_header").html('<i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + a[4]), $("#disAmtValDiv").show(), $("#CouponCode").val(t), $("#Coupon_id").val(r[1]), $("#couponType").val(r[2]), $("#MCartGAmt").html(a[3]), $("#CartCartGAmt").html('&#x20B9; ' + cart_data_wcs['total_grand_final_rent']), $("#CartCartGAmtFirst").html('<i classname="rupees-symbol">&#x20B9;</i> ' + a[7]), $("#CartCartGAmt1").html('<i classname="rupees-symbol">&#x20B9;</i> ' + a[7]), $("#gstTaxVal").html('<i classname="rupees-symbol">&#x20B9;</i> ' + cart_data_wcs['total_gst']), $("#gstTaxValFirst").html('<i classname="rupees-symbol">&#x20B9;</i> ' + a[6]), $("#gstTaxVal1").html('<i classname="rupees-symbol">&#x20B9;</i> ' + a[6]);
+                        $("#CouponErr").html("Coupon Code Applied"), $("#CouponErr").css("color", "green"), $("#cart_amount").val(a[0]), $("#cart_ship_amount").val(a[1]), $("#cart_tax_amount").val(a[2]), $("#cart_total_amount").val(a[3]), $("#discount_Amt").val(a[4]), $("#rental_amt").html('<i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + a[0]), $("#CartTAmt").html(a[2]), $("#CartGAmt").html('<i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + a[3]), $("#disAmtVal").html('<i className="rupees-symbol">&#x20B9;</i> ' + cart_data_wcs['discount_amount']), $("#3rdStepDiscount").html(a[4]), $("#disAmtVal_header").html('<i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + a[4]), $("#disAmtValDiv").show(), $("#CouponCode").val(t), $("#Coupon_id").val(r[1]), $("#couponType").val(r[2]), $("#MCartGAmt").html(a[3]), $("#CartCartGAmt").html('&#x20B9; ' + cart_data_wcs['total_grand_final_rent']), $("#CartCartGAmtFirst").html('<i className="rupees-symbol">&#x20B9;</i> ' + a[7]), $("#CartCartGAmt1").html('<i className="rupees-symbol">&#x20B9;</i> ' + a[7]), $("#gstTaxVal").html('<i className="rupees-symbol">&#x20B9;</i> ' + cart_data_wcs['total_gst']), $("#gstTaxValFirst").html('<i className="rupees-symbol">&#x20B9;</i> ' + a[6]), $("#gstTaxVal1").html('<i className="rupees-symbol">&#x20B9;</i> ' + a[6]);
                         if (r.includes("combine")) {
                             $("#CouponMessage").append(" Coupon not applicable on few items in cart.");
                             $("#CouponMessage").css("color", "green");
                         }
                         if ($('#TotalRentIncludeGST').length) {
                             var totalrentincludegst = (parseFloat(cart_data_wcs['total_rent_after_discount']) + parseFloat(cart_data_wcs['total_gst']));
-                            $("#TotalRentIncludeGST").html('<i classname="rupees-symbol">&#x20B9;</i> ' + totalrentincludegst.toFixed(2));
-                            $("#TotalRentIncludeGST1").html('<i classname="rupees-symbol">&#x20B9;</i> ' + totalrentincludegst.toFixed(2));
+                            $("#TotalRentIncludeGST").html('<i className="rupees-symbol">&#x20B9;</i> ' + totalrentincludegst.toFixed(2));
+                            $("#TotalRentIncludeGST1").html('<i className="rupees-symbol">&#x20B9;</i> ' + totalrentincludegst.toFixed(2));
                         }
                         for (var i = 6, n = 0; n < a[5]; n++)
                             $("#IndTotalVal" + n).html(a[i]), i++;
@@ -1838,7 +1838,7 @@ function checkCode() {
                     },
                     success: function (e) {
                         var a = e.split("|");
-                        $("#CouponErr").html("Coupon Code Applied"), $("#CouponErr").css("color", "green"), $("#cart_amount").val(a[0]), $("#cart_ship_amount").val(a[1]), $("#cart_tax_amount").val(a[2]), $("#cart_total_amount").val(a[3]), $("#discount_Amt").val(a[4]), $("#rental_amt").html('<i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + a[0]), $("#CartTAmt").html(a[2]), $("#CartGAmt").html('<i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + a[3]), $("#disAmtVal").html('<i classname="rupees-symbol">&#x20B9;</i> ' + a[4]), $("#3rdStepDiscount").html(a[4]), $("#disAmtVal_header").html('<i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + a[4]), $("#disAmtValDiv").show(), $("#CouponCode").val(t), $("#Coupon_id").val(r[1]), $("#couponType").val(r[2]), $("#MCartGAmt").html(a[3]), $("#CartCartGAmt").html('<i classname="rupees-symbol">&#x20B9;</i> ' + a[3]), $("#CartCartGAmtFirst").html('<i classname="rupees-symbol">&#x20B9;</i> ' + a[3]), $("#CartCartGAmt1").html('<i classname="rupees-symbol">&#x20B9;</i> ' + a[3]);
+                        $("#CouponErr").html("Coupon Code Applied"), $("#CouponErr").css("color", "green"), $("#cart_amount").val(a[0]), $("#cart_ship_amount").val(a[1]), $("#cart_tax_amount").val(a[2]), $("#cart_total_amount").val(a[3]), $("#discount_Amt").val(a[4]), $("#rental_amt").html('<i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + a[0]), $("#CartTAmt").html(a[2]), $("#CartGAmt").html('<i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + a[3]), $("#disAmtVal").html('<i className="rupees-symbol">&#x20B9;</i> ' + a[4]), $("#3rdStepDiscount").html(a[4]), $("#disAmtVal_header").html('<i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + a[4]), $("#disAmtValDiv").show(), $("#CouponCode").val(t), $("#Coupon_id").val(r[1]), $("#couponType").val(r[2]), $("#MCartGAmt").html(a[3]), $("#CartCartGAmt").html('<i className="rupees-symbol">&#x20B9;</i> ' + a[3]), $("#CartCartGAmtFirst").html('<i className="rupees-symbol">&#x20B9;</i> ' + a[3]), $("#CartCartGAmt1").html('<i className="rupees-symbol">&#x20B9;</i> ' + a[3]);
                         for (var i = 6, n = 0; n < a[5]; n++)
                             $("#IndTotalVal" + n).html(a[i]), i++;
                         $("#CheckCodeButton").val("Remove"), $("#is_coupon").attr("readonly", "readonly"), document.getElementById("CheckCodeButton").setAttribute("onclick", "javascript:checkRemove();")
@@ -1868,34 +1868,34 @@ function checkRemove(t = null) {
             var a = t.split("|");
             var cart_data_wcs = JSON.parse(a[a.length - 1]);
             $("#cart_amount").val(a[0]);
-            $("#min-cart-advance").html('<i classname="rupees-symbol">&#x20B9;</i> ' + a[0]);
-            $("#min-cart-subtotal").html('<i classname="rupees-symbol">&#x20B9;</i> ' + a[3]);
+            $("#min-cart-advance").html('<i className="rupees-symbol">&#x20B9;</i> ' + a[0]);
+            $("#min-cart-subtotal").html('<i className="rupees-symbol">&#x20B9;</i> ' + a[3]);
             $("#cart_ship_amount").val(a[1]);
             $("#cart_tax_amount").val(a[2]);
             $("#cart_total_amount").val(a[3]);
             $("#discount_Amt").val(a[4]);
-            $("#rental_amt").html('<i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + a[0]);
+            $("#rental_amt").html('<i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + a[0]);
             $("#CartTAmt").html(a[2]);
-            $("#CartGAmt").html('<i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + a[3]);
+            $("#CartGAmt").html('<i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + a[3]);
             if ($('#TotalRentIncludeGST').length) {
                 var totalrentincludegst = (parseFloat(cart_data_wcs['total_rent_after_discount']) + parseFloat(cart_data_wcs['total_gst']));
-                $("#TotalRentIncludeGST").html('<i classname="rupees-symbol">&#x20B9;</i> ' + totalrentincludegst.toFixed(2));
-                $("#TotalRentIncludeGST1").html('<i classname="rupees-symbol">&#x20B9;</i> ' + totalrentincludegst.toFixed(2));
+                $("#TotalRentIncludeGST").html('<i className="rupees-symbol">&#x20B9;</i> ' + totalrentincludegst.toFixed(2));
+                $("#TotalRentIncludeGST1").html('<i className="rupees-symbol">&#x20B9;</i> ' + totalrentincludegst.toFixed(2));
             }
-            $("#disAmtVal").html('<i classname="rupees-symbol">&#x20B9;</i> ' + cart_data_wcs['discount_amount']);
+            $("#disAmtVal").html('<i className="rupees-symbol">&#x20B9;</i> ' + cart_data_wcs['discount_amount']);
             $("#3rdStepDiscount").html(a[4]);
-            $("#disAmtVal_header").html('<i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + a[4]);
+            $("#disAmtVal_header").html('<i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + a[4]);
             $("#disAmtValDiv").show();
             $("#CouponCode").val(e);
             $("#Coupon_id").val(0);
             $("#couponType").val("");
             $("#MCartGAmt").html(a[3]);
-            $("#CartCartGAmt").html('<i classname="rupees-symbol">&#x20B9;</i> ' + cart_data_wcs['total_grand_final_rent']);
-            $("#CartCartGAmtFirst").html('<i classname="rupees-symbol">&#x20B9;</i> ' + a[7]);
-            $("#CartCartGAmt1").html('<i classname="rupees-symbol">&#x20B9;</i> ' + a[7]);
-            $("#gstTaxVal").html('<i classname="rupees-symbol">&#x20B9;</i> ' + cart_data_wcs['total_gst']);
-            $("#gstTaxValFirst").html('<i classname="rupees-symbol">&#x20B9;</i> ' + a[6])
-            $("#gstTaxVal1").html('<i classname="rupees-symbol">&#x20B9;</i> ' + a[6]);
+            $("#CartCartGAmt").html('<i className="rupees-symbol">&#x20B9;</i> ' + cart_data_wcs['total_grand_final_rent']);
+            $("#CartCartGAmtFirst").html('<i className="rupees-symbol">&#x20B9;</i> ' + a[7]);
+            $("#CartCartGAmt1").html('<i className="rupees-symbol">&#x20B9;</i> ' + a[7]);
+            $("#gstTaxVal").html('<i className="rupees-symbol">&#x20B9;</i> ' + cart_data_wcs['total_gst']);
+            $("#gstTaxValFirst").html('<i className="rupees-symbol">&#x20B9;</i> ' + a[6])
+            $("#gstTaxVal1").html('<i className="rupees-symbol">&#x20B9;</i> ' + a[6]);
             for (var i = 6, r = 0; r < a[5]; r++)
                 $("#IndTotalVal" + r).html(a[i]), i++;
             $("#is_coupon").val(""), $("#disAmtValDiv").hide(), $("#is_coupon").removeAttr("readonly"), $("#CheckCodeButton").val("Apply"), $("#CouponMessage").html("")
@@ -1923,7 +1923,7 @@ function othermethods() {
 function loadListValues(t) {
     var e = $(t).val(),
             a = $(t).parent().next().find("select");
-    "" == e ? a.html('<option value="">--Select--</option>') : (a.hide(), $(t).parent().next().append('<span classname="loading">Loading...</span>'), $.ajax({
+    "" == e ? a.html('<option value="">--Select--</option>') : (a.hide(), $(t).parent().next().append('<span className="loading">Loading...</span>'), $.ajax({
         type: "POST",
         url: BaseURL + "admin/product/loadListValues",
         data: {
@@ -1939,7 +1939,7 @@ function loadListValues(t) {
 function loadListValuesUser(t) {
     var e = $(t).val(),
             a = $(t).parent().next().find("select");
-    "" == e ? a.html('<option value="">--Select--</option>') : (a.hide(), $(t).parent().next().append('<span classname="loading">Loading...</span>'), $.ajax({
+    "" == e ? a.html('<option value="">--Select--</option>') : (a.hide(), $(t).parent().next().append('<span className="loading">Loading...</span>'), $.ajax({
         type: "POST",
         url: BaseURL + "site/product/loadListValues",
         data: {
@@ -1955,7 +1955,7 @@ function loadListValuesUser(t) {
 function changeListValues(t, e) {
     var a = $(t).val(),
             i = $(t).parent().next().find("select");
-    "" == a ? i.html('<option value="">--Select--</option>') : (i.hide(), $(t).parent().next().append('<span classname="loading">Loading...</span>'), $.ajax({
+    "" == a ? i.html('<option value="">--Select--</option>') : (i.hide(), $(t).parent().next().append('<span className="loading">Loading...</span>'), $.ajax({
         type: "POST",
         url: BaseURL + "admin/product/loadListValues",
         data: {
@@ -1975,7 +1975,7 @@ function changeListValues(t, e) {
 function changeListValuesUser(t, e) {
     var a = $(t).val(),
             i = $(t).parent().next().find("select");
-    "" == a ? i.html('<option value="">--Select--</option>') : (i.hide(), $(t).parent().next().append('<span classname="loading">Loading...</span>'), $.ajax({
+    "" == a ? i.html('<option value="">--Select--</option>') : (i.hide(), $(t).parent().next().append('<span className="loading">Loading...</span>'), $.ajax({
         type: "POST",
         url: BaseURL + "site/product/loadListValues",
         data: {
@@ -2592,10 +2592,10 @@ function addnewaddress() {
                         $(".proceed-btn").removeAttr("style");
                         $('.address-label').hide();
                         if (t.default == 'Yes') {
-                            df = '<span classname="address-label default">Default</span>';
+                            df = '<span className="address-label default">Default</span>';
                         }
                         ($("#save-add").removeAttr("disabled"), $("#button-submit-merchant").removeAttr("disabled"), $("#saveaddress").prop("checked", !0), $(".addressfrm").css("display", "none"), $(".saveaddresscol").css("display", "inline-block"), $("#empty-address").css("display", "none"),
-                                $(".save-address").prepend('<li><div classname="address-box flex-full selected" data-current-add-id="' + t.data + '"><i classname="icn icn-correct-red"></i><h3>' + e + '</h3><address>' + a.replace('"', "") + ", " + i.replace('"', "") + "<br>" + o + ", " + s + ", india<br> " + d + '</address>' + df + '</div></li>'))
+                                $(".save-address").prepend('<li><div className="address-box flex-full selected" data-current-add-id="' + t.data + '"><i className="icn icn-correct-red"></i><h3>' + e + '</h3><address>' + a.replace('"', "") + ", " + i.replace('"', "") + "<br>" + o + ", " + s + ", india<br> " + d + '</address>' + df + '</div></li>'))
                         $("#addnewAddress").trigger("reset");
                         $("#address_proceed_button").attr("data-address", t.data);
                         toast('Address added.', 'toast bg-success', '5000');
@@ -2619,7 +2619,7 @@ function viewProduct(t) {
         },
         success: function (t) {
             var e = t.image.split(",");
-            $("#p-name").text(t.product_name), $("#p-price1").html('<i classname="fa fa-inr" aria-hidden="true"></i>' + t.price), $("#viewdeatilcontent #p-price").after(t.description), $("#p-image").attr("src", CDN_URL + "images/product/" + e[0]), "" != t.subproducts && $("#sub-product-count").text(t.subproducts.split(",").length + " item Includes"), null != t.brand && "" != t.brand && $("#sub-product-count").before('<div classname="sizecol brandcol"><strong>Brand</strong><span><i classname="material-icons">loyalty</i><span>' + t.brand + "</span></span></div>"), "" != t.weight && null != t.weight && $("#sub-product-count").before('<div classname="sizecol"><strong>Size</strong><span><i><img src="' + CDN_URL + 'images/size-icn.svg" alt="size"></i><span>' + t.weight + "</span></span></div>"), $(".viewdeatilcontent p").each(function () {
+            $("#p-name").text(t.product_name), $("#p-price1").html('<i className="fa fa-inr" aria-hidden="true"></i>' + t.price), $("#viewdeatilcontent #p-price").after(t.description), $("#p-image").attr("src", CDN_URL + "images/product/" + e[0]), "" != t.subproducts && $("#sub-product-count").text(t.subproducts.split(",").length + " item Includes"), null != t.brand && "" != t.brand && $("#sub-product-count").before('<div className="sizecol brandcol"><strong>Brand</strong><span><i className="material-icons">loyalty</i><span>' + t.brand + "</span></span></div>"), "" != t.weight && null != t.weight && $("#sub-product-count").before('<div className="sizecol"><strong>Size</strong><span><i><img src="' + CDN_URL + 'images/size-icn.svg" alt="size"></i><span>' + t.weight + "</span></span></div>"), $(".viewdeatilcontent p").each(function () {
                 var t = $(this);
                 0 == t.html().replace(/\s|&nbsp;/g, "").length && t.remove()
             })
@@ -2644,7 +2644,7 @@ function remove_product(t, e, a) {
         success: function (e) {
             $("#price_table").empty();
             var a = e.split("|");
-            0 == a[5] && $(".priceaddon").hide(), 0 == a[9] ? ($("#mobile_cart_row_" + a[10]).fadeOut("slow"), $("#cart-row-" + a[10]).fadeOut("slow"), $("#cart-row-first-" + a[10]).fadeOut("slow"), $("#header-cart-row-" + a[10]).fadeOut("slow"), $("#addon-product-detail-cart-" + a[10]).fadeOut("slow"), $("#all-product-detail-cart-" + a[10]).fadeOut("slow"), $("#image_tab" + a[10]).fadeOut("slow"), $("#product_quantity_" + t).val("0"), delete_addon_cart_product(t)) : $("#product_quantity_" + t).val(a[9]), $("#new_quantity_" + t).html(a[9]), $("#new_quantity1_" + t).html(a[9]), $("#rental_amt").html('<i classname="fa fa-inr" aria-hidden="true"></i>' + a[1]), $("#deposit_amt").html('<i id="new_pricesymbl" classname="fa fa-inr" aria-hidden="true"></i>' + a[2]), $("#price_table").append('<div classname="discol"><label>ADVANCE RENTAL</label><span id="rental_amt"><i classname="fa fa-inr" aria-hidden="true"></i>' + a[1] + '</span></div><div classname="discol"><label>REFUNDABLE DEPOSIT</label><span id="deposit_amt"><i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + a[2] + '</span></div><label>TOTAL RENT </label><span id="DetailCartGAmt"> <i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + a[4] + "</span></div>"), $("#CartGAmt").html('<i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + a[4]), swal({
+            0 == a[5] && $(".priceaddon").hide(), 0 == a[9] ? ($("#mobile_cart_row_" + a[10]).fadeOut("slow"), $("#cart-row-" + a[10]).fadeOut("slow"), $("#cart-row-first-" + a[10]).fadeOut("slow"), $("#header-cart-row-" + a[10]).fadeOut("slow"), $("#addon-product-detail-cart-" + a[10]).fadeOut("slow"), $("#all-product-detail-cart-" + a[10]).fadeOut("slow"), $("#image_tab" + a[10]).fadeOut("slow"), $("#product_quantity_" + t).val("0"), delete_addon_cart_product(t)) : $("#product_quantity_" + t).val(a[9]), $("#new_quantity_" + t).html(a[9]), $("#new_quantity1_" + t).html(a[9]), $("#rental_amt").html('<i className="fa fa-inr" aria-hidden="true"></i>' + a[1]), $("#deposit_amt").html('<i id="new_pricesymbl" className="fa fa-inr" aria-hidden="true"></i>' + a[2]), $("#price_table").append('<div className="discol"><label>ADVANCE RENTAL</label><span id="rental_amt"><i className="fa fa-inr" aria-hidden="true"></i>' + a[1] + '</span></div><div className="discol"><label>REFUNDABLE DEPOSIT</label><span id="deposit_amt"><i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + a[2] + '</span></div><label>TOTAL RENT </label><span id="DetailCartGAmt"> <i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + a[4] + "</span></div>"), $("#CartGAmt").html('<i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + a[4]), swal({
                 title: "Success!",
                 text: "Removed Successfully",
                 animation: "slide-from-bottom",
@@ -2672,7 +2672,7 @@ function delete_addon_cart_product(t) {
         success: function (t) {
             $("#price_table").empty();
             var e = t.split("|");
-            e[4] < 1 && ($("#add_new_product").empty(), $("#addon_new_product").empty(), $(".btncartdiv").hide(), $("#subtotal").hide(), $("#add_new_product").append('<div classname="emptycartbar"><img src="' + CDN_URL + 'images/empty_cart.webp" alt="Empaty cart"><h5>Your Cart is Empty</h5><p>Looks like you have not chosen <br> any product yet</p></div>'), $("#empty_msg").show(), $("#title").hide(), $(".emptycartbar").show()), (e[4] > 0 ? $("#user_cart_btn").html(`<i classname="icn icn-cart"></i><span id="new_count">${t.product_value.length}</span>`) : $("#user_cart_btn").html(`<i classname="icn icn-cart"></i>`)), (e[4] > 0 ? $("#user_cart_btn_m").html(`<i classname="icn icn-cart-white"></i><span id="new_count">${t.product_value.length}</span>`) : $("#user_cart_btn_m").html(`<i classname="icn icn-cart-white"></i>`)), $("#cart_amount").val(e[0]), $("#cart_ship_amount").val(e[1]), $("#cart_tax_amount").val(e[2]), $("#cart_total_amount").val(e[3]), $("#discount_Amt").val(e[5]), $("#CartAmt").html(e[0]), $("#CartAmtFirst").html(e[0]), $("#CartAmtDup").html(e[0]), $("#CartSAmt").html(e[1]), $("#CartSAmtFirst").html(e[1]), $("#deposit_amt").html('<i id="new_pricesymbl" classname="fa fa-inr" aria-hidden="true"></i>' + e[1]), $("#CartTAmt").html(e[2]), $("#CartGAmt").html('<i id="new_pricesymbl" classname="fa fa-inr" aria-hidden="true"></i>' + e[3]), $("#DetailCartGAmt").html('<i id="new_pricesymbl" classname="fa fa-inr" aria-hidden="true"></i>' + e[3]), $("#CartCartGAmt").html('<i classname="rupees-symbol">&#x20B9;</i> ' + e[10]), $("#CartCartGAmtFirst").html('<i classname="rupees-symbol">&#x20B9;</i> ' + e[10]), $("#Shop_id_count").html(e[4]), $("#Shop_MiniId_count").html(e[4] + " items"), $("#disAmtVal").html('<i classname="rupees-symbol">&#x20B9;</i> ' + e[5]), $("#cartdivId_" + e[7]).hide(), $("#cartMindivId_" + e[7]).hide(), 0 == e[0] && ($("#cartSubmit").hide(), 0 == e[4] && $("#EmptyCart").show()), $("#CartAmt1").html(e[0]), $("#CartSAmt1").html(e[1]), $("#gstTaxVal").html('<i classname="rupees-symbol">&#x20B9;</i> ' + e[9]), $("#gstTaxValFirst").html('<i classname="rupees-symbol">&#x20B9;</i> ' + e[9]), $('#gstTaxVal1').html('&#8377; ' + e[9]), $("#CartCartGAmt1").html('<i classname="rupees-symbol">&#x20B9;</i> ' + e[10]), $("#price_table").append(' <div classname="discol"><label>ADVANCE RENTAL</label><span id="rental_amt"><i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + e[0] + '</span></div><div classname="discol"><label>REFUNDABLE DEPOSIT</label><span id="deposit_amt"> <i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + e[1] + '</span></div><label>TOTAL RENT </label><span id="DetailCartGAmt"> <i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + e[3] + "</span> </div>")
+            e[4] < 1 && ($("#add_new_product").empty(), $("#addon_new_product").empty(), $(".btncartdiv").hide(), $("#subtotal").hide(), $("#add_new_product").append('<div className="emptycartbar"><img src="' + CDN_URL + 'images/empty_cart.webp" alt="Empaty cart"><h5>Your Cart is Empty</h5><p>Looks like you have not chosen <br> any product yet</p></div>'), $("#empty_msg").show(), $("#title").hide(), $(".emptycartbar").show()), (e[4] > 0 ? $("#user_cart_btn").html(`<i className="icn icn-cart"></i><span id="new_count">${t.product_value.length}</span>`) : $("#user_cart_btn").html(`<i className="icn icn-cart"></i>`)), (e[4] > 0 ? $("#user_cart_btn_m").html(`<i className="icn icn-cart-white"></i><span id="new_count">${t.product_value.length}</span>`) : $("#user_cart_btn_m").html(`<i className="icn icn-cart-white"></i>`)), $("#cart_amount").val(e[0]), $("#cart_ship_amount").val(e[1]), $("#cart_tax_amount").val(e[2]), $("#cart_total_amount").val(e[3]), $("#discount_Amt").val(e[5]), $("#CartAmt").html(e[0]), $("#CartAmtFirst").html(e[0]), $("#CartAmtDup").html(e[0]), $("#CartSAmt").html(e[1]), $("#CartSAmtFirst").html(e[1]), $("#deposit_amt").html('<i id="new_pricesymbl" className="fa fa-inr" aria-hidden="true"></i>' + e[1]), $("#CartTAmt").html(e[2]), $("#CartGAmt").html('<i id="new_pricesymbl" className="fa fa-inr" aria-hidden="true"></i>' + e[3]), $("#DetailCartGAmt").html('<i id="new_pricesymbl" className="fa fa-inr" aria-hidden="true"></i>' + e[3]), $("#CartCartGAmt").html('<i className="rupees-symbol">&#x20B9;</i> ' + e[10]), $("#CartCartGAmtFirst").html('<i className="rupees-symbol">&#x20B9;</i> ' + e[10]), $("#Shop_id_count").html(e[4]), $("#Shop_MiniId_count").html(e[4] + " items"), $("#disAmtVal").html('<i className="rupees-symbol">&#x20B9;</i> ' + e[5]), $("#cartdivId_" + e[7]).hide(), $("#cartMindivId_" + e[7]).hide(), 0 == e[0] && ($("#cartSubmit").hide(), 0 == e[4] && $("#EmptyCart").show()), $("#CartAmt1").html(e[0]), $("#CartSAmt1").html(e[1]), $("#gstTaxVal").html('<i className="rupees-symbol">&#x20B9;</i> ' + e[9]), $("#gstTaxValFirst").html('<i className="rupees-symbol">&#x20B9;</i> ' + e[9]), $('#gstTaxVal1').html('&#8377; ' + e[9]), $("#CartCartGAmt1").html('<i className="rupees-symbol">&#x20B9;</i> ' + e[10]), $("#price_table").append(' <div className="discol"><label>ADVANCE RENTAL</label><span id="rental_amt"><i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + e[0] + '</span></div><div className="discol"><label>REFUNDABLE DEPOSIT</label><span id="deposit_amt"> <i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + e[1] + '</span></div><label>TOTAL RENT </label><span id="DetailCartGAmt"> <i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + e[3] + "</span> </div>")
         }
     })
 }
@@ -2766,7 +2766,7 @@ function show_discount_box() {
 
 function Get_Product_Value() {
     var t = [];
-    $("input:checkbox[classname=subproduct___1]:checked").each(function () {
+    $("input:checkbox[className=subproduct___1]:checked").each(function () {
         t.push($(this).val())
     }), $("input.subproduct___1:checked").length > 0 && $.ajax({
         type: "POST",
@@ -2788,7 +2788,7 @@ function Calculate_amount() {
             a = [],
             i = {},
             r = $("#package_discount").val();
-    return "" == r ? (alert("Please Enter Discount %"), !1) : r > 99 ? (alert("Please Enter Valid %"), !1) : ($("input.subproduct___1:checked").length, $("input:checkbox[classname=subproduct___1]:checked").each(function () {
+    return "" == r ? (alert("Please Enter Discount %"), !1) : r > 99 ? (alert("Please Enter Valid %"), !1) : ($("input.subproduct___1:checked").length, $("input:checkbox[className=subproduct___1]:checked").each(function () {
         var t = $(this).val(),
                 r = $("#package_quantity_" + t).val();
         e.push(t), a.push(r), i[$(this).val()] = $("#package_quantity_" + t).val()
@@ -2840,7 +2840,7 @@ function Calculate_amount_edit() {
         return alert("Please Enter Discount %"), !1;
     if (r > 99)
         return alert("Please Enter Valid %"), !1;
-    $("input.subproduct___1:checked").length, $("input:checkbox[classname=subproduct___1]:checked").each(function () {
+    $("input.subproduct___1:checked").length, $("input:checkbox[className=subproduct___1]:checked").each(function () {
         var t = $(this).val(),
                 r = $("#package_quantity_" + t).val();
         e.push(t), a.push(r), i[$(this).val()] = $("#package_quantity_" + t).val();
@@ -2999,7 +2999,7 @@ function check_box() {
         success: function (t) {
             if (0 != t) {
                 var e = t.split("|");
-                $("#cart_amount").val(e[0]), $("#cart_ship_amount").val(e[1]), $("#cart_tax_amount").val(e[2]), $("#cart_total_amount").val(e[3]), $("#rental_amt").html('<i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + e[0]), $("#CartTAmt").html(e[2]), $("#CartGAmt").html('<i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + e[3]), $("#MCartGAmt").html(e[3]), $("#CartCartGAmt").html('<i classname="rupees-symbol">&#x20B9;</i> ' + e[3]), $("#CartCartGAmtFirst").html('<i classname="rupees-symbol">&#x20B9;</i> ' + e[3]), $("#CartCartGAmt1").html('<i classname="rupees-symbol">&#x20B9;</i> ' + e[3]), $(".ajax_discount").show(), $(".ajax_discount").html('<span classname="pull-left">Discount for SI</span><span classname="pull-right text-righ pricet"><strong><i classname="fa fa-inr" aria-hidden="true"></i> <span >' + e[4] + "</strong></span>");
+                $("#cart_amount").val(e[0]), $("#cart_ship_amount").val(e[1]), $("#cart_tax_amount").val(e[2]), $("#cart_total_amount").val(e[3]), $("#rental_amt").html('<i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + e[0]), $("#CartTAmt").html(e[2]), $("#CartGAmt").html('<i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + e[3]), $("#MCartGAmt").html(e[3]), $("#CartCartGAmt").html('<i className="rupees-symbol">&#x20B9;</i> ' + e[3]), $("#CartCartGAmtFirst").html('<i className="rupees-symbol">&#x20B9;</i> ' + e[3]), $("#CartCartGAmt1").html('<i className="rupees-symbol">&#x20B9;</i> ' + e[3]), $(".ajax_discount").show(), $(".ajax_discount").html('<span className="pull-left">Discount for SI</span><span className="pull-right text-righ pricet"><strong><i className="fa fa-inr" aria-hidden="true"></i> <span >' + e[4] + "</strong></span>");
                 var a = $("#voucher_money").val();
                 si_discount = e[4];
                 var i = '<font color="red">Additional discount of Rs ' + e[4] + "  applied for registering for SI on credit card.Gift vouchers of Rs " + a + " will be sent on your registration id.</font>";
@@ -3012,7 +3012,7 @@ function check_box() {
         data: {},
         success: function (t) {
             var e = t.split("|");
-            $("#cart_amount").val(e[0]), $("#cart_ship_amount").val(e[1]), $("#cart_tax_amount").val(e[2]), $("#cart_total_amount").val(e[3]), $("#rental_amt").html('<i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + e[0]), $("#CartTAmt").html(e[2]), $("#CartGAmt").html('<i id="p-price" classname="fa fa-inr" aria-hidden="true"></i>' + e[3]), $("#MCartGAmt").html(e[3]), $("#CartCartGAmt").html('<i classname="rupees-symbol">&#x20B9;</i> ' + e[3]), $("#CartCartGAmtFirst").html('<i classname="rupees-symbol">&#x20B9;</i> ' + e[3]), $("#CartCartGAmt1").html('<i classname="rupees-symbol">&#x20B9;</i> ' + e[3]), $(".ajax_discount").hide(), $(".row__1234").hide(), $("#recurring_offer").empty();
+            $("#cart_amount").val(e[0]), $("#cart_ship_amount").val(e[1]), $("#cart_tax_amount").val(e[2]), $("#cart_total_amount").val(e[3]), $("#rental_amt").html('<i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + e[0]), $("#CartTAmt").html(e[2]), $("#CartGAmt").html('<i id="p-price" className="fa fa-inr" aria-hidden="true"></i>' + e[3]), $("#MCartGAmt").html(e[3]), $("#CartCartGAmt").html('<i className="rupees-symbol">&#x20B9;</i> ' + e[3]), $("#CartCartGAmtFirst").html('<i className="rupees-symbol">&#x20B9;</i> ' + e[3]), $("#CartCartGAmt1").html('<i className="rupees-symbol">&#x20B9;</i> ' + e[3]), $(".ajax_discount").hide(), $(".row__1234").hide(), $("#recurring_offer").empty();
             var a = "<font color=red>Register for recurring payment on credit card by selecting SI option in first step to get additional discount of Rs " + si_discount + " and gift vouchers worth Rs " + $("#voucher_money").val() + " .</font>";
             $("#without_recurring").html(a), $("#recurring_offer").empty()
         }
@@ -3174,7 +3174,7 @@ function ShowOldPayouts(t) {
                 for (var a = t.data.length - 1; a >= 0; a--)
                     e += "<tr><td>" + t.data[a].order_id + "</td><td>" + t.data[a].payout_date + "</td><td>" + t.data[a].shippingcost + "</td><td>" + t.data[a].payout_amount + "</td><td>" + t.data[a].cashgramId + "</td>", "Paid" == t.data[a].payout_status ? e += '<td><label style="color:green">' + t.data[a].payout_status + "</label></td>" : e += '<td><label style="color:red">' + t.data[a].payout_status + "</label></td>", e += '<td><button type="button" onclick="return CheckPayoutStatus(\'' + t.data[a].cashgramId + "')\" >Status</button><br><br>", "Paid" !== t.data[a].payout_status && "OTP Verified" !== t.data[a].payout_status && (e += '<button type="button" onclick="return ResendCashgramNew(\'' + t.data[a].cashgramId + "','" + t.data[a].shippingcost + "','" + t.data[a].order_id + "')\">Resend</button>"), "Expired" !== t.data[a].payout_status && "Paid" !== t.data[a].payout_status && "OTP Verified" !== t.data[a].payout_status && (e += '<br><br><button type="button" onclick="return DisableExpireLink(\'' + t.data[a].cashgramId + "')\">Deactivate</button>");
             else
-                e += '<tr><td colspan="7" classname="no-data-available">No data!</td></tr>';
+                e += '<tr><td colspan="7" className="no-data-available">No data!</td></tr>';
             $("#payout_table_body").html(e)
         }
     })

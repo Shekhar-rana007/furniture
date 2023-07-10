@@ -2,22 +2,10 @@ import React, { useState } from 'react'
 import { shopingItems } from '../../assets/Index';
 const HomeFurniture = () => {
   const data = shopingItems;
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
 
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [selectedSort, setSelectedSort] = useState('all');
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-
-  const handleSort = (attribute) => {
-    setSelectedSort(attribute);
-  }
-
-  const toggleAccordion = () => {
-    setIsOpen(!isOpen);
-  };
+  // const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  // const [selectedSort, setSelectedSort] = useState('all');
   return (
     <>
       <section id="prod-page-scroll" className="product-listing-main flex-full">
@@ -27,41 +15,40 @@ const HomeFurniture = () => {
               <div className="filter-box category-block flex-full">
                 <h2>Categories</h2>
                 <div className="category-box flex-full">
-                <div className="accordion-tab">
-      <h3 className="accordion-title" onClick={toggleAccordion}>
-        Home Furniture
-        <i className="icn icn-arrow-bottom"></i>
-      </h3>
-      {isOpen && (
-        <div className="accordion-content">
-          <div className="accordion-body">
-            <div className="radio-grp product">
-              <a href="bangalore/bedroom-furniture-on-rent" className="sort-cat cat-sort">
-                <h2>Bed Room</h2>
-              </a>
-            </div>
-            <div className="radio-grp product">
-              <a href="bangalore/living-room-furniture-on-rent" className="sort-cat cat-sort">
-                <h2>Living Room</h2>
-              </a>
-            </div>
-            <div className="radio-grp product">
-              <a href="bangalore/dining-furniture-on-rent" className="sort-cat cat-sort">
-                <h2>Dining Room</h2>
-              </a>
-            </div>
-            <div className="radio-grp product">
-              <a href="bangalore/study-room-furniture-rental" className="sort-cat cat-sort">
-                <h2>Study Room</h2>
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
+                  <div className="accordion">
 
-                  <div className="accordion-tab current">
-                    <h3 className="accordion-title" onClick={() => onCategoryChange('bangalore', 'home-appliances-rental', 'p')}>
+                    <div className="accordion-tab current">
+                      <h3 className="accordion-title">Home Furniture<i className="icn icn-arrow-bottom"></i></h3>
+                      <div className="accordion-content" style={{display: "none"}}>
+                        <div className="accordion-body">
+                          <div className="radio-grp product">
+                            <a href="bangalore/bedroom-furniture-on-rent" className="sort-cat cat-sort">
+                              <h2>Bed Room</h2>
+                            </a>
+                          </div>
+                          <div className="radio-grp product">
+                            <a href="bangalore/living-room-furniture-on-rent" className="sort-cat cat-sort">
+                              <h2>Living Room</h2>
+                            </a>
+                          </div>
+                          <div className="radio-grp product">
+                            <a href="bangalore/dining-furniture-on-rent" className="sort-cat cat-sort">
+                              <h2>Dining Room</h2>
+                            </a>
+                          </div>
+                          <div className="radio-grp product">
+                            <a href="bangalore/study-room-furniture-rental" className="sort-cat cat-sort">
+                              <h2>Study Room</h2>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  {/* <div className="accordion-tab current">
+                    <h3 className="accordion-title" >
                       Appliances
                       <i className="icn icn-arrow-bottom"></i>
                     </h3>
@@ -99,10 +86,10 @@ const HomeFurniture = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
 
-                  <div className="accordion-tab">
-                    <h3 className="accordion-title" onClick={() => onCategoryChange('bangalore', 'office-furniture-rent', 'p')}>
+                  {/* <div className="accordion-tab">
+                    <h3 className="accordion-title" >
                       Office Furniture
                       <i className="icn icn-arrow-bottom"></i>
                     </h3>
@@ -120,10 +107,10 @@ const HomeFurniture = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
 
-                  <div className="accordion-tab">
-                    <h3 className="accordion-title" onClick={() => onCategoryChange('bangalore', 'furniture-rental-packages', 'p')}>
+                  {/* <div className="accordion-tab">
+                    <h3 className="accordion-title" >
                       Combos
                       <i className="icn icn-arrow-bottom"></i>
                     </h3>
@@ -161,19 +148,9 @@ const HomeFurniture = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
 
-                  <div className="accordion-tab">
-                    <h3 className="accordion-title" onClick={() => onCategoryChange('bangalore', 'clearance-sale', 'p')}>
-                      Furniture Sale
-                      <i className="icn icn-arrow-bottom"></i>
-                    </h3>
-                    <div className="accordion-content" style={{}}>
-                      <div className="accordion-body">
-                        {/* No radio buttons or labels */}
-                      </div>
-                    </div>
-                  </div>
+
                 </div>
               </div>
             </aside>
@@ -183,30 +160,28 @@ const HomeFurniture = () => {
                 <div className="sort-by flex-full align-items-center">
                   <div className="form-inline">
                     <label>Sort by :</label>
-                    <span id="Default_sort" onClick={toggleDropdown}>
+                    <span id="Default_sort">
                       Default <i className="icn-arrow-bottom"></i>
                     </span>
-                    <ul className={`sort-dropdown ${isDropdownOpen ? 'open' : ''}`}>
+                    <ul>
                       <li
-                        className={`selected ${selectedSort === 'all' ? 'default_search_123' : ''}`}
-                        onClick={() => handleSort('all')}
-                        data-attribute="all"
+                        className="selected" data-attribute="all"
                       >
                         Default
                       </li>
-                      <li onClick={() => handleSort('new')} data-attribute="new">
+                      <li data-attribute="new">
                         New
                       </li>
-                      <li onClick={() => handleSort('low_high')} data-attribute="low_high">
+                      <li data-attribute="low_high">
                         Price - Low-High
                       </li>
-                      <li onClick={() => handleSort('high_low')} data-attribute="high_low">
+                      <li data-attribute="high_low">
                         Price - High-Low
                       </li>
                     </ul>
                   </div>
                 </div>
-                <ul classname="tags-listing flex-full justify-content-end">
+                <ul className="tags-listing flex-full justify-content-end">
                 </ul>
               </div>
 
@@ -216,7 +191,7 @@ const HomeFurniture = () => {
                 {data.map((ele, id) => {
                   return (
 
-                    <li>
+                    <li key={id}>
                       <div className="product-single flex-full align-content-start position-relative">
                         <div className="product-image flex-full position-relative" id="DynamicWishlist_4182">
                           <a href="" className="flex-full position-relative h-100" target="_blank">
@@ -230,7 +205,7 @@ const HomeFurniture = () => {
                             />
                           </a>
                           <span className="new-label">{ele.label}</span>
-                          <span className="wishlist" onClick={() => addtowhishlist('4182', 'Jade King Size Double Bed')}>
+                          <span className="wishlist" >
                             <i id="whished_4182" className="icn icn-wishlist-fill-gray"></i>
                           </span>
                         </div>
@@ -277,20 +252,12 @@ const HomeFurniture = () => {
                         </div>
                       </div>
                     </li>
-
-
-
-
                   )
                 })}
               </ul>
 
 
             </div>
-
-
-
-
 
           </div>
         </div>
