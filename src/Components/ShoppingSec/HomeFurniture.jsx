@@ -5,11 +5,15 @@ import { NavLink } from 'react-router-dom'
 const HomeFurniture = () => {
   const data= shopingItems;
   const [isAccordionOpen, setIsAccordionOpen] = useState(true);
+  const [isAccordionOpen1, setIsAccordionOpen1] = useState(true);
 
   const toggleAccordion = () => {
     setIsAccordionOpen(prevState => !prevState);
   };
 
+  const toggleAccordion1 = () => {
+    setIsAccordionOpen1(prevState => !prevState);
+  };
 
   return (
     <>
@@ -21,8 +25,8 @@ const HomeFurniture = () => {
                 <h2>Categories</h2>
                 <div className="category-box flex-full">
       <div className="accordion">
-        <div className={`accordion-tab current ${isAccordionOpen ? 'active' : ''}`}>
-          <h3 className="accordion-title" onClick={toggleAccordion}>
+        <div className={`accordion-tab current ${isAccordionOpen1 ? 'active' : ''}`}>
+          <h3 className="accordion-title" onClick={toggleAccordion1}>
             Home Furniture
             <i className="icn icn-arrow-bottom"></i>
           </h3>
@@ -92,7 +96,7 @@ const HomeFurniture = () => {
             </div>
           </div>
         </div>
-        
+
       </div>
     </div>
               </div>
