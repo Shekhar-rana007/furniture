@@ -1,11 +1,11 @@
 import React from 'react'
 import Navbar from "./Components/Navbar"
-import HomeMain from './Components/Home/HomeMain'
+import HomeMain from './pages/Home/HomeMain'
 import "./App.css"
 import { Routes,Route } from 'react-router-dom'
-import ShoppingMain from './Components/ShoppingSec/ShoppingMain'
-import Footer from './Components/Footer'
-import Header from "./Components/Header"
+import ShoppingMain from './pages/Shopping/ShoppingMain'
+import Footer from './layout/Footer'
+import Header from "./layout/Header"
 const App = () => {
   
 return (

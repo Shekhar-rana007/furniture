@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaBars } from "react-icons/fa"
 import { RxCross1 } from "react-icons/rx"
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import SideNavbar from './SideNavbar';
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
