@@ -1,4 +1,3 @@
-import React from 'react'
 import Marquee from "react-fast-marquee";
 const HomeWhy = () => {
   return (
@@ -73,7 +72,7 @@ const HomeWhy = () => {
                     </h2>
                     <div id="panelsStayOpen-collapseFive" className="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
                       <div className="accordion-body">
-                        You can rest assured that you'll be renting furniture that looks and feels brand new.
+                        You can rest assured that you will be renting furniture that looks and feels brand new.
                       </div>
                     </div>
                   </div>
