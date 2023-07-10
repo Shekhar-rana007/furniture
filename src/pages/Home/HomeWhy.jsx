@@ -121,7 +121,7 @@ const HomeWhy = () => {
       </div>
 
       <section className="overflow-x-hidden">
-        <h2 className="absolute w-full text-center text-sm md:text-base leading-6 font-medium text-ruby-beta " style={{ marginTop: "68px", zIndex: "11" }}>Media Coverage</h2>
+        <h2 className="absolute w-full text-center text-sm md:text-base leading-6 d-none font-medium text-ruby-beta " style={{ marginTop: "68px", zIndex: "11" }}>Media Coverage</h2>
         <Marquee className="marquee my-14 md:my-20 py-6 px-5.5 bg-pearl-delta relative border-b border-[#CCCAD6]" style={{height:"110px"}}>
         <img loading="lazy" className="w-[88px] h-3.5 md:w-[276px] md:h-[37px]" src="https://d3juy0zp6vqec8.cloudfront.net/images/businessline.webp" style={{width:"160px", height:"40px", marginRight:"25px"}} alt="Business Line" />
         <img loading="lazy" className="w-[88px] h-3.5 md:w-[276px] md:h-[37px]" style={{width:"160px", height:"40px", marginRight:"25px"}}  src="https://d3juy0zp6vqec8.cloudfront.net/images/business-standard.webp"  alt="Business Line" />
