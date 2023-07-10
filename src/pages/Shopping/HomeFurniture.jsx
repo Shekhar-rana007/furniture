@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 const HomeFurniture = () => {
   const data= shopingItems;
+  
   const [isAccordionOpen, setIsAccordionOpen] = useState(true);
   const [isAccordionOpen1, setIsAccordionOpen1] = useState(true);
 
