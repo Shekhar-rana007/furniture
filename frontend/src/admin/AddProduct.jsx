@@ -40,6 +40,7 @@ const AddProduct = () => {
     dispatch(createProducts(formdata));
     setformdata(data);
   };
+  console.log(imgState)
   return (
     <div className="col-12">
       <h1 className="h4 text-center my-2" style={{ fontWeight: "600" }}>
@@ -206,7 +207,7 @@ const AddProduct = () => {
             {" "}
             <p
               className={
-                imgState.message.includes("sucessfull")
+                imgState?.message?.includes("sucessfull")
                   ? "text-success"
                   : "text-danger"
               }

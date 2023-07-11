@@ -55,7 +55,7 @@ export const uploadSlice = createSlice({
         state.isLoading = false;
         state.isError = true;
         state.isSuccess = false;
-        state.message = action.error;
+        state.message = "failed uploding image";
       })
       .addCase(delImg.pending, (state) => {
         state.isLoading = true;
