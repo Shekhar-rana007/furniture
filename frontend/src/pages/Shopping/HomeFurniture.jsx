@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import { shopingItems } from '../../assets/Index';
 import { NavLink } from 'react-router-dom'
-
+import{ filters } from "./Filter";
 const HomeFurniture = () => {
   const data = shopingItems;
+const [products,setdata]= useState(data);
+const [filteredProducts,setfilteredProducts]=useState(products);
+
 
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
   const [isAccordionOpen2, setIsAccordionOpen2] = useState(false);
@@ -33,6 +36,25 @@ const HomeFurniture = () => {
   const resetFilter = () => {
     // Handle reset filter logic here
   };
+
+  const handleCheckboxChange = (event) => {
+    const { value, checked } = event.target;
+    // Do something with the checkbox value and checked state
+    console.log(value, checked);
+  };
+
+  const fetchdata=(e,index)=>{
+        console.log(e.target.value);
+        const activatedData= document.getElementById(index).checked
+        // console.log(activatedData,"activatedData");
+        if(activatedData==true){
+          setfilteredProducts(oldData=>[...oldData,e.target.value])
+        }else{
+          setfilteredProducts(filteredProducts.filter((values)=>{
+                values.category !== e.target.value
+          }))
+        }
+  }
   return (
     <>
       <section id="prod-page-scroll" className="product-listing-main flex-full">
@@ -41,8 +63,11 @@ const HomeFurniture = () => {
             <aside className="filter-area flex-full">
               <div className="filter-box category-block flex-full">
                 <h2>Categories</h2>
+
                 <div className="category-box flex-full">
                   <div className="accordion">
+              <input type="checkbox" className='bg-dark' />
+
                     <div className={`accordion-tab ${isAccordionOpen ? 'current active' : ''}`}>
                       <h3 className="accordion-title" onClick={toggleAccordion}>
                         Home Furniture
@@ -184,28 +209,29 @@ const HomeFurniture = () => {
                   </div>
                 </div>
               </div>
-
               <div className="filter-box filter-block flex-full" id="filter-desktop">
-      <h2>
-        Filters <a href="javascript:void(0)" className="reset-small" style={{ display: 'none' }} onClick={resetFilter}>Reset</a>
-      </h2>
-      <div className="category-box flex-full" id="Customefilters">
-        <div className="checkbox-grp">
-          <input type="checkbox" name="" id="single_bed" value="single_bed" />
-          <label >Single Bed</label>
-        </div>
-        <div className="checkbox-grp">
-          <input type="checkbox" name="" id="single_bed" value="single_bed" />
-          <label >Single Bed</label>
-        </div>
-        <div className="checkbox-grp">
-          <input type="checkbox" name="" id="single_bed" value="single_bed" />
-          <label >Single Bed</label>
-        </div>
-        
-       
-      </div>
-    </div>
+                <h2>
+                  Filters <a href="#" className="reset-small" style={{ display: 'none' }} onChange={resetFilter}>Reset</a>
+                </h2>
+              
+                <div className="category-box flex-full" id="Customefilters">
+             {/* Filter methods-------------------------------  */}
+                 {filters.map((val,id)=>{
+                    return(
+                <div className="form-check" key={id}>
+                  <input className="form-check-input" type="checkbox" value={val.category} id={id} onClick={(e)=>fetchdata(e,id)}/>
+                  <label className="form-check-label" htmlFor={val.category}>
+                   {val.terms}
+                  </label>
+                </div>
+                    )})}
+
+                
+                  
+
+
+                </div>
+              </div>
             </aside>
 
             <div className="product-area flex-full">
@@ -241,7 +267,7 @@ const HomeFurniture = () => {
 
               <ul className="product-listing non-combo flex-full" id="product_main_container">
 
-                {data.map((ele, id) => {
+                {filteredProducts.map((ele, id) => {
                   return (
 
                     <li key={id}>
@@ -265,9 +291,9 @@ const HomeFurniture = () => {
                         <div className="product-description flex-full">
                           <div className="product-description-wrapper flex-full">
                             <h2>
-                              {/* <a href="   " target="_blank"> */}
-                              {ele.name}
-                              {/* </a> */}
+                              <a href="   " target="_blank">
+                                {ele.name}
+                              </a>
                             </h2>
                             <p className="price">
                               <del>
@@ -308,6 +334,10 @@ const HomeFurniture = () => {
                   )
                 })}
               </ul>
+
+
+         
+
 
 
             </div>
