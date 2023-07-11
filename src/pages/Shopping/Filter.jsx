@@ -1,0 +1,16 @@
+export const filters=[
+    {terms:"Single Bed", category:"Single_Bed"},
+    {terms:"Queen Size Bed", category:"Double_Bed"},
+    {terms:"King Size Bed", category:"KingSizeBed"},
+    {terms:"Bedside And Storage", category:"BedsizeStorage"},
+    {terms:"Mattress", category:"Mattres"},
+    {terms:" Bedsheet And Pillow", category:"Badshhet_Pillow"},
+    {terms:" Sofa Set", category:"SofaSet"},
+    {terms:" L Shaped Sofa", category:"LShapedSofa"},
+    {terms:" Recliner", category:"Recliner"},
+    {terms:"4 Seater Dining Set", category:"4seater"},
+    {terms:" Coffee Table", category:"Coffee_table"},
+    {terms:"  6 Seater Dining Set", category:"6Seater"},
+    {terms:" Bookshelf ", category:"Bookshelf"},
+    {terms:"Study Set", category:"Study_set"},
+]
