@@ -9,13 +9,8 @@ import Header from "./layout/Header";
 import { Login, SignUP } from "./pages";
 import AdminPage from "./admin";
 const App = () => {
-<<<<<<< HEAD:frontend/src/App.jsx
-  return (
-=======
-  
-  
+
 return (
->>>>>>> c7b0c26fee4552166f96ee6a1ae1c1768957b6c5:src/App.jsx
     <>
       <Header />
       <Routes>
