@@ -3,19 +3,36 @@ import { shopingItems } from '../../assets/Index';
 import { NavLink } from 'react-router-dom'
 
 const HomeFurniture = () => {
-  const data= shopingItems;
-  
-  const [isAccordionOpen, setIsAccordionOpen] = useState(true);
-  const [isAccordionOpen1, setIsAccordionOpen1] = useState(true);
+  const data = shopingItems;
+
+  const [isAccordionOpen, setIsAccordionOpen] = useState(false);
+  const [isAccordionOpen2, setIsAccordionOpen2] = useState(false);
+  const [isAccordionOpen3, setIsAccordionOpen3] = useState(false);
+  const [isAccordionOpen4, setIsAccordionOpen4] = useState(false);
 
   const toggleAccordion = () => {
-    setIsAccordionOpen(prevState => !prevState);
+    setIsAccordionOpen(!isAccordionOpen);
   };
 
-  const toggleAccordion1 = () => {
-    setIsAccordionOpen1(prevState => !prevState);
+  const toggleAccordion2 = () => {
+    setIsAccordionOpen2(!isAccordionOpen2);
   };
 
+  const toggleAccordion3 = () => {
+    setIsAccordionOpen3(!isAccordionOpen3);
+  };
+
+  const toggleAccordion4 = () => {
+    setIsAccordionOpen4(!isAccordionOpen4);
+  }
+
+  const onCategoryChange = (city, category, p) => {
+    // Handle category change logic here
+  };
+
+  const resetFilter = () => {
+    // Handle reset filter logic here
+  };
   return (
     <>
       <section id="prod-page-scroll" className="product-listing-main flex-full">
@@ -25,82 +42,170 @@ const HomeFurniture = () => {
               <div className="filter-box category-block flex-full">
                 <h2>Categories</h2>
                 <div className="category-box flex-full">
-      <div className="accordion">
-        <div className={`accordion-tab current ${isAccordionOpen1 ? 'active' : ''}`}>
-          <h3 className="accordion-title" onClick={toggleAccordion1}>
-            Home Furniture
-            <i className="icn icn-arrow-bottom"></i>
-          </h3>
-          <div className="accordion-content" style={{ display: isAccordionOpen ? 'block' : 'none' }}>
-            <div className="accordion-body">
-              <div className="radio-grp product">
-                <a href="bangalore/bedroom-furniture-on-rent" className="sort-cat cat-sort">
-                  <h2>Bed Room</h2>
-                </a>
-              </div>
-              <div className="radio-grp product">
-                <a href="bangalore/living-room-furniture-on-rent" className="sort-cat cat-sort">
-                  <h2>Living Room</h2>
-                </a>
-              </div>
-              <div className="radio-grp product">
-                <a href="bangalore/dining-furniture-on-rent" className="sort-cat cat-sort">
-                  <h2>Dining Room</h2>
-                </a>
-              </div>
-              <div className="radio-grp product">
-                <a href="bangalore/study-room-furniture-rental" className="sort-cat cat-sort">
-                  <h2>Study Room</h2>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+                  <div className="accordion">
+                    <div className={`accordion-tab ${isAccordionOpen ? 'current active' : ''}`}>
+                      <h3 className="accordion-title" onClick={toggleAccordion}>
+                        Home Furniture
+                        <i className="icn icn-arrow-bottom"></i>
+                      </h3>
+                      <div className="accordion-content" style={{ display: isAccordionOpen ? 'block' : 'none' }}>
+                        <div className="accordion-body">
+                          <div className="radio-grp product">
+                            <a href="bangalore/bedroom-furniture-on-rent" className="sort-cat cat-sort">
+                              <h2>Bed Room</h2>
+                            </a>
+                          </div>
+                          <div className="radio-grp product">
+                            <a href="bangalore/living-room-furniture-on-rent" className="sort-cat cat-sort">
+                              <h2>Living Room</h2>
+                            </a>
+                          </div>
+                          <div className="radio-grp product">
+                            <a href="bangalore/dining-furniture-on-rent" className="sort-cat cat-sort">
+                              <h2>Dining Room</h2>
+                            </a>
+                          </div>
+                          <div className="radio-grp product">
+                            <a href="bangalore/study-room-furniture-rental" className="sort-cat cat-sort">
+                              <h2>Study Room</h2>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
-        <div className={`accordion-tab ${isAccordionOpen ? 'current active' : ''}`}>
-          <h3 className="accordion-title" onClick={toggleAccordion}>
-            Appliances
-            <i className="icn icn-arrow-bottom"></i>
-          </h3>
-          <div className="accordion-content" style={{ display: isAccordionOpen ? 'block' : '' }}>
-            <div className="accordion-body">
-              <div className="radio-grp product">
-                <a href="bangalore/refrigerator-rentals" className="sort-cat cat-sort">
-                  <h2>Refrigerator</h2>
-                </a>
-              </div>
-              <div className="radio-grp product">
-                <a href="bangalore/water-purifier" className="sort-cat cat-sort">
-                  <h2>Water Purifier</h2>
-                </a>
-              </div>
-              <div className="radio-grp product">
-                <a href="bangalore/air-conditioners-1" className="sort-cat cat-sort">
-                  <h2>Air Conditioners</h2>
-                </a>
-              </div>
-              <div className="radio-grp product">
-                <a href="bangalore/washing-machine-rentals" className="sort-cat cat-sort">
-                  <h2>Washing Machine</h2>
-                </a>
-              </div>
-              <div className="radio-grp product">
-                <a href="bangalore/tv-rentals" className="sort-cat cat-sort">
-                  <h2>Television</h2>
-                </a>
-              </div>
-              <div className="radio-grp product">
-                <a href="bangalore/other-appliances" className="sort-cat cat-sort">
-                  <h2>Other Appliances</h2>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+                    <div className={`accordion-tab ${isAccordionOpen2 ? 'current active' : ''}`}>
+                      <h3 className="accordion-title" onClick={toggleAccordion2}>
+                        Appliances
+                        <i className="icn icn-arrow-bottom"></i>
+                      </h3>
+                      <div className="accordion-content" style={{ display: isAccordionOpen2 ? 'block' : 'none' }}>
+                        <div className="accordion-body">
+                          <div className="radio-grp product">
+                            <a href="bangalore/refrigerator-rentals" className="sort-cat cat-sort">
+                              <h2>Refrigerator</h2>
+                            </a>
+                          </div>
+                          <div className="radio-grp product">
+                            <a href="bangalore/water-purifier" className="sort-cat cat-sort">
+                              <h2>Water Purifier</h2>
+                            </a>
+                          </div>
+                          <div className="radio-grp product">
+                            <a href="bangalore/air-conditioners-1" className="sort-cat cat-sort">
+                              <h2>Air Conditioners</h2>
+                            </a>
+                          </div>
+                          <div className="radio-grp product">
+                            <a href="bangalore/washing-machine-rentals" className="sort-cat cat-sort">
+                              <h2>Washing Machine</h2>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
+                    <div className={`accordion-tab ${isAccordionOpen3 ? 'current active' : ''}`}>
+                      <h3 className="accordion-title" onClick={toggleAccordion3}>
+                        Office Furniture
+                        <i className="icn icn-arrow-bottom"></i>
+                      </h3>
+                      <div className="accordion-content" style={{ display: isAccordionOpen3 ? 'block' : 'none' }}>
+                        <div className="accordion-body">
+                          <div className="radio-grp product">
+                            <a href="bangalore/workstations" className="sort-cat cat-sort">
+                              <h2>Workstations</h2>
+                            </a>
+                          </div>
+                          <div className="radio-grp product">
+                            <a href="bangalore/office-chair" className="sort-cat cat-sort">
+                              <h2>Office Chair</h2>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className={`accordion-tab ${isAccordionOpen4 ? 'current active' : ''}`}>
+                      <h3 className="accordion-title" onClick={toggleAccordion4}>
+                        Combos
+                        <i className="icn icn-arrow-bottom"></i>
+                      </h3>
+                      <div className="accordion-content" style={{ display: isAccordionOpen4 ? 'block' : 'none' }}>
+                        <div className="accordion-body">
+                          <div className="radio-grp product">
+                            <a href="bangalore/refrigerator-rentals" className="sort-cat cat-sort">
+                              <h2>Bed Room</h2>
+                            </a>
+                          </div>
+                          <div className="radio-grp product">
+                            <a href="bangalore/water-purifier" className="sort-cat cat-sort">
+                              <h2>Living Room</h2>
+                            </a>
+                          </div>
+                          <div className="radio-grp product">
+                            <a href="bangalore/air-conditioners-1" className="sort-cat cat-sort">
+                              <h2>Dinning Room</h2>
+                            </a>
+                          </div>
+                          <div className="radio-grp product">
+                            <a href="bangalore/washing-machine-rentals" className="sort-cat cat-sort">
+                              <h2>Study Room</h2>
+                            </a>
+                          </div>
+                          <div className="radio-grp product">
+                            <a href="bangalore/washing-machine-rentals" className="sort-cat cat-sort">
+                              <h2>Appliances </h2>
+                            </a>
+                          </div>
+                          <div className="radio-grp product">
+                            <a href="bangalore/washing-machine-rentals" className="sort-cat cat-sort">
+                              <h2>Value Combos</h2>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="accordion-tab">
+                      <h3 className="accordion-title" onClick={() => onCategoryChange('bangalore', 'clearance-sale', 'p')}>
+                        Furniture Sale <i className="icn icn-arrow-bottom"></i>
+                      </h3>
+                      <div className="accordion-content">
+                        <div className="accordion-body">
+                          <div className="radio-grp">
+                            <input type="radio" name="category" id="clearance-sale" onClick={() => onCategoryChange('bangalore', 'clearance-sale')} />
+                            <label htmlFor="clearance-sale">Furniture Sale</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div className="filter-box filter-block flex-full" id="filter-desktop">
+      <h2>
+        Filters <a href="javascript:void(0)" className="reset-small" style={{ display: 'none' }} onClick={resetFilter}>Reset</a>
+      </h2>
+      <div className="category-box flex-full" id="Customefilters">
+        <div className="checkbox-grp">
+          <input type="checkbox" name="" id="single_bed" value="single_bed" />
+          <label >Single Bed</label>
+        </div>
+        <div className="checkbox-grp">
+          <input type="checkbox" name="" id="single_bed" value="single_bed" />
+          <label >Single Bed</label>
+        </div>
+        <div className="checkbox-grp">
+          <input type="checkbox" name="" id="single_bed" value="single_bed" />
+          <label >Single Bed</label>
+        </div>
+        
+       
       </div>
     </div>
-              </div>
             </aside>
 
             <div className="product-area flex-full">

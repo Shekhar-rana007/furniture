@@ -7,7 +7,13 @@ import Footer from "./layout/Footer";
 import Header from "./layout/Header";
 import { Login, SignUP } from "./pages";
 const App = () => {
+<<<<<<< HEAD
   return (
+=======
+  
+  
+return (
+>>>>>>> 1f949deddc36a1596e7eea7d69df244c14da0f87
     <>
       {/* <Navbar /> */}
       <Header />
