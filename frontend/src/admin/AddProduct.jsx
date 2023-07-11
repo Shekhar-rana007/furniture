@@ -206,7 +206,7 @@ const AddProduct = () => {
             {" "}
             <p
               className={
-                imgState.message.includes("sucessfull")
+                imgState?.message?.includes("sucessfull")
                   ? "text-success"
                   : "text-danger"
               }
