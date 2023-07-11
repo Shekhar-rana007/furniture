@@ -1,0 +1,27 @@
+/* css code by Pankaj */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&family=Roboto+Slab&display=swap');
+body {
+  /* font-family: "Roboto Slab", serif !important; */
+  font-family: 'Poppins', sans-serif !important;
+}
+.sideBtn {
+  width: 100%;
+  padding: 4px 4px;
+  background-color: rgb(228, 240, 238);
+  padding-left: 1rem !important;
+  color: rgb(0, 0, 0);
+  margin-bottom: 5px;
+}
+
+.sideBtn.active {
+  background-color: rgb(105, 156, 149);
+  color: white;
+}
+input{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 3;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
