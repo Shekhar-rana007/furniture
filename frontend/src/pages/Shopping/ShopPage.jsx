@@ -1,27 +1,60 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { filters } from "./Filter";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../features/products/productSlice";
 import Accordion from "react-bootstrap/Accordion";
 import { useLocation } from "react-router-dom";
+import NoFound from "../../assets/images/nofound.png"
 
 const ShopPage = () => {
   const dispatch = useDispatch();
-  const pathname = useLocation().pathname
-  console.log(pathname)
+  const pathname = useLocation().pathname;
   const product = useSelector(
     (state) => state.productReduceradmin.products.products
   );
   const [products, setproducts] = useState([]);
-  const [categoryFilter, setcategoryFilter] = useState("")
+  const [categoryFilter, setcategoryFilter] = useState("");
+
   useEffect(() => {
     dispatch(getProducts());
-    setproducts(product);
   }, [dispatch]);
 
-  useEffect(()=>{
+  // todo set products according to routes
+  useEffect(() => {
+    setproducts(product);
+    if (pathname.includes("home")) {
+      const filters = product?.filter(
+        (produ) => produ.category === "home-furniture"
+      );
+      setproducts(filters);
+    } else if (pathname.includes("appliance")) {
+      const filters = product?.filter(
+        (produ) => produ.category === "appliances"
+      );
+      setproducts(filters);
+    }else if (pathname.includes("office")) {
+      const filters = product?.filter(
+        (produ) => produ.category === "office"
+      );
+      setproducts(filters);
+    }else if (pathname.includes("combos")) {
+      const filters = product?.filter(
+        (produ) => produ.category === "combos"
+      );
+      setproducts(filters);
+    }else if (pathname.includes("furniture")) {
+      const filters = product?.filter(
+        (produ) => produ.category === "furniture"
+      );
+      setproducts(filters);
+    }else{
+      setproducts([])
+    }
+  }, [product,pathname]);
 
-  },[product])
+  const handleFilter=()=>{
+
+  }
 
   const categories = {
     HomeFurniture: ["Bed Room", "Living Room", "Dining Room", "Study Room"],
@@ -37,11 +70,11 @@ const ShopPage = () => {
 
   return (
     <>
-      <section id="prod-page-scroll" className="product-listing-main flex-full">
+      <section id="prod-page-scroll" className=" ">
         <div className="container">
-          <div className="product-listing-main-wrapper flex-full align-items-start align-content-start">
-            <aside className="filter-area flex-full">
-              <div className="filter-box category-block flex-full">
+          <div className="col-12 row justify-between" style={{boxSizing:"border-box"}}>
+            <aside className="storeSidebar ">
+              <div className="filter-box category-block ">
                 <h2>Categories</h2>
                 <Accordion defaultActiveKey="0" flush className="border">
                   <Accordion.Item eventKey="0">
@@ -55,7 +88,12 @@ const ShopPage = () => {
                             key={i}
                             className="flex gap-2 items-center justify-start"
                           >
-                            <input onChange={()=>setcategoryFilter(e)} type="radio" name="fgf" id="" />
+                            <input
+                              onChange={() => setcategoryFilter(e)}
+                              type="radio"
+                              name="fgf"
+                              id=""
+                            />
                             <p className="pb-0 mt-1 text-sm">{e}</p>
                           </div>
                         );
@@ -101,7 +139,7 @@ const ShopPage = () => {
                 </Accordion>
               </div>
               <div
-                className="filter-box filter-block flex-full"
+                className="filter-box filter-block "
                 id="filter-desktop"
               >
                 <h2>
@@ -115,7 +153,7 @@ const ShopPage = () => {
                   </a>
                 </h2>
 
-                <div className="category-box flex-full" id="Customefilters">
+                <div className="category-box " id="Customefilters">
                   {filters.map((val, id) => {
                     return (
                       <div className="form-check" key={id}>
@@ -125,9 +163,7 @@ const ShopPage = () => {
                           value={val.category}
                           id={id}
                         />
-                        <label
-                          className="form-check-label text-sm"
-                        >
+                        <label className="form-check-label text-sm">
                           {val.terms}
                         </label>
                       </div>
@@ -137,9 +173,9 @@ const ShopPage = () => {
               </div>
             </aside>
 
-            <div className="product-area flex-full">
-              <div className="product-topbar flex-full">
-                <div className="sort-by flex-full align-items-center">
+            <div className="storeProduct   ">
+              <div className="product-topbar ">
+                <div className="sort-by  align-items-center">
                   <div className="form-inline">
                     <label>Sort by :</label>
                     <select name="" id="">
@@ -152,21 +188,20 @@ const ShopPage = () => {
                 </div>
               </div>
 
-              <ul
-                className="product-listing non-combo flex-full"
+              <div
+                className="product-listing row non-combo "
                 id="product_main_container"
               >
-                {products?.map((ele) => {
+                {products?.length !==0 ? products?.map((ele) => {
                   return (
-                    <li key={ele._id}>
-                      <div className="product-single flex-full align-content-start position-relative">
+                      <div key={ele._id} className="product-single col-4 m-2 align-content-start position-relative">
                         <div
-                          className="product-image flex-full position-relative"
+                          className="product-image  position-relative"
                           id="DynamicWishlist_4182"
                         >
                           <a
                             href=""
-                            className="flex-full position-relative h-100"
+                            className=" position-relative h-100"
                           >
                             <img
                               src={ele?.images[0].url}
@@ -183,8 +218,8 @@ const ShopPage = () => {
                             ></i>
                           </span>
                         </div>
-                        <div className="product-description flex-full">
-                          <div className="product-description-wrapper flex-full">
+                        <div className="product-description ">
+                          <div className="product-description-wrapper ">
                             <h2>
                               <a href="   " target="_blank">
                                 {ele.name}
@@ -194,7 +229,7 @@ const ShopPage = () => {
                               <del>
                                 <strong className="strikeThrough">
                                   <i className="rupees-symbol">₹</i>{" "}
-                                  {ele.nineMonthPrice+100}
+                                  {ele.nineMonthPrice + 100}
                                 </strong>
                               </del>
                               <ins>
@@ -206,14 +241,14 @@ const ShopPage = () => {
                               / month
                             </p>
                           </div>
-                          <div className="included-items-block flex-full">
+                          <div className="included-items-block ">
                             <h4>1 Item Included</h4>
                             <div
-                              className="flex-full"
+                              className=""
                               style={{ display: "block" }}
                               id="subProductList_4182"
                             >
-                              <ul className="items-lisitng flex-full">
+                              <ul className="items-lisitng ">
                                 <li>
                                   <a href="#">
                                     <img
@@ -229,10 +264,9 @@ const ShopPage = () => {
                           </div>
                         </div>
                       </div>
-                    </li>
                   );
-                })}
-              </ul>
+                }):<div><img src={NoFound} alt="No-Product Found" /></div>}
+              </div>
             </div>
           </div>
         </div>

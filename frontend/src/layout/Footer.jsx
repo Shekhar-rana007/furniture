@@ -2,7 +2,7 @@
 
 const Footer = () => {
   return (
-    <footer className="w-full py-10 hidden md:block">
+    <footer className="w-full py-10  md:block">
     <div className="container">
         <div className="footer-contain-section border-b border-ruby-gamma border-dashed pb-6 mb-8">
             <div className="furniture-rental mb-6">

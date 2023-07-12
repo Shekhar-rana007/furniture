@@ -24,6 +24,7 @@ const AddProduct = () => {
   const dispatch = useDispatch();
 
   const [formdata, setformdata] = useState(data);
+  const [subCategory, setSubCategory] = useState([]);
   const imgState = useSelector((state) => state.upload);
   const img = [];
   imgState.images.forEach((i) => {
@@ -43,12 +44,49 @@ const AddProduct = () => {
     setformdata(data);
   };
   const categories = [
-    "Home Furniture",
-    "Appliances",
-    "Office Furniture",
-    "Combos",
-    "Furnture Sale",
+    { v: "home-furniture", t: "Home Furniture" },
+    { v: "appliances", t: "Appliances" },
+    { v: "office", t: "Office Furniture" },
+    // { v: "combos", t: "Combos" },
+    // { v: "furniture sale", t: "Furniture Sale" },
   ];
+  useEffect(() => {
+    handleSubcategory();
+  }, [formdata.category]);
+
+  const handleSubcategory = () => {
+    switch (formdata.category) {
+      case "home-furniture":
+        setSubCategory([
+          { v: "bed-room", t: "Bed Room" },
+          { v: "living-room", t: "Living Room" },
+          { v: "dining-room", t: "Dining Room" },
+          { v: "study-room", t: "Study Room" },
+        ]);
+        break;
+      case "appliances":
+        setSubCategory([
+          { v: "refrigerator", t: "Refrigerator" },
+          { v: "water-purifier", t: "Water Purifier" },
+          { v: "air-conditioners", t: "Air Conditioners" },
+          { v: "washing-machine", t: "Washing Machine" },
+          { v: "telivision", t: "Telivision" },
+          { v: "other-appliance", t: "other Appliance" },
+        ]);
+        break;
+      case "office":
+        setSubCategory([
+          { v: "workstation", t: "Workstation" },
+          { v: "Ofiice-chair", t: "Ofiice Chair" },
+          { v: "other-office", t: "other Office" },
+        ]);
+        break;
+
+      default:
+        break;
+    }
+  };
+
   return (
     <div className="col-12">
       <h1 className="h4 text-center my-2" style={{ fontWeight: "600" }}>
@@ -82,22 +120,29 @@ const AddProduct = () => {
               >
                 <option>Select Category</option>
                 {categories.map((e, i) => (
-                  <option key={i}>{e}</option>
+                  <option value={e.v} key={i}>
+                    {e.t}
+                  </option>
                 ))}
               </Form.Select>
             </div>
             <div className="form-group col-md-4 mb-3 mb-md-3">
               <label className="mb-1">Enter Sub Category</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Category"
+              <Form.Select
                 value={formdata.subCategory}
                 required
                 onChange={(e) =>
                   setformdata({ ...formdata, subCategory: e.target.value })
                 }
-              />
+                aria-label="Default select example"
+              >
+                <option>Select Sub Category</option>
+                {subCategory.map((e, i) => (
+                  <option value={e.v} key={i}>
+                    {e.t}
+                  </option>
+                ))}
+              </Form.Select>
             </div>
             <div className="form-group col-md-4">
               <label className="mb-1">Enter Product Size</label>

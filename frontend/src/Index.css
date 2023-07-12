@@ -27,7 +27,7 @@ input {
 }
 .accordion-button {
   margin-left: -20px;
-  width: 125%;
+  width: 120%;
   border-radius: 0px;
   height: 36px;
   padding: 10px 10px 10px 10px;
@@ -58,4 +58,19 @@ input {
   text-transform: capitalize;
   font-size: 13px;
   font-weight: 600;
+}
+.storeSidebar{
+  width: 23%;
+}
+.storeProduct{
+  width: 75%;
+}
+@media only screen and (max-width: 1000px) and (min-width: 100px)  {
+  .storeSidebar{
+    width: 260px;
+    display: none;
+  }
+  .storeProduct{
+    width: 100%;
+  }
 }
