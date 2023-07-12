@@ -13,12 +13,12 @@ import $ from "jquery";
 
 const Header = () => {
   const categories = [
-    { link: "/rentfurniture", text: "Home Furniture", },
-    { link: "Appliances", text: "Appliances", },
-    { link: "Office Furniture", text: "Office Furniture", },
-    { link: "Combos", text: "Combos", },
-    { link: "For Businesses", text: "For Businesses", },
-    { link: "Offers", text: "Offers", },
+    { link: "/rent/home-furniture", text: "Home Furniture", },
+    { link: "/rent/appliances", text: "Appliances", },
+    { link: "/rent/office-furniture", text: "Office Furniture", },
+    { link: "/rent/combos", text: "Combos", },
+    { link: "/rent/businesses", text: "For Businesses", },
+    { link: "/rent/offers", text: "Offers", },
   ];
   // const menuOptions = {
   //   homeFurniture: ["Bed Room", "Living Room", "Dining Room", "study Room"],
@@ -474,61 +474,7 @@ const Header = () => {
                 </li>
               </ul>
             </div>
-            {/* QR code sectionpart here */}
-            {/* <div className="border-t mt-16 md:py-13 py-4 md:px-4 px-4 text-center">
-              <p className="md:text-2xl md:leading-8 text-lg leading-6 font-bold text-ruby-alpha md:mb-4 mb-2">
-                We are better on our <br /> Mobile App!
-              </p>
-              <p className="text-xs leading-4 font-normal text-ruby-beta md:mb-7 mb-6">
-                Get instant 100CF coins when you download our app
-              </p>
-              <div className="flex justify-between md:block">
-                <div className="flex md:justify-between items-center px-2.5">
-                  <div className="mr-4 md:mr-0">
-                    <p className="text-lg leading-6 md:text-2xl md:leading-8 font-bold text-[#7895B0] text-center">
-                      100K+
-                    </p>
-                    <p className="text-10 leading-4 md:text-lg font-normal leading-26 text-[#7895B0] align-top">
-                      Subscribers
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-lg leading-6 md:text-2xl md:leading-8 font-bold text-[#7895B0] text-center">
-                      Google
-                    </p>
-                    <p className="text-10 leading-4 md:text-lg font-normal leading-26 text-[#7895B0] align-top">
-                      4.5
-                    </p>
-                    <span
-                      className="w-[55px] h-3.5 md:w-[112px] md:h-[25px] inline-block bg-no-repeat bg-contain align-top mt-px"
-                      style={{
-                        backgroundImage:
-                          "url(https://d3juy0zp6vqec8.cloudfront.net/images/rating-4-5.webp)",
-                      }}
-                    ></span>
-                  </div>
-                </div>
-                <a
-                  href="https://cityfurnish.com/scanQRCode"
-                  className="md:hidden"
-                >
-                  <span className="py-1 px-4 rounded-full bg-pearl-alpha border border-white text-base leading-8 font-semibold text-white shadow-xss inline-block">
-                    Download now
-                  </span>
-                </a>
-              </div>
-              <span
-                className="bg-no-repeat bg-contain hidden md:inline-block w-36 h-36 mt-2 mb-4"
-                style={{
-                  backgroundImage:
-                    "url(https://d3juy0zp6vqec8.cloudfront.net/images/app-scanner.svg)",
-                }}
-              ></span>
-              <p className="text-base leading-6 font-medium text-ruby-beta hidden md:block">
-                Scan this code with your mobile device to download the
-                Cityfurnish app.
-              </p>
-            </div> */}
+            
           </div>
         </div>
       </header>

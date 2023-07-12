@@ -3,11 +3,11 @@ import HomeMain from "./pages/Home/HomeMain";
 import "./App.css";
 import "./index.css";
 import { Routes, Route } from "react-router-dom";
-import ShoppingMain from "./pages/Shopping/ShoppingMain";
 import Footer from "./layout/Footer";
 import Header from "./layout/Header";
 import { Login, SignUP } from "./pages";
 import AdminPage from "./admin";
+import ShopPage from "./pages/Shopping/ShopPage";
 const App = () => {
 
 return (
@@ -17,7 +17,7 @@ return (
         <Route path="/" element={<HomeMain />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUP />} />
-        <Route path="/rentfurniture" element={<ShoppingMain />} />
+        <Route path="/rent/:id" element={<ShopPage />} />
         <Route path="/admin/*" element={<AdminPage />} />
       </Routes>
       <Footer />

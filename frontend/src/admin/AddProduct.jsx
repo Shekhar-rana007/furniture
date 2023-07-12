@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { createProducts } from "../features/products/productSlice";
 import Dropzone from "react-dropzone";
 import { delImg, uploadImg } from "./../features/upload/uploadSlice";
+import Form from "react-bootstrap/Form";
 
 const AddProduct = () => {
   const data = {
@@ -12,6 +13,7 @@ const AddProduct = () => {
     brand: "",
     size: "",
     category: "",
+    subCategory: "",
     color: "",
     material: "",
     threeMonthPrice: "",
@@ -40,7 +42,13 @@ const AddProduct = () => {
     dispatch(createProducts(formdata));
     setformdata(data);
   };
-  console.log(imgState)
+  const categories = [
+    "Home Furniture",
+    "Appliances",
+    "Office Furniture",
+    "Combos",
+    "Furnture Sale",
+  ];
   return (
     <div className="col-12">
       <h1 className="h4 text-center my-2" style={{ fontWeight: "600" }}>
@@ -61,21 +69,37 @@ const AddProduct = () => {
               }
             />
           </div>
-          <div className="form-row row mb-3">
-            <div className="form-group col-md-6 mb-3 mb-md-3">
+          <div className="form-row row ">
+            <div className="form-group col-md-4 mb-3 mb-md-3">
               <label className="mb-1">Enter Category</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Category"
+              <Form.Select
                 value={formdata.category}
                 required
                 onChange={(e) =>
                   setformdata({ ...formdata, category: e.target.value })
                 }
+                aria-label="Default select example"
+              >
+                <option>Select Category</option>
+                {categories.map((e, i) => (
+                  <option key={i}>{e}</option>
+                ))}
+              </Form.Select>
+            </div>
+            <div className="form-group col-md-4 mb-3 mb-md-3">
+              <label className="mb-1">Enter Sub Category</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Category"
+                value={formdata.subCategory}
+                required
+                onChange={(e) =>
+                  setformdata({ ...formdata, subCategory: e.target.value })
+                }
               />
             </div>
-            <div className="form-group col-md-6">
+            <div className="form-group col-md-4">
               <label className="mb-1">Enter Product Size</label>
               <input
                 type="text"
