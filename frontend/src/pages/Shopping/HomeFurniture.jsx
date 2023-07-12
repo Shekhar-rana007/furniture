@@ -2,22 +2,11 @@ import React, { useState } from 'react'
 import { shopingItems } from '../../assets/Index';
 import { NavLink } from 'react-router-dom'
 import{ filters } from "./Filter";
-import axios from 'axios';
+
+
 const HomeFurniture = () => {
 const [productsData,setproductsData]= useState()
-  const allProducts= async()=>{
-   try {
-     const apiData=await axios.get("http://192.168.1.19:7001/api/product");
-     console.log(apiData.data);
-     setproductsData(apiData.data);
-   } catch (error) {
-    console.log(error);
-   }
-   
-  }
-
-  allProducts();
-
+ 
   const data = shopingItems;
 const [products,setdata]= useState(data);
 const [filteredProducts,setfilteredProducts]=useState(products);
@@ -275,15 +264,15 @@ const [filteredProducts,setfilteredProducts]=useState(products);
                     </ul>
                   </div>
                 </div>
-                <ul className="tags-listing flex-full justify-content-end">
-                </ul>
+                
               </div>
 
 
               <ul className="product-listing non-combo flex-full" id="product_main_container">
 
-                {productsData.map((ele,id) =>{
+                {filteredProducts.map((ele, id) => {
                   return (
+
                     <li key={id}>
                       <div className="product-single flex-full align-content-start position-relative">
                         <div className="product-image flex-full position-relative" id="DynamicWishlist_4182">
