@@ -8,6 +8,7 @@ import Footer from "./layout/Footer";
 import Header from "./layout/Header";
 import { Login, SignUP } from "./pages";
 import AdminPage from "./admin";
+import ProductModal from "./pages/ProductPages/ProductModal";
 const App = () => {
 
 return (
@@ -19,6 +20,8 @@ return (
         <Route path="/signup" element={<SignUP />} />
         <Route path="/rentfurniture" element={<ShoppingMain />} />
         <Route path="/admin/*" element={<AdminPage />} />
+        <Route path="/product/:id" element={<ProductModal />} />
+
       </Routes>
       <Footer />
     </>
