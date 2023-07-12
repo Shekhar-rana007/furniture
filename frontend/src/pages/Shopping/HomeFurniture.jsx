@@ -1,15 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { shopingItems } from '../../assets/Index';
 import { NavLink } from 'react-router-dom'
-import{ filters } from "./Filter";
-
+import { filters } from "./Filter";
+import { useDispatch, useSelector } from 'react-redux';
+import { getProducts } from '../../features/products/productSlice';
 
 const HomeFurniture = () => {
-const [productsData,setproductsData]= useState()
- 
+
+  const dispatch= useDispatch();
+  const [productsData, setproductsData] = useState();
+
+
+  useEffect(()=>{
+    dispatch(getProducts())
+  })
+
+  const product= useSelector(state=> state.productReduceradmin.products.products);
+// console.log(product);
   const data = shopingItems;
-const [products,setdata]= useState(data);
-const [filteredProducts,setfilteredProducts]=useState(products);
+  const [products, setdata] = useState(product);
+  const [filteredProducts, setfilteredProducts] = useState(products);
 
 
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
@@ -47,17 +57,17 @@ const [filteredProducts,setfilteredProducts]=useState(products);
     console.log(value, checked);
   };
 
-  const fetchdata=(e,index)=>{
-        console.log(e.target.value);
-        const activatedData= document.getElementById(index).checked
-        // console.log(activatedData,"activatedData");
-        if(activatedData==true){
-          setfilteredProducts(oldData=>[...oldData,e.target.value])
-        }else{
-          setfilteredProducts(filteredProducts.filter((values)=>{
-                values.category !== e.target.value
-          }))
-        }
+  const fetchdata = (e, index) => {
+    console.log(e.target.value);
+    const activatedData = document.getElementById(index).checked
+    // console.log(activatedData,"activatedData");
+    if (activatedData == true) {
+      setfilteredProducts(oldData => [...oldData, e.target.value])
+    } else {
+      setfilteredProducts(filteredProducts.filter((values) => {
+        values.category !== e.target.value
+      }))
+    }
   }
   return (
     <>
@@ -70,7 +80,7 @@ const [filteredProducts,setfilteredProducts]=useState(products);
 
                 <div className="category-box flex-full">
                   <div className="accordion">
-              <input type="checkbox" className='bg-dark' />
+                    <input type="checkbox" className='bg-dark' />
 
                     <div className={`accordion-tab ${isAccordionOpen ? 'current active' : ''}`}>
                       <h3 className="accordion-title" onClick={toggleAccordion}>
@@ -217,21 +227,22 @@ const [filteredProducts,setfilteredProducts]=useState(products);
                 <h2>
                   Filters <a href="#" className="reset-small" style={{ display: 'none' }} onChange={resetFilter}>Reset</a>
                 </h2>
-              
-                <div className="category-box flex-full" id="Customefilters">
-             {/* Filter methods-------------------------------  */}
-                 {filters.map((val,id)=>{
-                    return(
-                <div className="form-check" key={id}>
-                  <input className="form-check-input" type="checkbox" value={val.category} id={id} onClick={(e)=>fetchdata(e,id)}/>
-                  <label className="form-check-label" htmlFor={val.category}>
-                   {val.terms}
-                  </label>
-                </div>
-                    )})}
 
-                
-                  
+                <div className="category-box flex-full" id="Customefilters">
+                  {/* Filter methods-------------------------------  */}
+                  {filters.map((val, id) => {
+                    return (
+                      <div className="form-check" key={id}>
+                        <input className="form-check-input" type="checkbox" value={val.category} id={id} onClick={(e) => fetchdata(e, id)} />
+                        <label className="form-check-label" htmlFor={val.category}>
+                          {val.terms}
+                        </label>
+                      </div>
+                    )
+                  })}
+
+
+
 
 
                 </div>
@@ -264,13 +275,14 @@ const [filteredProducts,setfilteredProducts]=useState(products);
                     </ul>
                   </div>
                 </div>
-                
+
               </div>
 
 
               <ul className="product-listing non-combo flex-full" id="product_main_container">
 
-                {filteredProducts.map((ele, id) => {
+                { products?.map((ele, id) => {
+                  console.log(ele)
                   return (
 
                     <li key={id}>
@@ -278,11 +290,10 @@ const [filteredProducts,setfilteredProducts]=useState(products);
                         <div className="product-image flex-full position-relative" id="DynamicWishlist_4182">
                           <a href="" className="flex-full position-relative h-100" target="_blank">
                             <img
-                              data-src="https://d3juy0zp6vqec8.cloudfront.net/images/product/thumb/Jade Bed Frame Only Angled-1678779838.png"
+                              src={ele?.images[0]}
                               alt="Jade King Size Double Bed"
                               layout="responsive"
                               className=""
-                              src={ele.image}
                               style={{ opacity: 1 }}
                             />
                           </a>
@@ -339,7 +350,7 @@ const [filteredProducts,setfilteredProducts]=useState(products);
               </ul>
 
 
-         
+
 
 
 
