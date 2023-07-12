@@ -7,11 +7,8 @@ import Footer from "./layout/Footer";
 import Header from "./layout/Header";
 import { Login, SignUP } from "./pages";
 import AdminPage from "./admin";
-<<<<<<< HEAD
 import ShopPage from "./pages/Shopping/ShopPage";
-=======
 import ProductModal from "./pages/ProductPages/ProductModal";
->>>>>>> 67fcc217189bc7771f29290fd9977ff3ba9357c7
 const App = () => {
 
 return (
