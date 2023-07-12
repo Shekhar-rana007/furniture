@@ -51,7 +51,7 @@ export const uploadSlice = createSlice({
         state.message="Image is uploded sucessfull"
 
       })
-      .addCase(uploadImg.rejected, (state, action) => {
+      .addCase(uploadImg.rejected, (state) => {
         state.isLoading = false;
         state.isError = true;
         state.isSuccess = false;
