@@ -219,81 +219,12 @@ const ShopPage = () => {
               </div>
 
               <div
-                className="product-listing row non-combo "
+                className="product-listing col-12 gap-2 row non-combo justify-start justify-md-between"
                 id="product_main_container"
               >
                 {products?.length !==0 ? products?.map((ele) => {
                   return (
-                      <div key={ele._id} className="product-single col-4 m-2 align-content-start position-relative">
-                        <div
-                          className="product-image  position-relative"
-                          id="DynamicWishlist_4182"
-                        >
-                          <a
-                            href=""
-                            className=" position-relative h-100"
-                          >
-                            <img
-                              src={ele?.images[0].url}
-                              alt={ele.slug}
-                              className=""
-                              style={{ opacity: 1 }}
-                            />
-                          </a>
-                          <span className="new-label">{ele.stock}</span>
-                          <span className="wishlist">
-                            <i
-                              id="whished_4182"
-                              className="icn icn-wishlist-fill-gray"
-                            ></i>
-                          </span>
-                        </div>
-                        <div className="product-description ">
-                          <div className="product-description-wrapper ">
-                            <h2>
-                              <a href="   " target="_blank">
-                                {ele.name}
-                              </a>
-                            </h2>
-                            <p className="price">
-                              <del>
-                                <strong className="strikeThrough">
-                                  <i className="rupees-symbol">₹</i>{" "}
-                                  {ele.nineMonthPrice + 100}
-                                </strong>
-                              </del>
-                              <ins>
-                                <strong>
-                                  <i className="rupees-symbol">₹</i>{" "}
-                                  {ele.nineMonthPrice}
-                                </strong>
-                              </ins>
-                              / month
-                            </p>
-                          </div>
-                          <div className="included-items-block ">
-                            <h4>1 Item Included</h4>
-                            <div
-                              className=""
-                              style={{ display: "block" }}
-                              id="subProductList_4182"
-                            >
-                              <ul className="items-lisitng ">
-                                <li>
-                                  <a href="#">
-                                    <img
-                                      alt="Jade King Size Double Bed"
-                                      className=""
-                                      src={ele.images[0].url}
-                                      style={{ opacity: 1 }}
-                                    />
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      <ProductCard key={ele._id} data={ele} />
                   );
                 }):<div><img src={NoFound} alt="No-Product Found" /></div>}
               </div>

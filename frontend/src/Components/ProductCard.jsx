@@ -1,17 +1,18 @@
+import { Link } from "react-router-dom";
 
 const ProductCard = (props) => {
   const data = props.data;
   return (
-    <div className="product-single col-4 m-2 align-content-start position-relative">
-      <div
-        className="product-image  position-relative"
+    <div className="col-12 productCard border rounded shadow-sm hover:shadow">
+       <div
+        className="  position-relative"
         id="DynamicWishlist_4182"
       >
-        <Link href="" className=" position-relative h-100">
+        <Link to={`/product/${data.slug}`} className="">
           <img
             src={data?.images[0].url}
             alt={data.slug}
-            className=""
+            className="mt-2 border rounded w-full"
             style={{ opacity: 1 }}
           />
         </Link>
@@ -62,7 +63,7 @@ const ProductCard = (props) => {
             </ul>
           </div>
         </div>
-      </div>
+  </div>
     </div>
   );
 };
