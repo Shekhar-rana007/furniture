@@ -70,7 +70,14 @@ input {
     width: 260px;
     display: none;
   }
-  .storeProduct{
+
+  .product-topbar{
     width: 100%;
+    display: none;
+  }
+  .storeProduct{
+    margin-top: 50px;
+    width: 100%;
+    margin-left: 1.3rem;
   }
 }

@@ -194,7 +194,7 @@ const ShopPage = () => {
               >
                 {products?.length !==0 ? products?.map((ele) => {
                   return (
-                      <div key={ele._id} className="product-single col-4 m-2 align-content-start position-relative">
+                      <div key={ele._id} className="product-single col-4 m-2 align-content-start position-relative" style={{width:"auto"}}>
                         <div
                           className="product-image  position-relative"
                           id="DynamicWishlist_4182"
