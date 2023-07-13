@@ -27,8 +27,8 @@ const uploadPhoto = multer({
 });
 
 const productImgResize = async (req, res, next) => {
-  console.log(req.body);
   if (!req.files) return next();
+  console.log(req.files)
   await Promise.all(
     req.files.map(async (file) => {
       

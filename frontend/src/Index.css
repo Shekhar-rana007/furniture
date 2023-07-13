@@ -25,7 +25,7 @@ input {
   -o-appearance: none;
   appearance: none;
 }
-.accordion-button {
+.category-block .accordion-button {
   margin-left: -20px;
   width: 120%;
   border-radius: 0px;
@@ -34,7 +34,7 @@ input {
   margin-bottom: 0;
 
 }
-.accordion-button:focus {
+ .accordion-button:focus {
   z-index: 3;
   outline: 0;
   box-shadow: none;
@@ -42,11 +42,13 @@ input {
   border-radius: 0;
   border-color: black;
 }
-.accordion-item {
+ .accordion-button:not(.collapsed) {
+  background-color: transparent !important;
+ }
+.category-block .accordion-item {
   color: black;
-  /* border: var(--bs-accordion-border-width) solid var(--bs-accordion-border-color); */
 }
-.accordion-body{
+.category-block .accordion-body{
   margin-top: -7px;
     padding: 1px 10px;
 }
@@ -60,10 +62,10 @@ input {
   font-weight: 600;
 }
 .storeSidebar{
-  width: 23%;
+  width: 20%;
 }
 .storeProduct{
-  width: 75%;
+  width: 79%;
 }
 @media only screen and (max-width: 1000px) and (min-width: 100px)  {
   .storeSidebar{

@@ -10,6 +10,9 @@ import {
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import $ from "jquery";
+import Accordion from "react-bootstrap/Accordion";
+import {  useNavigate } from "react-router-dom";
+
 
 const Header = () => {
   const categories = [
@@ -48,15 +51,27 @@ const Header = () => {
     }
   };
   const [navtoggle, setNavtoggle] = useState(false);
+  const navigate = useNavigate();
   const toogleNavar = () => {
     if (!navtoggle) {
       $(".burger-navbar").css("left", "0px");
       setNavtoggle(!navtoggle);
     } else {
-      $(".burger-navbar").css("left", "-500px");
+      $(".burger-navbar").css("left", "-100vw");
       setNavtoggle(!navtoggle);
     }
   };
+  const categorieMenu = {
+    HomeFurniture: ["Bed Room", "Living Room", "Dining Room", "Study Room"],
+    appliances: [
+      "Refrigerator",
+      "Waterr Purifier",
+      "Air Conditioner",
+      "Washing Machine",
+    ],
+    officeFurniture: ["Work Station", "Office Chair"],
+  };
+  const { HomeFurniture, appliances, officeFurniture } = categorieMenu;
 
   return (
     <>
@@ -211,158 +226,65 @@ const Header = () => {
                     All
                   </Link>
                 </li>
-                <li className="accordion-tab mb-4">
-                  <div className="accordion-title flex justify-between items-center text-sm md:text-base font-medium leading-6 text-ruby-alpha hover:text-pearl-alpha cursor-pointer">
-                    <NavLink
-                      to={"/rentFurnitures"}
-                      className="flex justify-between items-center w-full " style={{ cursor: "pointer" }}
-                    >
-                      <p>Home Furniture</p>
-                      <span className="chevron"></span>
-                    </NavLink>
-                  </div>
-                  <ul className="accordion-content p-4">
-                    <li className="mb-4">
-                      <a
-                        href="https://cityfurnish.com/bangalore/bedroom-furniture-on-rent"
-                        aria-label="Bed Room"
-                        target="_self"
-                        rel="noopener"
-                        className="text-sm md:text-base font-normal leading-6 text-ruby-beta hover:text-pearl-alpha"
-                      >
-                        Bed Room
-                      </a>
-                    </li>
-                    <li className="mb-4">
-                      <a
-                        href="https://cityfurnish.com/bangalore/living-room-furniture-on-rent"
-                        aria-label="Living Room"
-                        target="_self"
-                        rel="noopener"
-                        className="text-sm md:text-base font-normal leading-6 text-ruby-beta hover:text-pearl-alpha"
-                      >
-                        Living Room
-                      </a>
-                    </li>
-                    <li className="mb-4">
-                      <a
-                        href="https://cityfurnish.com/bangalore/dining-furniture-on-rent"
-                        aria-label="Dining Room"
-                        target="_self"
-                        rel="noopener"
-                        className="text-sm md:text-base font-normal leading-6 text-ruby-beta hover:text-pearl-alpha"
-                      >
-                        Dining Room
-                      </a>
-                    </li>
-                    <li className="mb-4">
-                      <a
-                        href="https://cityfurnish.com/bangalore/study-room-furniture-rental"
-                        aria-label="Study Room"
-                        target="_self"
-                        rel="noopener"
-                        className="text-sm md:text-base font-normal leading-6 text-ruby-beta hover:text-pearl-alpha"
-                      >
-                        Study Room
-                      </a>
-                    </li>
-                  </ul>
+                <li className="mb-4">
+                <Accordion defaultActiveKey="0" flush>
+                  <Accordion.Item eventKey="0">
+                    <Accordion.Header onClick={()=>navigate("/rent/home-furniture")}>
+                      <h3 className="catebtn">Home Furniture</h3>
+                    </Accordion.Header>
+                    <Accordion.Body>
+                      {HomeFurniture.map((e, i) => {
+                        return (
+                          <div
+                            key={i}
+                            className="flex gap-2 items-center justify-start"
+                          >
+                            <p className="pb-0 mt-1 text-sm">{e}</p>
+                          </div>
+                        );
+                      })}
+                    </Accordion.Body>
+                  </Accordion.Item>
+                  <Accordion.Item eventKey="1">
+                    <Accordion.Header onClick={()=>navigate("/rent/appliances")}>
+                      <h3 className="catebtn">Appliance</h3>
+                    </Accordion.Header>
+                    <Accordion.Body>
+                      {appliances.map((e, i) => {
+                        return (
+                          <div
+                            key={i}
+                            className="flex gap-2 items-center justify-start"
+                          >                            
+                            <p className="pb-0 mt-1 text-sm">{e}</p>
+                          </div>
+                        );
+                      })}
+                    </Accordion.Body>
+                  </Accordion.Item>
+                  <Accordion.Item eventKey="2">
+                    <Accordion.Header onClick={()=>navigate("/rent/office-furniture")}>
+                      <h3 className="catebtn">Office Furniture</h3>
+                    </Accordion.Header>
+                    <Accordion.Body>
+                      {officeFurniture.map((e, i) => {
+                        return (
+                          <div
+                            key={i}
+                            className="flex gap-2 items-center justify-start"
+                          >
+                           
+                            <p className="pb-0 mt-1 text-sm">{e}</p>
+                          </div>
+                        );
+                      })}
+                    </Accordion.Body>
+                  </Accordion.Item>
+                </Accordion>
                 </li>
-                <li className="accordion-tab mb-4">
-                  <div className="accordion-title flex justify-between items-center text-sm md:text-base font-medium leading-6 text-ruby-alpha hover:text-pearl-alpha cursor-pointer">
-                    <a
-                      aria-label="Appliances"
-                      target="_self"
-                      rel="noopener"
-                      className="flex justify-between items-center w-full"
-                    >
-                      <p>Appliances</p>
-                      <span className="chevron"></span>
-                    </a>
-                  </div>
-                  <ul className="accordion-content p-4">
-                    <li className="mb-4">
-                      <a
-                        href="https://cityfurnish.com/bangalore/refrigerator-rentals"
-                        aria-label="Refrigerator"
-                        target="_self"
-                        rel="noopener"
-                        className="text-sm md:text-base font-normal leading-6 text-ruby-beta hover:text-pearl-alpha"
-                      >
-                        Refrigerator
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li className="accordion-tab mb-4">
-                  <div className="accordion-title flex justify-between items-center text-sm md:text-base font-medium leading-6 text-ruby-alpha hover:text-pearl-alpha cursor-pointer">
-                    <a
-                      aria-label="Office Furniture"
-                      target="_self"
-                      rel="noopener"
-                      className="flex justify-between items-center w-full"
-                    >
-                      <p>Office Furniture</p>
-                      <span className="chevron"></span>
-                    </a>
-                  </div>
-                  <ul className="accordion-content p-4">
-                    <li className="mb-4">
-                      <a
-                        href="https://cityfurnish.com/bangalore/workstations"
-                        aria-label="Workstations"
-                        target="_self"
-                        rel="noopener"
-                        className="text-sm md:text-base font-normal leading-6 text-ruby-beta hover:text-pearl-alpha"
-                      >
-                        Workstations
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li className="accordion-tab mb-4">
-                  <div className="accordion-title flex justify-between items-center text-sm md:text-base font-medium leading-6 text-ruby-alpha hover:text-pearl-alpha cursor-pointer">
-                    <a
-                      aria-label="Combos"
-                      target="_self"
-                      rel="noopener"
-                      className="flex justify-between items-center w-full"
-                    >
-                      <p>Combos</p>
-                      <span className="chevron"></span>
-                    </a>
-                  </div>
-                  <ul className="accordion-content p-4">
-                    <li className="mb-4">
-                      <a
-                        href="https://cityfurnish.com/bangalore/bedroom"
-                        aria-label="Bed Room"
-                        target="_self"
-                        rel="noopener"
-                        className="text-sm md:text-base font-normal leading-6 text-ruby-beta hover:text-pearl-alpha"
-                      >
-                        Bed Room
-                      </a>
-                    </li>
-                  </ul>
-                </li>
+                
                 <li className="my-4 border-b border-dashed"></li>
-                <li className="mb-4">
-                  <a className="text-sm md:text-base font-medium leading-6 text-ruby-alpha hover:text-pearl-alpha">
-                    Furniture Sale
-                  </a>
-                </li>
-                <li className="mb-4">
-                  <a
-                    href="https://cityfurnish.com/pages/bulkorder"
-                    aria-label="Furniture Sale"
-                    target="_self"
-                    rel="noopener"
-                    className="text-sm md:text-base font-medium leading-6 text-ruby-alpha hover:text-pearl-alpha"
-                  >
-                    For Businesses
-                  </a>
-                </li>
+                
                 <li className="mb-4">
                   <a
                     href="https://cityfurnish.com/customerpayment"
