@@ -61,7 +61,7 @@ const ShopPage = () => {
     );
     setproducts(filtered);
   };
-  console.log(categoryFilter);
+  // console.log(categoryFilter);
 
   const categories = {
     HomeFurniture: ["Bed Room", "Living Room", "Dining Room", "Study Room"],

@@ -228,7 +228,7 @@ const makepdf = (id) => {
     </header>
     <article>
     
-      <table class="meta">
+      <table className="meta">
         <tr>
           <th><span contenteditable>Invoice #</span></th>
           <td><span contenteditable>101138</span></td>
@@ -244,7 +244,7 @@ const makepdf = (id) => {
           }</span></td>
         </tr>
       </table>
-      <table class="inventory">
+      <table className="inventory">
         <thead>
           <tr>
             <th><span contenteditable>Item</span></th>
@@ -258,7 +258,7 @@ const makepdf = (id) => {
         ${products.data.map((items) => {
           return `
           <tr>
-          <td><a class="cut">-</a><span contenteditable>${items.brand}</span></td>
+          <td><a className="cut">-</a><span contenteditable>${items.brand}</span></td>
           <td><span >${items.description}"</span></td>
           <td><span data-prefix></span><span contenteditable>${items.price}</span></td>
           <td><span contenteditable>${items.count}</span></td>
@@ -269,7 +269,7 @@ const makepdf = (id) => {
       </tbody>
       </table>
     
-      <table class="balance">
+      <table className="balance">
         <tr>
           <th><span contenteditable>Total</span></th>
           <td><span data-prefix></span><span>${cartTota}</span></td>
