@@ -5,7 +5,7 @@ import "./index.css";
 import { Routes, Route } from "react-router-dom";
 import Footer from "./layout/Footer";
 import Header from "./layout/Header";
-import { Login, SignUP } from "./pages";
+import { Cart, Login, SignUP } from "./pages";
 import AdminPage from "./admin";
 import ShopPage from "./pages/Shopping/ShopPage";
 import ProductModal from "./pages/ProductPages/ProductModal";
@@ -21,6 +21,7 @@ return (
         <Route path="/rent/:id" element={<ShopPage />} />
         <Route path="/admin/*" element={<AdminPage />} />
         <Route path="/product/:id" element={<ProductModal />} />
+        <Route path="/cart" element={<Cart />} />
 
       </Routes>
       <Footer />

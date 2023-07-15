@@ -91,7 +91,7 @@ const Header = () => {
                 </span>
               </button>
               <p className="hidden md:block text-base leading-4 text-ruby-beta hover:text-pearl-alpha cursor-pointer ml-7 choose-your-city">
-                <span>Bangalore</span>
+                <span>Delhi-ncr</span>
                 <i className="border-l-6 border-r-6 border-transparent border-t-6 border-t-black inline-block ml-1.5"></i>
               </p>
               <Link to="/" className="md:hidden">
@@ -144,7 +144,7 @@ const Header = () => {
               <div className="relative ml-4 sm:ml-8">
                 <Link to={"/cart"}>
                   <span className="material-symbols-outlined inline-block align-middle hover:text-pearl-alpha cursor-pointer">
-                    <MdOutlineShoppingCart fontSize={22} />
+                    <MdOutlineShoppingCart fontSize={22}  />
                   </span>
                 </Link>
               </div>

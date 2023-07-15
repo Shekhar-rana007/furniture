@@ -26,7 +26,7 @@ export const login = createAsyncThunk(
 );
 
 export const logout = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
-  try {
+  try{
     localStorage.removeItem("user");
     toast.info("Logout successfully");
   } catch (error) {
