@@ -108,6 +108,22 @@ export const productSlice = createSlice({
         state.isSuccess = false;
         toast.info('Server Error')
       })
+      .addCase(deleteAProduct.pending, (state) => {
+        state.isLoading = true;
+        
+      })
+      .addCase(deleteAProduct.fulfilled, (state, ) => {
+        state.isLoading = false;
+        state.isError = false;
+        state.isSuccess = true;
+        toast.success('Product is deleted successfully ')
+      })
+      .addCase(deleteAProduct.rejected, (state, ) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.isSuccess = false;
+        toast.error('Server Error')
+      })
       .addCase(resetState, () => initialState);
   },
 });

@@ -13,6 +13,7 @@ const Login = () => {
   const navigate = useNavigate();
   const authState = useSelector((state) => state.auth);
   const { user, isError, isSuccess, isLoading, role } = authState;
+  console.log(authState)
   useEffect(() => {
     if (isSuccess) {
       if (role === "admin" || role === "super") {
