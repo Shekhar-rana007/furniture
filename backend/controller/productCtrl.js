@@ -84,38 +84,17 @@ const updateProduct = asyncHandler(async (req, res) => {
 const deleteProduct = asyncHandler(async (req, res) => {
   const { id } = req.params;
   const { _id } = req.user;
-
   validateMongoDbId(_id);
   const admin = await User.findById(_id).select("super");
-  console.log(admin);
   validateMongoDbId(id);
   try {
-    if (admin.super === false) {
-      const delete1 = await Product.findOneAndDelete({
-        _id: id,
-        "created.posted": _id,
-      });
-      if (delete1 === null) {
-        res.send({
-          message:
-            "Yor are not authorized to delete Product or Product doesn't exist",
-        });
-        return;
-      } else {
-        res.send({ message: "Product deleted Successfully " });
+    const deleteProduct = await Product.findOne({ _id: id });
+    if (deleteProduct) {
+      try {
+        await Product.deleteOne({ _id: id });
+      } catch (error) {
+        throw new Error(error.message);
       }
-
-      return;
-    } else if (admin.super === true) {
-      const delete2 = await Product.findByIdAndDelete(id);
-      if (delete2 === null) {
-        res.send({ message: "Product doesn't exist" });
-        return;
-      } else {
-        res.send({ message: "Product deleted Successfully " });
-      }
-
-      return;
     }
   } catch (error) {
     throw new Error(error);
@@ -126,11 +105,9 @@ const deleteProduct = asyncHandler(async (req, res) => {
 const getaProduct = asyncHandler(async (req, res) => {
   const { id } = req.params;
   console.log(id);
-  validateMongoDbId(id);
+  // validateMongoDbId(id);
   try {
-    const findProduct = await Product.findById(id)
-      .populate("color") // populate the 'color' field
-      .populate("size"); // populate the 'size' field
+    const findProduct = await Product.findOne({ slug: id });
     res.json(findProduct);
   } catch (error) {
     throw new Error(error);
