@@ -9,6 +9,7 @@ import { Cart, Login, SignUP } from "./pages";
 import AdminPage from "./admin";
 import ShopPage from "./pages/Shopping/ShopPage";
 import ProductModal from "./pages/ProductPages/ProductModal";
+import ProductEdit from "./pages/cart/productEdit";
 const App = () => {
 
 return (
@@ -22,6 +23,7 @@ return (
         <Route path="/admin/*" element={<AdminPage />} />
         <Route path="/product/:id" element={<ProductModal />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/cartedit" element={<ProductEdit />} />
 
       </Routes>
       <Footer />
