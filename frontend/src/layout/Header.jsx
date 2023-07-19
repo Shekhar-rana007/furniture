@@ -11,7 +11,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import $ from "jquery";
 import Accordion from "react-bootstrap/Accordion";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const Header = () => {
@@ -23,6 +23,8 @@ const Header = () => {
     { link: "/rent/businesses", text: "For Businesses", },
     { link: "/rent/offers", text: "Offers", },
   ];
+  const navigate = useNavigate();
+
   // const menuOptions = {
   //   homeFurniture: ["Bed Room", "Living Room", "Dining Room", "study Room"],
   //   Appliances: [
@@ -51,7 +53,6 @@ const Header = () => {
     }
   };
   const [navtoggle, setNavtoggle] = useState(false);
-  const navigate = useNavigate();
   const toogleNavar = () => {
     if (!navtoggle) {
       $(".burger-navbar").css("left", "0px");
@@ -72,6 +73,7 @@ const Header = () => {
     officeFurniture: ["Work Station", "Office Chair"],
   };
   const { HomeFurniture, appliances, officeFurniture } = categorieMenu;
+
 
   return (
     <>
@@ -144,12 +146,12 @@ const Header = () => {
               <div className="relative ml-4 sm:ml-8">
                 <Link to={"/cart"}>
                   <span className="material-symbols-outlined inline-block align-middle hover:text-pearl-alpha cursor-pointer">
-                    <MdOutlineShoppingCart fontSize={22}  />
+                    <MdOutlineShoppingCart fontSize={22} />
                   </span>
                 </Link>
               </div>
               <div className="relative ml-8 hidden md:block navigation">
-                <Link to={"/user"}>
+                <Link to={"/signup"}>
                   <span className="material-symbols-outlined inline-block align-middle hover:text-pearl-alpha relative z-10 cursor-pointer">
                     <BiUserCircle fontSize={22} />
                   </span>
@@ -227,64 +229,64 @@ const Header = () => {
                   </Link>
                 </li>
                 <li className="mb-4">
-                <Accordion defaultActiveKey="0" flush>
-                  <Accordion.Item eventKey="0">
-                    <Accordion.Header onClick={()=>navigate("/rent/home-furniture")}>
-                      <h3 className="catebtn">Home Furniture</h3>
-                    </Accordion.Header>
-                    <Accordion.Body>
-                      {HomeFurniture.map((e, i) => {
-                        return (
-                          <div
-                            key={i}
-                            className="flex gap-2 items-center justify-start"
-                          >
-                            <p className="pb-0 mt-1 text-sm">{e}</p>
-                          </div>
-                        );
-                      })}
-                    </Accordion.Body>
-                  </Accordion.Item>
-                  <Accordion.Item eventKey="1">
-                    <Accordion.Header onClick={()=>navigate("/rent/appliances")}>
-                      <h3 className="catebtn">Appliance</h3>
-                    </Accordion.Header>
-                    <Accordion.Body>
-                      {appliances.map((e, i) => {
-                        return (
-                          <div
-                            key={i}
-                            className="flex gap-2 items-center justify-start"
-                          >                            
-                            <p className="pb-0 mt-1 text-sm">{e}</p>
-                          </div>
-                        );
-                      })}
-                    </Accordion.Body>
-                  </Accordion.Item>
-                  <Accordion.Item eventKey="2">
-                    <Accordion.Header onClick={()=>navigate("/rent/office-furniture")}>
-                      <h3 className="catebtn">Office Furniture</h3>
-                    </Accordion.Header>
-                    <Accordion.Body>
-                      {officeFurniture.map((e, i) => {
-                        return (
-                          <div
-                            key={i}
-                            className="flex gap-2 items-center justify-start"
-                          >
-                           
-                            <p className="pb-0 mt-1 text-sm">{e}</p>
-                          </div>
-                        );
-                      })}
-                    </Accordion.Body>
-                  </Accordion.Item>
-                </Accordion>
+                  <Accordion defaultActiveKey="0" flush>
+                    <Accordion.Item eventKey="0">
+                      <Accordion.Header onClick={() => navigate("/rent/home-furniture")}>
+                        <h3 className="catebtn">Home Furniture</h3>
+                      </Accordion.Header>
+                      <Accordion.Body>
+                        {HomeFurniture.map((e, i) => {
+                          return (
+                            <div
+                              key={i}
+                              className="flex gap-2 items-center justify-start"
+                            >
+                              <p className="pb-0 mt-1 text-sm">{e}</p>
+                            </div>
+                          );
+                        })}
+                      </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item eventKey="1">
+                      <Accordion.Header onClick={() => navigate("/rent/appliances")}>
+                        <h3 className="catebtn">Appliance</h3>
+                      </Accordion.Header>
+                      <Accordion.Body>
+                        {appliances.map((e, i) => {
+                          return (
+                            <div
+                              key={i}
+                              className="flex gap-2 items-center justify-start"
+                            >
+                              <p className="pb-0 mt-1 text-sm">{e}</p>
+                            </div>
+                          );
+                        })}
+                      </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item eventKey="2">
+                      <Accordion.Header onClick={() => navigate("/rent/office-furniture")}>
+                        <h3 className="catebtn">Office Furniture</h3>
+                      </Accordion.Header>
+                      <Accordion.Body>
+                        {officeFurniture.map((e, i) => {
+                          return (
+                            <div
+                              key={i}
+                              className="flex gap-2 items-center justify-start"
+                            >
+
+                              <p className="pb-0 mt-1 text-sm">{e}</p>
+                            </div>
+                          );
+                        })}
+                      </Accordion.Body>
+                    </Accordion.Item>
+                  </Accordion>
                 </li>
-                
+
                 <li className="my-4 border-b border-dashed"></li>
-                
+
                 <li className="mb-4">
                   <a
                     href="https://cityfurnish.com/customerpayment"
@@ -396,7 +398,7 @@ const Header = () => {
                 </li>
               </ul>
             </div>
-            
+
           </div>
         </div>
       </header>

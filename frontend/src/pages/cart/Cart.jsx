@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
 import { SlArrowDown } from "react-icons/sl"
 import { BiSolidHomeHeart, BiRightArrowAlt } from "react-icons/bi"
+import {GiCrossedBones} from "react-icons/gi";
 import { BsTruck } from "react-icons/bs"
+import ProductEdit from './productEdit'
+import Product_main from './Product_main'
+import KnowMore from './KnowMore'
 const Cart = () => {
   const [count, setCount] = useState(0);
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
   const handleButtonClick = () => {
-    alert("gjfgj");
-    setIsSidebarVisible(!isSidebarVisible);
+        setIsSidebarVisible(!isSidebarVisible);
   };
   const handleIncrement = () => {
     setCount(count + 1);
@@ -28,8 +31,8 @@ const Cart = () => {
           <div className="row">
             <div className="col-sm-8">
               <div className="card text-center " style={{ position: "relative", padding: "0px", }}>
-                <div className="card-header   d-flex justify-content-center align-items-center flex-row" style={{background:"rgb(206, 237, 240)"}}>
-                  Rent Cart                  1 Items
+                <div className="card-header   d-flex justify-content-center align-items-center flex-row" style={{ background: "rgb(206, 237, 240)" }}>
+                  Rent Cart 1 Items
                 </div>
                 <div className="card-body d-flex" >
                   <div className="img w-50" >
@@ -40,10 +43,10 @@ const Cart = () => {
                       cursor: 'pointer',
                       boxSizing: 'border-box',
                       padding: 0,
-                      display:"flex",
-                      alignItems:"center",
-                      justifyContent:"center",
-                      gap:"10px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "10px",
                       margin: '0px 0px 20px 0px',
                       fontFamily: 'Work Sans',
                       fontSize: '1em',
@@ -149,7 +152,7 @@ const Cart = () => {
                         +
                       </button>
                       <div className="MuiBox-root border-primary " style={{ border: "1px solid", width: "150px", padding: "10px", borderRadius: "20px", position: "relative", marginLeft: "15px" }}>
-                        <p className=" " style={{ display: "flex",cursor:"pointer",zIndex:"10", alignItems: "center", marginLeft: "10px" }}onClick={handleButtonClick}>12 months < SlArrowDown /></p>
+                        <p className=" " style={{ display: "flex", cursor: "pointer", zIndex: "10", alignItems: "center", marginLeft: "10px" }} onClick={handleButtonClick}>12 months < SlArrowDown /></p>
                       </div>
                     </div>
                   </div>
@@ -165,10 +168,10 @@ const Cart = () => {
                       cursor: 'pointer',
                       boxSizing: 'border-box',
                       padding: 0,
-                      display:"flex",
-                      alignItems:"center",
-                      justifyContent:"center",
-                      gap:"10px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "10px",
                       margin: '0px 0px 20px 0px',
                       fontFamily: 'Work Sans',
                       fontSize: '1em',
@@ -274,19 +277,13 @@ const Cart = () => {
                         +
                       </button>
                       <div className="MuiBox-root border-primary " style={{ border: "1px solid", width: "150px", padding: "10px", borderRadius: "20px", position: "relative", marginLeft: "15px" }}>
-                        <p className=" " style={{ display: "flex",cursor:"pointer",zIndex:"10", alignItems: "center", marginLeft: "10px" }}onClick={handleButtonClick}>12 months < SlArrowDown /></p>
+                        <p className=" " style={{ display: "flex", cursor: "pointer", zIndex: "10", alignItems: "center", marginLeft: "10px" }} onClick={handleButtonClick}>12 months < SlArrowDown /></p>
                       </div>
                     </div>
                   </div>
                 </div>
-              
-              
-
-
-
-
                 {/* -----card footer */}
-                <div className="card-footer text-muted "  style={{background:"rgb(206, 237, 240)"}} >
+                <div className="card-footer text-muted " style={{ background: "rgb(206, 237, 240)" }} >
                   <p className="">
                     Value added services
                   </p>
@@ -316,21 +313,10 @@ const Cart = () => {
                       <p className="MuiTypography-root MuiTypography-body1 css-1lc7696">Offers &amp; Discounts</p>
                       <h6 className='d-flex justify-content-center ' style={{ marginTop: "10px" }}>2 Available <BiRightArrowAlt /></h6>
                     </div>
-
-
-
                   </div>
-
-
-
-
                 </div>
-
               </div>
-              
             </div>
-
-
             <div className="col-sm-4 mt-3" >
               <p className="delivery">Delivery Estimate</p>
               <div className="MuiBox-root css-42wdnn" style={{
@@ -657,15 +643,15 @@ const Cart = () => {
                             d="M5 12.9453H19"
                             stroke="#FFFFFF"
                             strokeWidth="2"
-                            
-                                            className="right-arrow-icon"
+
+                            className="right-arrow-icon"
                           ></path>
                           <path
                             d="M12 5.94531L19 12.9453L12 19.9453"
                             stroke="#FFFFFF"
                             strokeWidth="2"
-                            
-                                                      className="right-arrow-icon"
+
+                            className="right-arrow-icon"
                           ></path>
                         </svg>
                       </div>
@@ -676,11 +662,17 @@ const Cart = () => {
 
             </div>
           </div>
-
-
-
         </div>
       </section >
+      {
+        isSidebarVisible ? <div className='cart_sidebar position-absolute col-12 col-md-7 p-4 shadow rounded bg-white'>
+            <GiCrossedBones onClick={handleButtonClick} style={{position:"absolute", right:"40px", zIndex:"1"}}/>
+          <Product_main  />
+          <ProductEdit />
+          <KnowMore />
+
+        </div> : null
+      }
 
 
     </>

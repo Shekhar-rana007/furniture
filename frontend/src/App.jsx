@@ -10,6 +10,7 @@ import AdminPage from "./admin";
 import ShopPage from "./pages/Shopping/ShopPage";
 import ProductModal from "./pages/ProductPages/ProductModal";
 import ProductEdit from "./pages/cart/productEdit";
+import KnowMore from "./pages/cart/KnowMore";
 const App = () => {
 
 return (
@@ -24,6 +25,7 @@ return (
         <Route path="/product/:id" element={<ProductModal />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/cartedit" element={<ProductEdit />} />
+        <Route path="/knowmore" element={<KnowMore />} />
 
       </Routes>
       <Footer />

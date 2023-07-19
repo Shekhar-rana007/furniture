@@ -670,3 +670,9 @@ input {
 .css-2rlxtj {
   padding: 4px;
 }
+.cart_sidebar{
+  height: fit-content;
+  top: 0;
+  right: 0;
+  z-index: 999;
+}

@@ -6,7 +6,7 @@ const ProductEdit = () => {
             <section className="section ">
                 <div className="container " >
                     <div className="row d-flex flex-column justify-content-center align-items-center" >
-                        <div className="col-sm-6">
+                        <div className="col-sm-8">
                             <div className="card w-100" style={{
 
                                 color: "rgba(0, 0, 0, 0.87)",
@@ -148,7 +148,7 @@ const ProductEdit = () => {
                             </div>
                         </div>
 
-                        <div className="col-sm-6">
+                        <div className="col-sm-8">
                             <div className="card w-100" style={{
                                 color: "rgba(0, 0, 0, 0.87)",
                                 boxSizing: "border-box",
@@ -289,7 +289,7 @@ const ProductEdit = () => {
                             </div>
                         </div>
 
-                        <div className="col-sm-6">
+                        <div className="col-sm-8">
                             <div className="card w-100" style={{
                                 color: "rgba(0, 0, 0, 0.87)",
                                 boxSizing: "border-box",
@@ -430,7 +430,7 @@ const ProductEdit = () => {
                             </div>
                         </div>
 
-                        <div className="col-sm-6">
+                        <div className="col-sm-8">
                             <div className="card w-100" style={{
                                 color: "rgba(0, 0, 0, 0.87)",
                                 boxSizing: "border-box",
