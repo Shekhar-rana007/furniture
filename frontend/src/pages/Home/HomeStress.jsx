@@ -49,7 +49,7 @@ const HomeStress = () => {
                             </div>
                         </div>
                     </div>
-                    <a href="https://cityfurnish.com/delhi/rent" aria-label="Check our plan" target="_self" rel="noopener" className="py-3 px-8 md:py-4 md:px-14 bg-opal-alpha rounded-full text-ruby-alpha text-sm leading-6 md:text-lg md:font-medium font-normal inline-block md:mt-8 hover:bg-yellow-400">Explore products</a>
+                   
                 </div>
             </section>
 
@@ -254,16 +254,14 @@ const HomeStress = () => {
                             <p className="text-xs leading-4 font-medium text-ruby-alpha md:text-lg md:leading-6 md:font-normal">3. Experience furniture magic firsthand with the option to return/renew/extend.</p>
                         </div>
                     </div>
-                    <a href="https://cityfurnish.com/delhi/rent" aria-label="Check our plan" target="_self" rel="noopener" className="py-3 px-8 bg-opal-alpha rounded-full text-ruby-alpha text-sm leading-6 font-normal mb-1.5 inline-block sm:hidden">Explore products</a>
+                 
                 </div>
             </section>
 
             <section className="w-full bg-pearl-beta py-9.5 sm:py-13 px-4">
                 <div className="container mx-auto">
                     <div className="md:flex">
-                        <div className="hidden md:flex items-center w-1/2 border-r border-white flex pr-5.5">
-                            <a href="https://cityfurnish.com/delhi/rent" className="products py-4 px-8 md:ml-5 lg:ml-7.5 bg-opal-alpha rounded-3xl text-lg leading-6 font-medium text-ruby-alpha border border-white hover:bg-yellow-400">Explore products</a>
-                        </div>
+                      
                         <div className="support-info w-3/4 md:w-1/2 md:pl-8 lg:pl-[122px]">
                             <p className="text-sm sm:text-lg leading-6 font-medium text-white sm:mb-6 mb-3.5">Have any query? <a className="text-opal-beta" aria-label="Check our plan" target="_self" rel="noopener" >chat with us.</a></p>
                             <p className="text-sm sm:text-lg leading-6 font-medium text-white">Talk to our customer care representative: <br /><a className="text-opal-beta" aria-label="Check our plan" target="_self" rel="noopener" href="tel:080-66084700">080-66084700</a></p>

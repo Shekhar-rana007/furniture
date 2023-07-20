@@ -57,9 +57,7 @@ const Home = () => {
         <div className="h-full flex flex-col text-center">
           <div className="container my-auto md:my-0">
             <h1 className="relative text-2.5xl leading-10 md:text-5.5xl md:leading-74 lg:leading-72 font-bold text-white max-w-md md:max-w-[906px] mx-auto mt-6 md:mt-0">Make your picture perfect home with us</h1>
-            <div>
-              <a href="https://cityfurnish.com/delhi/rent" aria-label="Check our plan" target="_self" rel="noopener" className="bg-white inline-block rounded-full py-2 px-14 md:py-3 md:px-20 mt-6 mb-[5px] md:mt-9 md:mb-0 text-lg leading-6 font-semibold md:text-2xl md:leading-8 md:font-bold text-[#333333] hover:bg-ruby-delta">Explore</a>
-            </div>
+           
           </div>
           <div className="flex justify-end mt-auto md:mt-[68px] pr-5 sub-details">
             <div>

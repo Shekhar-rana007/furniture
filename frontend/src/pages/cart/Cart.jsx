@@ -1,17 +1,20 @@
 import React, { useState } from 'react'
 import { SlArrowDown } from "react-icons/sl"
 import { BiSolidHomeHeart, BiRightArrowAlt } from "react-icons/bi"
-import {GiCrossedBones} from "react-icons/gi";
+import { GiCrossedBones } from "react-icons/gi";
 import { BsTruck } from "react-icons/bs"
 import ProductEdit from './productEdit'
 import Product_main from './Product_main'
 import KnowMore from './KnowMore'
+import { useDispatch, useSelector } from 'react-redux';
 const Cart = () => {
   const [count, setCount] = useState(0);
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+  // const items= useSelector(state=>state.cartItems); 
+  // const dispatch= useDispatch();
 
   const handleButtonClick = () => {
-        setIsSidebarVisible(!isSidebarVisible);
+    setIsSidebarVisible(!isSidebarVisible);
   };
   const handleIncrement = () => {
     setCount(count + 1);
@@ -439,7 +442,7 @@ const Cart = () => {
                     }}>Rent Cart Breakup</p>
                     <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <rect width="24" height="24" rx="12" fill="#76CDD6"></rect>
-                      <path d="M8.5 12h7M12 8.5l3.5 3.5-3.5 3.5" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M8.5 12h7M12 8.5l3.5 3.5-3.5 3.5" stroke="#fff" strokeLinecap="round" strokeLinejoin="round"></path>
                     </svg>
                   </div>
                   <hr className='mt-3 mb-3' />
@@ -666,8 +669,8 @@ const Cart = () => {
       </section >
       {
         isSidebarVisible ? <div className='cart_sidebar position-absolute col-12 col-md-7 p-4 shadow rounded bg-white'>
-            <GiCrossedBones onClick={handleButtonClick} style={{position:"absolute", right:"40px", zIndex:"1"}}/>
-          <Product_main  />
+          <GiCrossedBones onClick={handleButtonClick} style={{ position: "absolute", right: "40px", zIndex: "1" }} />
+          <Product_main />
           <ProductEdit />
           <KnowMore />
 

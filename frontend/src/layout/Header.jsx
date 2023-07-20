@@ -138,7 +138,7 @@ const Header = () => {
                   </div>
                 </div>
               </div>
-              <Link to="/user/favourite" className="relative ml-4 md:ml-9">
+              <Link to="/signup" className="relative ml-4 md:ml-9">
                 <span className=" inline-block align-middle hover:text-pearl-alpha cursor-pointer">
                   <AiOutlineHeart fontSize={22} />
                 </span>

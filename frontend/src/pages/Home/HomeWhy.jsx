@@ -8,7 +8,7 @@ const HomeWhy = () => {
             You might be wondering
           </p>
           <h2 className="text-2xl leading-6 font-bold text-ruby-alpha md:text-4.5xl md:leading-56 mb-10 md:mb-18">
-            Why Cityfurnish?
+            Why Leelu Chacha?
           </h2>
           <div className="md:flex gap-8 block max-w-md mx-auto md:max-w-full md:mx-0">
             <div className="image-container md:w-[55%]">
@@ -186,15 +186,6 @@ const HomeWhy = () => {
               </div>
             </div>
           </div>
-          <a
-            href="https://cityfurnish.com/delhi/rent"
-            aria-label="Check our plan"
-            target="_self"
-            rel="noopener"
-            className="py-3 px-4 md:py-4 md:px-9 text-sm leading-6 md:text-lg md:leading-6 md:font-medium md:mt-10 text-ruby-alpha rounded-full bg-opal-alpha hover:bg-yellow-400 mt-8 inline-block"
-          >
-            Explore all products
-          </a>
         </div>
       </section>
 
@@ -308,13 +299,7 @@ const HomeWhy = () => {
             alt="H"
           />
         </div>
-        <a
-          href="https://cityfurnish.com/delhi/furniture-rental-packages"
-          className="py-3 px-3 md:py-4 md:px-8 bg-opal-alpha text-ruby-alpha rounded-full inline-block text-sm leading-6 font-normal md:text-lg md:font-medium md:mt-10 hover:bg-yellow-400"
-          style={{ marginLeft: "490px" }}
-        >
-          Explore value combos
-        </a>
+
       </div>
 
       <section className="overflow-x-hidden">

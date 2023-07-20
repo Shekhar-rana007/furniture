@@ -13,6 +13,8 @@ import smsReducer from "../features/Sms/SmsSlice";
 import QuantitySlice from "../features/Quantity/quantitySlice";
 import contactReducer from "../features/contact/contactSlice";
 import emailReducer from "../features/email/emailSlice";
+import CartSlice from "../features/products/CartSlice";
+
 export const store = configureStore({
   reducer: {
     auth: authReducer,
@@ -29,6 +31,7 @@ export const store = configureStore({
     Quantity: QuantitySlice,
     contact: contactReducer,
     email: emailReducer,
+    cartItems: CartSlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

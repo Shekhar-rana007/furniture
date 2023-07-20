@@ -12,6 +12,7 @@ export const getProducts = createAsyncThunk(
     }
   }
 );
+
 export const createProducts = createAsyncThunk(
   "product/create-products",
   async (productData, thunkAPI) => {
@@ -24,8 +25,8 @@ export const createProducts = createAsyncThunk(
 );
 export const updateAProduct = createAsyncThunk(
   "product/update-product",
-  async (data,thunkAPI) => {
-  try {
+  async (data, thunkAPI) => {
+    try {
       return await productService.updateProduct(data);
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
@@ -54,6 +55,7 @@ const initialState = {
   isSuccess: false,
   message: "",
 };
+
 export const productSlice = createSlice({
   name: "products",
   initialState,
@@ -96,13 +98,13 @@ export const productSlice = createSlice({
         state.isLoading = true;
 
       })
-      .addCase(updateAProduct.fulfilled, (state, ) => {
+      .addCase(updateAProduct.fulfilled, (state,) => {
         state.isLoading = false;
         state.isError = false;
         state.isSuccess = true;
         toast.success('Product Stock Updated successfully ')
       })
-      .addCase(updateAProduct.rejected, (state, ) => {
+      .addCase(updateAProduct.rejected, (state,) => {
         state.isLoading = false;
         state.isError = true;
         state.isSuccess = false;
@@ -110,15 +112,15 @@ export const productSlice = createSlice({
       })
       .addCase(deleteAProduct.pending, (state) => {
         state.isLoading = true;
-        
+
       })
-      .addCase(deleteAProduct.fulfilled, (state, ) => {
+      .addCase(deleteAProduct.fulfilled, (state,) => {
         state.isLoading = false;
         state.isError = false;
         state.isSuccess = true;
         toast.success('Product is deleted successfully ')
       })
-      .addCase(deleteAProduct.rejected, (state, ) => {
+      .addCase(deleteAProduct.rejected, (state,) => {
         state.isLoading = false;
         state.isError = true;
         state.isSuccess = false;
