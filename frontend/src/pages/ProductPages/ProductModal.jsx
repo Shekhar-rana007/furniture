@@ -50,8 +50,11 @@ const ProductModal = () => {
                         </div>
                     </div>
 
-                    {modals.length !== 0 &&
-                   
+                    {/* {modals.length !== 0 && */}
+                   {items.map((value,id)=>{
+                    console.log(value);
+                    console.log(id);
+                   })}
                         <div className="container" style={{ boxSizing: "border-box" }}>
                             <div className="row d-flex justify-content-around ">
                                 <div className="col-lg-2 col-md-3 col-sm-6 p-4" >
@@ -204,7 +207,7 @@ const ProductModal = () => {
                                 </div>
                             </div>
                         </div>
-                        }
+                        {/* } */}
                 </div>
             </section>
 

@@ -32,87 +32,86 @@ const ProductModal2 = () => {
             Complete the look
           </h2>
           <div className="col-sm-12">
-          <ItemsCarousel
-            enablePlaceholder
-            numberOfPlaceholderItems={0}
-            minimumPlaceholderTime={1000}
-            placeholderItem={<div style={{ height: 100, background: '#fff' }}>Placeholder</div>}
-            numberOfCards={3}
-            gutter={0}
-            showSlither={true}
-            firstAndLastGutter={true}
-            freeScrolling={false}
-            requestToChangeActive={changeActiveItem}
-            activeItemIndex={activeItemIndex}
-            activePosition={'center'}
-            chevronWidth={1}
-            rightChevron={'>>'}
-            leftChevron={'<<'}
-            outsideChevron={false}
-            
-          >
-            <div className="card" style={{ width: 'auto', height:"fit-content", marginBottom:"10px ", marginRight:"15px"  }}>
-              <img src="https://d3juy0zp6vqec8.cloudfront.net/images/product/thumb/1583907887_DSC0014%20copy-min.jpg" className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title"><NavLink>  Alexa Bedside Table </NavLink></h5>
-                <p className="price">
-                  <strong>
-                    <i className="rupees-symbol">₹</i> 119
-                  </strong> / month
-                </p>
+            <ItemsCarousel
+              enablePlaceholder
+              numberOfPlaceholderItems={0}
+              minimumPlaceholderTime={1000}
+              placeholderItem={<div style={{ height: 100, background: '#fff' }}>Placeholder</div>}
+              numberOfCards={3}
+              gutter={0}
+              showSlither={true}
+              firstAndLastGutter={true}
+              freeScrolling={false}
+              requestToChangeActive={changeActiveItem}
+              activeItemIndex={activeItemIndex}
+              activePosition={'center'}
+              chevronWidth={1}
+              rightChevron={'>>'}
+              leftChevron={'<<'}
+              outsideChevron={false}
+            >
+              <div className="card" style={{ width: 'auto', height: "fit-content", marginBottom: "10px ", marginRight: "15px" }}>
+                <img src="https://d3juy0zp6vqec8.cloudfront.net/images/product/thumb/1583907887_DSC0014%20copy-min.jpg" className="card-img-top" alt="..." />
+                <div className="card-body">
+                  <h5 className="card-title"><NavLink>  Alexa Bedside Table </NavLink></h5>
+                  <p className="price">
+                    <strong>
+                      <i className="rupees-symbol">₹</i> 119
+                    </strong> / month
+                  </p>
 
+                </div>
               </div>
-            </div>
-            <div className="card" style={{ width: 'auto', height:"fit-content", marginBottom:"10px ", marginRight:"15px"  }}>
-              <img src="https://d3juy0zp6vqec8.cloudfront.net/images/product/thumb/1583907887_DSC0014%20copy-min.jpg" className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title"><NavLink>  Alexa Bedside Table </NavLink></h5>
-                <p className="price">
-                  <strong>
-                    <i className="rupees-symbol">₹</i> 119
-                  </strong> / month
-                </p>
+              <div className="card" style={{ width: 'auto', height: "fit-content", marginBottom: "10px ", marginRight: "15px" }}>
+                <img src="https://d3juy0zp6vqec8.cloudfront.net/images/product/thumb/1583907887_DSC0014%20copy-min.jpg" className="card-img-top" alt="..." />
+                <div className="card-body">
+                  <h5 className="card-title"><NavLink>  Alexa Bedside Table </NavLink></h5>
+                  <p className="price">
+                    <strong>
+                      <i className="rupees-symbol">₹</i> 119
+                    </strong> / month
+                  </p>
 
+                </div>
               </div>
-            </div>
-          </ItemsCarousel>
+            </ItemsCarousel>
           </div>
 
           <div className="col-sm-12">
-          <ItemsCarousel
-            enablePlaceholder
-            numberOfPlaceholderItems={0}
-            minimumPlaceholderTime={1000}
-            placeholderItem={<div style={{ height: 100, background: '#fff' }}>Placeholder</div>}
-            numberOfCards={3}
-            gutter={0}
-            showSlither={true}
-            firstAndLastGutter={true}
-            freeScrolling={false}
-            requestToChangeActive={changeActiveItem}
-            activeItemIndex={activeItemIndex}
-            activePosition={'center'}
-            chevronWidth={1}
-            rightChevron={'>>'}
-            leftChevron={'<<'}
-            outsideChevron={false}
-            
-          >
-            <div className="card" style={{ width: 'auto', height:"fit-content", marginBottom:"10px ", marginRight:"15px"  }}>
-              <img src="https://d3juy0zp6vqec8.cloudfront.net/images/product/thumb/1583907887_DSC0014%20copy-min.jpg" className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title"><NavLink>  Alexa Bedside Table </NavLink></h5>
-                <p className="price">
-                  <strong>
-                    <i className="rupees-symbol">₹</i> 119
-                  </strong> / month
-                </p>
+            <ItemsCarousel
+              enablePlaceholder
+              numberOfPlaceholderItems={0}
+              minimumPlaceholderTime={1000}
+              placeholderItem={<div style={{ height: 100, background: '#fff' }}>Placeholder</div>}
+              numberOfCards={3}
+              gutter={0}
+              showSlither={true}
+              firstAndLastGutter={true}
+              freeScrolling={false}
+              requestToChangeActive={changeActiveItem}
+              activeItemIndex={activeItemIndex}
+              activePosition={'center'}
+              chevronWidth={1}
+              rightChevron={'>>'}
+              leftChevron={'<<'}
+              outsideChevron={false}
 
+            >
+              <div className="card" style={{ width: 'auto', height: "fit-content", marginBottom: "10px ", marginRight: "15px" }}>
+                <img src="https://d3juy0zp6vqec8.cloudfront.net/images/product/thumb/1583907887_DSC0014%20copy-min.jpg" className="card-img-top" alt="..." />
+                <div className="card-body">
+                  <h5 className="card-title"><NavLink>  Alexa Bedside Table </NavLink></h5>
+                  <p className="price">
+                    <strong>
+                      <i className="rupees-symbol">₹</i> 119
+                    </strong> / month
+                  </p>
+
+                </div>
               </div>
-            </div>
-          </ItemsCarousel>
+            </ItemsCarousel>
           </div>
-          
+
         </div>
       </section>
 

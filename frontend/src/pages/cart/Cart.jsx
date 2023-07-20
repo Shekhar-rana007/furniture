@@ -23,7 +23,7 @@ const Cart = () => {
   const handleDecrement = () => {
 
     if (count > 0) {
-      setCount(count - 1);
+      setCount(count-1);
     }
   };
   console.log(count)
@@ -37,6 +37,7 @@ const Cart = () => {
                 <div className="card-header   d-flex justify-content-center align-items-center flex-row" style={{ background: "rgb(206, 237, 240)" }}>
                   Rent Cart 1 Items
                 </div>
+
                 <div className="card-body d-flex" >
                   <div className="img w-50" >
                     <img src="https://assets.furlenco.com/image/upload/dpr_1.0,f_auto,q_auto/v1/r2/products/222/plp_1.png" style={{ width: "50%", height: "auto", marginTop: "40px", position: "relative", left: "0" }} /></div>
@@ -285,6 +286,7 @@ const Cart = () => {
                     </div>
                   </div>
                 </div>
+
                 {/* -----card footer */}
                 <div className="card-footer text-muted " style={{ background: "rgb(206, 237, 240)" }} >
                   <p className="">
@@ -318,8 +320,10 @@ const Cart = () => {
                     </div>
                   </div>
                 </div>
+
               </div>
             </div>
+
             <div className="col-sm-4 mt-3" >
               <p className="delivery">Delivery Estimate</p>
               <div className="MuiBox-root css-42wdnn" style={{
