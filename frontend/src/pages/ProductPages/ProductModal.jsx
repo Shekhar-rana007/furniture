@@ -1,32 +1,37 @@
-import React, { useState, useEffect } from 'react'
-import ProductModal2 from './ProductModal2';
-import { BiShareAlt } from "react-icons/bi";
-import { useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import 'range-slider-input/dist/style.css';
 import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import 'range-slider-input/dist/style.css';
 import { productallData } from '../../features/products/CartSlice';
-
+import ProductModal2 from './ProductModal2';
+import { addtoCart } from '../../features/products/CartSlice';
 const ProductModal = () => {
-    const items = useSelector(state => state.cartItems)
-    console.log(items)
+    const items = useSelector(state => state.cartItems.data);
+    console.log(items.products);
     const dispatch = useDispatch();
     const location = useLocation().pathname;
-    const [modals, setmodals] = useState([]);
+    const API_ENDPOINT = `http://192.168.1.19:7001/api${location}`;
+    // console.log(location);
+    const [modals, setModals] = useState([]);
+    const productModalData = async (e) => {
+        try {
+            const response = await axios.get(API_ENDPOINT);
+            // console.log(response.data._id);
+            // console.log(modals);
+            return setModals(response.data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
 
-    const productMoadalData = async (e) => {
-        e.preventDefault();
-        const data = await axios.get(`http://192.168.1.19:7001/api${location}`);
-        console.log(`data is ${data.data}`);
-        console.log(modals);
-        return setmodals(data.data);
-    }
-    
     useEffect(() => {
-        productMoadalData();
-    }, [productMoadalData]);
+        productModalData();
+        // dispatch(productallData());
+    }, []);
 
-    
+
+   
     return (
         <>
             <section className="product-detail-main">
@@ -35,14 +40,14 @@ const ProductModal = () => {
                     <div className="breadcrumbs ">
                         <div className="container">
                             <ul className="breadcrumbs-listing align-items-center">
-                                <li className="root-link"><a href="https://cityfurnish.com/">Home</a></li>
+                                <li className="root-link"><a href="#">Home</a></li>
                                 <li className="child-link">
-                                    <a href="https://cityfurnish.com/bangalore/home-furniture-rental">
+                                    <a href="#">
                                         Home Furniture
                                     </a>
                                 </li>
                                 <li className="current-link">
-                                    <a href="https://cityfurnish.com/things/4171/jade-queen-size-double-bed">
+                                    <a href="#">
                                         Jade Queen Size Double Bed
                                     </a>
                                 </li>
@@ -50,11 +55,7 @@ const ProductModal = () => {
                         </div>
                     </div>
 
-                    {/* {modals.length !== 0 && */}
-                   {items.map((value,id)=>{
-                    console.log(value);
-                    console.log(id);
-                   })}
+                    {modals?.length !== 0 &&
                         <div className="container" style={{ boxSizing: "border-box" }}>
                             <div className="row d-flex justify-content-around ">
                                 <div className="col-lg-2 col-md-3 col-sm-6 p-4" >
@@ -82,7 +83,7 @@ const ProductModal = () => {
                                                         <a href="#" className="d_no"></a>
                                                         <li><a href="#" className="d_no"></a><a href="" className="facebook"><i className="icn icn-facebook-white"></i></a></li>
                                                         <li><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fcityfurnish.com%2Fthings%2F4171%2Fjade-queen-size-double-bed&amp;title=Jade Queen Size Double Bed&amp;source=LinkedIn" className="linkedin" target="_blank"><i className="icn icn-linkedin-white"></i></a></li>
-                                                        <li><a href="https://api.whatsapp.com/send?text=http://cityfurnish.com/things/4171/jade-queen-size-double-bed" className="google" target="_blank"><i className="icn icn-whatsapp"></i></a></li>
+                                                        <li><a href="" className="google" target="_blank"><i className="icn icn-whatsapp"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </span>
@@ -120,9 +121,12 @@ const ProductModal = () => {
                                         </div>
                                         <div className="product-actions flex-full justify-content-center text-center d-none-xs">
                                             <div className="product-btns flex-full justify-content-center text-center">
-                                                <a href="#" className=" product-btn" id="add-to-cart-btn" onClick={dispatch(productallData())}>Add to Cart</a>
-                                                <a href="https://cityfurnish.com/user_sign_up" className="rentnow product-btn">Rent Now</a>
-                                                <a href="https://cityfurnish.com/user_sign_up" className="newwishlistbtn">
+                                                <a href="#" className="addtocart product-btn" id="add-to-cart-btn"
+                                                onClick={()=>dispatch(addtoCart(modals))}
+                                                
+                                                >Add to Cart</a>
+                                                <a href="#" className="rentnow product-btn">Rent Now</a>
+                                                <a href="#" className="newwishlistbtn">
                                                     <i id="whished_4171" className="icn icn-wishlist-fill-gray wishlist-icn"></i>
                                                 </a>
                                                 <input type="hidden" name="product_id" id="product_id" value="4171" />
@@ -172,7 +176,7 @@ const ProductModal = () => {
                                                 <ul className="items-info-listing flex-full">
                                                     <li>
                                                         <h4><i className="icn icn-brand"></i> Brand(s)</h4>
-                                                        <p>Cityfurnish</p>
+                                                        <p>Leelu Chacha</p>
                                                     </li>
                                                     <li>
                                                         <h4><i className="icn icn-dimensions"></i> Size</h4>
@@ -207,7 +211,7 @@ const ProductModal = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* } */}
+                    }
                 </div>
             </section>
 

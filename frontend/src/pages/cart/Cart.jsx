@@ -21,8 +21,7 @@ const Cart = () => {
   };
 
   const handleDecrement = () => {
-
-    if (count > 0) {
+    if(count > 0) {
       setCount(count-1);
     }
   };
