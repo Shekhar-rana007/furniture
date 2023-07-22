@@ -7,8 +7,9 @@ import ProductEdit from './productEdit'
 import Product_main from './Product_main'
 import KnowMore from './KnowMore'
 import { useDispatch, useSelector } from 'react-redux';
+import { decqty, incqty } from '../../features/products/CartSlice';
 const Cart = () => {
-  const quantity= useSelector((state)=>state.cartItems.quantity);
+  const quantity = useSelector((state) => state.cartItems.quantity);
   const [count, setCount] = useState(quantity);
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
   const cartdata = useSelector(state => state.cartItems.cart);
@@ -18,7 +19,7 @@ const Cart = () => {
     setIsSidebarVisible(!isSidebarVisible);
   };
 
-  
+
   const handleIncrement = () => {
     setCount(quantity + 1);
   };
@@ -39,12 +40,12 @@ const Cart = () => {
                 <div className="card-header   d-flex justify-content-center align-items-center flex-row" style={{ background: "rgb(206, 237, 240)" }}>
                   Rent Cart 1 Items
                 </div>
-                {cartdata.map((value,index) => {
+                {cartdata.map((value, index) => {
                   return (
                     <Fragment key={index} >
                       <div className="card-body d-flex"  >
                         <div className="img w-50" >
-                          <img src={value.images[0].url} style={{ width: "50%", height: "auto", marginTop: "40px", position: "relative", left: "0" }} /></div>
+                          <img src={value.img} style={{ width: "50%", height: "auto", marginTop: "40px", position: "relative", left: "0" }} /></div>
                         <div className="content w-100">
                           <h5 className="card-title" style={{}}>{value.name}</h5>
                           <p className=" " style={{
@@ -79,7 +80,7 @@ const Cart = () => {
                               borderRadius: '9px',
                               backgroundColor: 'rgb(255, 245, 183)',
                               lineHeight: 1.3,
-                            }}>{value.Discount}</p>
+                            }}>{value.discount}%</p>
                             <p className="card-text" style={{
                               cursor: 'pointer',
                               boxSizing: 'border-box',
@@ -112,7 +113,7 @@ const Cart = () => {
                               alignItems: 'center',
                               justifyContent: 'center',
                               marginBottom: "10px",
-                            }} onClick={()=>handleDecrement()}>
+                            }} onClick={() => decqty(value)}>
                               -
                             </button>
                             <input
@@ -138,7 +139,7 @@ const Cart = () => {
                               className="btn btn-primary "
                               min="0"
                               defaultValue="dfkh"
-                              value={count}
+                              value={value.qty}
                               name="quantity"
                             />
                             <button className="btn btn-icon btn-primary plus" style={{
@@ -156,7 +157,7 @@ const Cart = () => {
                               alignItems: 'center',
                               justifyContent: 'center',
                               padding: '0',
-                            }} onClick={handleIncrement}>
+                            }} onClick={()=>incqty(value)}>
                               +
                             </button>
                             <div className="MuiBox-root border-primary " style={{ border: "1px solid", width: "150px", padding: "10px", borderRadius: "20px", position: "relative", marginLeft: "15px" }}>

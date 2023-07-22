@@ -8,11 +8,9 @@ import ProductModal2 from './ProductModal2';
 import { addtoCart } from '../../features/products/CartSlice';
 const ProductModal = () => {
     const items = useSelector(state => state.cartItems.data);
-    // console.log(items.products);
     const dispatch = useDispatch();
     const location = useLocation().pathname;
     const API_ENDPOINT = `http://192.168.1.19:7001/api${location}`;
-    // console.log(location);
     const [modals, setModals] = useState([]);
     const productModalData = async (e) => {
         try {
@@ -27,11 +25,24 @@ const ProductModal = () => {
 
     useEffect(() => {
         productModalData();
-        // dispatch(productallData());
     }, []);
 
+    const handleAddToCart = (product) => {
+        const pro = {
+            id:product._id,
+            name: product.name,
+            category: product.category,
+            threeMonthPrice: product.threeMonthPrice,
+            sixMonthPrice: product.sixMonthPrice,
+            nineMonthPrice: product.nineMonthPrice,
+            img: product.images[0].url,
+            discount:10,
+            qty: 1
+        }
+        dispatch(addtoCart(pro))
+    }
 
-   
+
     return (
         <>
             <section className="product-detail-main">
@@ -122,8 +133,8 @@ const ProductModal = () => {
                                         <div className="product-actions flex-full justify-content-center text-center d-none-xs">
                                             <div className="product-btns flex-full justify-content-center text-center">
                                                 <a href="#" className="addtocart product-btn" id="add-to-cart-btn"
-                                                onClick={()=>dispatch(addtoCart(modals))}
-                                                
+                                                    onClick={() => handleAddToCart(modals)}
+
                                                 >Add to Cart</a>
                                                 <a href="#" className="rentnow product-btn">Rent Now</a>
                                                 <a href="#" className="newwishlistbtn">
