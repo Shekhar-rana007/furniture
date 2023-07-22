@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import { SlArrowDown } from "react-icons/sl"
 import { BiSolidHomeHeart, BiRightArrowAlt } from "react-icons/bi"
 import { GiCrossedBones } from "react-icons/gi";
@@ -8,21 +8,24 @@ import Product_main from './Product_main'
 import KnowMore from './KnowMore'
 import { useDispatch, useSelector } from 'react-redux';
 const Cart = () => {
-  const [count, setCount] = useState(0);
+  const quantity= useSelector((state)=>state.cartItems.quantity);
+  const [count, setCount] = useState(quantity);
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
-  // const items= useSelector(state=>state.cartItems); 
-  // const dispatch= useDispatch();
+  const cartdata = useSelector(state => state.cartItems.cart);
+  console.log(cartdata);
 
   const handleButtonClick = () => {
     setIsSidebarVisible(!isSidebarVisible);
   };
+
+  
   const handleIncrement = () => {
-    setCount(count + 1);
+    setCount(quantity + 1);
   };
 
   const handleDecrement = () => {
-    if(count > 0) {
-      setCount(count-1);
+    if (count > 0) {
+      setCount(count - 1);
     }
   };
   console.log(count)
@@ -36,255 +39,136 @@ const Cart = () => {
                 <div className="card-header   d-flex justify-content-center align-items-center flex-row" style={{ background: "rgb(206, 237, 240)" }}>
                   Rent Cart 1 Items
                 </div>
+                {cartdata.map((value,index) => {
+                  return (
+                    <Fragment key={index} >
+                      <div className="card-body d-flex"  >
+                        <div className="img w-50" >
+                          <img src={value.images[0].url} style={{ width: "50%", height: "auto", marginTop: "40px", position: "relative", left: "0" }} /></div>
+                        <div className="content w-100">
+                          <h5 className="card-title" style={{}}>{value.name}</h5>
+                          <p className=" " style={{
+                            cursor: 'pointer',
+                            boxSizing: 'border-box',
+                            padding: 0,
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            gap: "10px",
+                            margin: '0px 0px 20px 0px',
+                            fontFamily: 'Work Sans',
+                            fontSize: '1em',
+                            fontWeight: 400,
+                            color: 'rgb(119, 119, 119)',
+                            lineHeight: 1.3,
+                          }}><BsTruck />Delivery by 18 Jul</p>
+                          <div className="muibox d-flex align-items-center gap-2 justify-content-center " style={{ marginTop: "-15px", marginBottom: "20px", padding: "10px", position: "relative" }}>
+                            <p className="card-text" style={{
+                              margin: '0 8px 0 0',
+                              fontSize: '100%',
+                              fontWeight: 500,
+                              color: 'rgb(188, 188, 188)',
+                              textDecoration: 'line-through',
+                              lineHeight: 1.3,
+                            }}>₹{value.threeMonthPrice}</p>
+                            <p className="card-text" style={{
+                              fontSize: '1em',
+                              fontWeight: 600,
+                              color: 'rgb(34, 34, 34)',
+                              padding: '4px 8px',
+                              borderRadius: '9px',
+                              backgroundColor: 'rgb(255, 245, 183)',
+                              lineHeight: 1.3,
+                            }}>{value.Discount}</p>
+                            <p className="card-text" style={{
+                              cursor: 'pointer',
+                              boxSizing: 'border-box',
+                              padding: 0,
+                              margin: '0px',
+                              fontFamily: 'Work Sans',
+                              fontSize: '20px',
+                              fontWeight: 600,
+                              color: 'rgb(34, 34, 34)',
+                              lineHeight: 1.3,
+                            }}
+                            >{value.threeMonthPrice}</p>
+                          </div>
 
-                <div className="card-body d-flex" >
-                  <div className="img w-50" >
-                    <img src="https://assets.furlenco.com/image/upload/dpr_1.0,f_auto,q_auto/v1/r2/products/222/plp_1.png" style={{ width: "50%", height: "auto", marginTop: "40px", position: "relative", left: "0" }} /></div>
-                  <div className="content w-100">
-                    <h5 className="card-title" style={{}}>Noah Fabric 3 Seater Sofa in Turquoise Color</h5>
-                    <p className=" " style={{
-                      cursor: 'pointer',
-                      boxSizing: 'border-box',
-                      padding: 0,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: "10px",
-                      margin: '0px 0px 20px 0px',
-                      fontFamily: 'Work Sans',
-                      fontSize: '1em',
-                      fontWeight: 400,
-                      color: 'rgb(119, 119, 119)',
-                      lineHeight: 1.3,
-                    }}><BsTruck />Delivery by 18 Jul</p>
-                    <div className="muibox d-flex align-items-center gap-2 justify-content-center " style={{ marginTop: "-15px", marginBottom: "20px", padding: "10px", position: "relative" }}>
-                      <p className="card-text" style={{
-                        margin: '0 8px 0 0',
-                        fontSize: '100%',
-                        fontWeight: 500,
-                        color: 'rgb(188, 188, 188)',
-                        textDecoration: 'line-through',
-                        lineHeight: 1.3,
-                      }}>₹2350.00</p>
-                      <p className="card-text" style={{
-                        fontSize: '1em',
-                        fontWeight: 600,
-                        color: 'rgb(34, 34, 34)',
-                        padding: '4px 8px',
-                        borderRadius: '9px',
-                        backgroundColor: 'rgb(255, 245, 183)',
-                        lineHeight: 1.3,
-                      }}>-75%</p>
-                      <p className="card-text" style={{
-                        cursor: 'pointer',
-                        boxSizing: 'border-box',
-                        padding: 0,
-                        margin: '0px',
-                        fontFamily: 'Work Sans',
-                        fontSize: '20px',
-                        fontWeight: 600,
-                        color: 'rgb(34, 34, 34)',
-                        lineHeight: 1.3,
-                      }}
-                      >₹2350.00</p>
-                    </div>
 
-
-                    <div className="qty-icons" style={{ zIndex: "1", display: "flex", justifyContent: "center", alignContent: "center", marginTop: "-15px" }}>
-                      <button className="btn btn-icon btn-primary minus" style={{
-                        boxSizing: 'border-box',
-                        margin: '0',
-                        textDecoration: 'none',
-                        fontSize: '15px',
-                        letterSpacing: '.5px',
-                        transition: 'all .3s',
-                        borderRadius: '5px',
-                        cursor: 'pointer',
-                        outline: '0',
-                        height: '36px',
-                        width: '36px',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        marginBottom: "10px",
-                      }} onClick={handleDecrement}>
-                        -
-                      </button>
-                      <input
-                        style={{
-                          boxSizing: 'border-box',
-                          margin: '0 10px',
-                          outline: '0',
-                          textDecoration: 'none',
-                          fontSize: '15px',
-                          letterSpacing: '.5px',
-                          transition: 'all .3s',
-                          borderRadius: '5px',
-                          height: '36px',
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          padding: '0',
-                          pointerEvents: 'none',
-                          width: '100px',
-                          paddingLeft: '16px',
-                        }}
-                        type="number"
-                        className="btn btn-primary "
-                        min="0"
-                        value={count}
-                        defaultValue="0"
-                        name="quantity"
-                      />
-                      <button className="btn btn-icon btn-primary plus" style={{
-                        boxSizing: 'border-box',
-                        textDecoration: 'none',
-                        fontSize: '15px',
-                        letterSpacing: '.5px',
-                        transition: 'all .3s',
-                        borderRadius: '5px',
-                        cursor: 'pointer',
-                        outline: '0',
-                        height: '36px',
-                        width: '36px',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        padding: '0',
-                      }} onClick={handleIncrement}>
-                        +
-                      </button>
-                      <div className="MuiBox-root border-primary " style={{ border: "1px solid", width: "150px", padding: "10px", borderRadius: "20px", position: "relative", marginLeft: "15px" }}>
-                        <p className=" " style={{ display: "flex", cursor: "pointer", zIndex: "10", alignItems: "center", marginLeft: "10px" }} onClick={handleButtonClick}>12 months < SlArrowDown /></p>
+                          <div className="qty-icons" style={{ zIndex: "1", display: "flex", justifyContent: "center", alignContent: "center", marginTop: "-15px" }}>
+                            <button className="btn btn-icon btn-primary minus" style={{
+                              boxSizing: 'border-box',
+                              margin: '0',
+                              textDecoration: 'none',
+                              fontSize: '15px',
+                              letterSpacing: '.5px',
+                              transition: 'all .3s',
+                              borderRadius: '5px',
+                              cursor: 'pointer',
+                              outline: '0',
+                              height: '36px',
+                              width: '36px',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              marginBottom: "10px",
+                            }} onClick={()=>handleDecrement()}>
+                              -
+                            </button>
+                            <input
+                              style={{
+                                boxSizing: 'border-box',
+                                margin: '0 10px',
+                                outline: '0',
+                                textDecoration: 'none',
+                                fontSize: '15px',
+                                letterSpacing: '.5px',
+                                transition: 'all .3s',
+                                borderRadius: '5px',
+                                height: '36px',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                padding: '0',
+                                pointerEvents: 'none',
+                                width: '100px',
+                                paddingLeft: '16px',
+                              }}
+                              type="text"
+                              className="btn btn-primary "
+                              min="0"
+                              defaultValue="dfkh"
+                              value={count}
+                              name="quantity"
+                            />
+                            <button className="btn btn-icon btn-primary plus" style={{
+                              boxSizing: 'border-box',
+                              textDecoration: 'none',
+                              fontSize: '15px',
+                              letterSpacing: '.5px',
+                              transition: 'all .3s',
+                              borderRadius: '5px',
+                              cursor: 'pointer',
+                              outline: '0',
+                              height: '36px',
+                              width: '36px',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              padding: '0',
+                            }} onClick={handleIncrement}>
+                              +
+                            </button>
+                            <div className="MuiBox-root border-primary " style={{ border: "1px solid", width: "150px", padding: "10px", borderRadius: "20px", position: "relative", marginLeft: "15px" }}>
+                              <p className=" " style={{ display: "flex", cursor: "pointer", zIndex: "10", alignItems: "center", marginLeft: "10px" }} onClick={handleButtonClick}>12 months < SlArrowDown /></p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-                <hr />
+                      <hr />
 
-                <div className="card-body d-flex" >
-                  <div className="img w-50" >
-                    <img src="https://assets.furlenco.com/image/upload/dpr_1.0,f_auto,q_auto/v1/r2/products/222/plp_1.png" style={{ width: "50%", height: "auto", marginTop: "40px", position: "relative", left: "0" }} /></div>
-                  <div className="content w-100">
-                    <h5 className="card-title" style={{}}>Noah Fabric 3 Seater Sofa in Turquoise Color</h5>
-                    <p className=" " style={{
-                      cursor: 'pointer',
-                      boxSizing: 'border-box',
-                      padding: 0,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: "10px",
-                      margin: '0px 0px 20px 0px',
-                      fontFamily: 'Work Sans',
-                      fontSize: '1em',
-                      fontWeight: 400,
-                      color: 'rgb(119, 119, 119)',
-                      lineHeight: 1.3,
-                    }}><BsTruck />Delivery by 18 Jul</p>
-                    <div className="muibox d-flex align-items-center gap-2 justify-content-center " style={{ marginTop: "-15px", marginBottom: "20px", padding: "10px", position: "relative" }}>
-                      <p className="card-text" style={{
-                        margin: '0 8px 0 0',
-                        fontSize: '100%',
-                        fontWeight: 500,
-                        color: 'rgb(188, 188, 188)',
-                        textDecoration: 'line-through',
-                        lineHeight: 1.3,
-                      }}>₹2350.00</p>
-                      <p className="card-text" style={{
-                        fontSize: '1em',
-                        fontWeight: 600,
-                        color: 'rgb(34, 34, 34)',
-                        padding: '4px 8px',
-                        borderRadius: '9px',
-                        backgroundColor: 'rgb(255, 245, 183)',
-                        lineHeight: 1.3,
-                      }}>-75%</p>
-                      <p className="card-text" style={{
-                        cursor: 'pointer',
-                        boxSizing: 'border-box',
-                        padding: 0,
-                        margin: '0px',
-                        fontFamily: 'Work Sans',
-                        fontSize: '20px',
-                        fontWeight: 600,
-                        color: 'rgb(34, 34, 34)',
-                        lineHeight: 1.3,
-                      }}
-                      >₹2350.00</p>
-                    </div>
-
-
-                    <div className="qty-icons" style={{ zIndex: "1", display: "flex", justifyContent: "center", alignContent: "center", marginTop: "-15px" }}>
-                      <button className="btn btn-icon btn-primary minus" style={{
-                        boxSizing: 'border-box',
-                        margin: '0',
-                        textDecoration: 'none',
-                        fontSize: '15px',
-                        letterSpacing: '.5px',
-                        transition: 'all .3s',
-                        borderRadius: '5px',
-                        cursor: 'pointer',
-                        outline: '0',
-                        height: '36px',
-                        width: '36px',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        marginBottom: "10px",
-                      }} onClick={handleDecrement}>
-                        -
-                      </button>
-                      <input
-                        style={{
-                          boxSizing: 'border-box',
-                          margin: '0 10px',
-                          outline: '0',
-                          textDecoration: 'none',
-                          fontSize: '15px',
-                          letterSpacing: '.5px',
-                          transition: 'all .3s',
-                          borderRadius: '5px',
-                          height: '36px',
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          padding: '0',
-                          pointerEvents: 'none',
-                          width: '100px',
-                          paddingLeft: '16px',
-                        }}
-                        type="number"
-                        className="btn btn-primary "
-                        min="0"
-                        value={count}
-                        defaultValue="0"
-                        name="quantity"
-                      />
-                      <button className="btn btn-icon btn-primary plus" style={{
-                        boxSizing: 'border-box',
-                        textDecoration: 'none',
-                        fontSize: '15px',
-                        letterSpacing: '.5px',
-                        transition: 'all .3s',
-                        borderRadius: '5px',
-                        cursor: 'pointer',
-                        outline: '0',
-                        height: '36px',
-                        width: '36px',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        padding: '0',
-                      }} onClick={handleIncrement}>
-                        +
-                      </button>
-                      <div className="MuiBox-root border-primary " style={{ border: "1px solid", width: "150px", padding: "10px", borderRadius: "20px", position: "relative", marginLeft: "15px" }}>
-                        <p className=" " style={{ display: "flex", cursor: "pointer", zIndex: "10", alignItems: "center", marginLeft: "10px" }} onClick={handleButtonClick}>12 months < SlArrowDown /></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                    </Fragment>)
+                })}
 
                 {/* -----card footer */}
                 <div className="card-footer text-muted " style={{ background: "rgb(206, 237, 240)" }} >
@@ -319,6 +203,7 @@ const Cart = () => {
                     </div>
                   </div>
                 </div>
+
 
               </div>
             </div>

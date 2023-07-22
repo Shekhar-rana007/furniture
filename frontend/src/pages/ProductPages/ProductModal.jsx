@@ -8,7 +8,7 @@ import ProductModal2 from './ProductModal2';
 import { addtoCart } from '../../features/products/CartSlice';
 const ProductModal = () => {
     const items = useSelector(state => state.cartItems.data);
-    console.log(items.products);
+    // console.log(items.products);
     const dispatch = useDispatch();
     const location = useLocation().pathname;
     const API_ENDPOINT = `http://192.168.1.19:7001/api${location}`;
@@ -18,7 +18,7 @@ const ProductModal = () => {
         try {
             const response = await axios.get(API_ENDPOINT);
             // console.log(response.data._id);
-            // console.log(modals);
+            // console.log(modals.quantity);
             return setModals(response.data);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -92,7 +92,7 @@ const ProductModal = () => {
                                         <div className="range-slider-wrapper flex-full align-items-center">
                                             <div className="range-slider">
 
-                                                <input type="range" id="baseprice" name="baseprice" value="899" max="100" min="10" />
+                                                <input type="range" id="baseprice" name="baseprice" defaultValue="899" max="100" min="10" />
 
                                             </div>
                                         </div>

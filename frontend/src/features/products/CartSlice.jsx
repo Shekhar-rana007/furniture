@@ -17,6 +17,7 @@ const initialState = {
   data: [],
   isError: false,
   isLoading: false,
+  quantity: 0,
   success: false,
   message: "hello",
 };
@@ -26,9 +27,14 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addtoCart: (state, action) => {
-      state.cart.push(action.payload);
+          const existingItem = state.cart.find((item) => item.name === action.payload.name);
+      if (existingItem) {
+       state.quantity += 1;
+      } else {
+        state.cart.push(action.payload);
+      }
+      // state.cart.push({ ...action.payload, quantity: 1 });
     }
-
   },
   extraReducers: (builder) => {
     builder
