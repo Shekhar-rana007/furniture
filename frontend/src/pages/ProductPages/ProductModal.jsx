@@ -6,11 +6,13 @@ import 'range-slider-input/dist/style.css';
 import { productallData } from '../../features/products/CartSlice';
 import ProductModal2 from './ProductModal2';
 import { addtoCart } from '../../features/products/CartSlice';
+import { base_url } from '../../utils/baseUrl';
 const ProductModal = () => {
     const items = useSelector(state => state.cartItems.data);
     const dispatch = useDispatch();
     const location = useLocation().pathname;
-    const API_ENDPOINT = `http://192.168.1.19:7001/api${location}`;
+    console.log(location)
+    const API_ENDPOINT = `http://192.168.1.12:7001/api${location}`;
     const [modals, setModals] = useState([]);
     const productModalData = async (e) => {
         try {

@@ -13,11 +13,10 @@ const HomeWhy = () => {
           <div className="md:flex gap-8 block max-w-md mx-auto md:max-w-full md:mx-0">
             <div className="image-container md:w-[55%]">
               <img
-                src="https://d3juy0zp6vqec8.cloudfront.net/images/why-cityfurnish.webp"
-                className="w-full h-auto"
+                src="https://images.pexels.com/photos/7972951/pexels-photo-7972951.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                className="w-full rounded-5"
                 alt="Image 1"
-                width="631"
-                height="528"
+                style={{height:"500px"}}
                 id="accordion-image"
               />
             </div>
@@ -30,7 +29,6 @@ const HomeWhy = () => {
                 <div
                   className="accordion"
                   id="accordionPanelsStayOpenExample"
-                  style={{ marginTop: "50px" }}
                 >
                   <div className="accordion-item">
                     <h2
@@ -45,7 +43,7 @@ const HomeWhy = () => {
                         aria-expanded="true"
                         aria-controls="panelsStayOpen-collapseOne"
                       >
-                        <p className="  font-medium text-ruby-alpha md:text-2xl text-left">
+                        <p className="font-medium text-ruby-alpha md:text-2xl text-left">
                           Designs for every taste and need
                         </p>
                       </button>
@@ -92,7 +90,7 @@ const HomeWhy = () => {
                     </div>
                   </div>
 
-                  <div className="accordion-item">
+                  <div className="accordion-item ">
                     <h2
                       className="accordion-header"
                       id="panelsStayOpen-headingThree"
@@ -106,7 +104,7 @@ const HomeWhy = () => {
                         aria-controls="panelsStayOpen-collapseThree"
                       >
                         <p className="  font-medium text-ruby-alpha md:text-2xl text-left">
-                          Tenures as low as 3 months
+                          Tenures as low as 3 months.
                         </p>
                       </button>
                     </h2>
