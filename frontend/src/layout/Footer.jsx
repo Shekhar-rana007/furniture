@@ -40,7 +40,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="Cityfurnish flex flex-wrap basis-[220px] content-start">
-            <h2 className="text-lg leading-6 font-medium text-ruby-alpha mb-4 w-full">Cityfurnish</h2>
+            <h2 className="text-lg leading-6 font-medium text-ruby-alpha mb-4 w-full">Leelu Chacha</h2>
             <ul className="w-full">
               <li className="mb-4">
                 <a href="#" className="text-base leading-6 font-normal text-ruby-beta hover:text-pearl-alpha" target="_self" aria-label="About Us" rel="noopener">About Us</a>

@@ -33,7 +33,7 @@ const loginUserCtrl = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
   // check if user exists or not
   const findUser = await User.findOne({ email });
-  if (findUser && (await findUser.isPasswordMatched(password))) {
+  if (findUser && (await findUser.isPasswordMatched(password))){
     const refreshToken = await generateRefreshToken(findUser?._id);
     if (findUser.isBlocked === false) {
       const updateuser = await User.findByIdAndUpdate(
