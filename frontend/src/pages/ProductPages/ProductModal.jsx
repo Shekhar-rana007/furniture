@@ -12,7 +12,7 @@ const ProductModal = () => {
     const dispatch = useDispatch();
     const location = useLocation().pathname;
     console.log(location)
-    const API_ENDPOINT = `http://192.168.1.12:7001/api${location}`;
+    const API_ENDPOINT = `http://127.0.0.1:7001/api${location}`;
     const [modals, setModals] = useState([]);
     const productModalData = async (e) => {
         try {

@@ -28,7 +28,7 @@ const cartSlice = createSlice({
     addtoCart: (state, action) => {
       const existingItem = state.cart.find(item => item.id === action.payload.id);
       if (existingItem) {
-        existingItem.qty = existingItem.qty + 1
+        existingItem.qty = existingItem.qty + 1;
       } else {
         state.cart.push(action.payload);
       }
@@ -36,13 +36,12 @@ const cartSlice = createSlice({
     },
     incqty: (state, action) => {
       const finditem = state.cart.find(item => item.id === action.payload.id);
-      console.log(finditem)
-      finditem.qty = finditem.qty + 1
+      finditem.qty = finditem.qty + 1;
     },
     decqty: (state, action) => {
       const finditem = state.cart.find(item => item.id === action.payload.id);
       if (finditem.qty >= 1) {
-        finditem.qty = finditem.qty - 1
+        finditem.qty = finditem.qty - 1;
       }
     }
   },

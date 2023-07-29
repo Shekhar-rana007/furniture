@@ -13,8 +13,8 @@ const Cart = () => {
   const [count, setCount] = useState(quantity);
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
   const cartdata = useSelector(state => state.cartItems.cart);
-  console.log(cartdata);
-
+  // console.log(cartdata);
+const dispatch= useDispatch();
   const handleButtonClick = () => {
     setIsSidebarVisible(!isSidebarVisible);
   };
@@ -41,6 +41,7 @@ const Cart = () => {
                   Rent Cart 1 Items
                 </div>
                 {cartdata.map((value, index) => {
+                  console.log((`ngjhg ${value}`))
                   return (
                     <Fragment key={index} >
                       <div className="card-body d-flex"  >
@@ -92,7 +93,7 @@ const Cart = () => {
                               color: 'rgb(34, 34, 34)',
                               lineHeight: 1.3,
                             }}
-                            >{value.threeMonthPrice}</p>
+                            >{value.threeMonthPrice * value.qty}</p>
                           </div>
 
 
@@ -113,7 +114,7 @@ const Cart = () => {
                               alignItems: 'center',
                               justifyContent: 'center',
                               marginBottom: "10px",
-                            }} onClick={() => decqty(value)}>
+                            }} onClick={() => dispatch(decqty(value))}>
                               -
                             </button>
                             <input
@@ -157,7 +158,7 @@ const Cart = () => {
                               alignItems: 'center',
                               justifyContent: 'center',
                               padding: '0',
-                            }} onClick={()=>incqty(value)}>
+                            }} onClick={()=>dispatch(incqty(value))}>
                               +
                             </button>
                             <div className="MuiBox-root border-primary " style={{ border: "1px solid", width: "150px", padding: "10px", borderRadius: "20px", position: "relative", marginLeft: "15px" }}>
